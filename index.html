@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Navbar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+    <body>
+        <div class="navbar">
+            <div class="left">Benjamin Rowan</div>
+            <div class="right">
+                <a href="#about">ABOUT</a>
+                <a href="#skills">SKILLS</a>
+                <a href="#projects">PROJECTS</a>
+                <a href="#timeline">TIMELINE</a>
+                <a href="#education">EDUCATION</a>
+                <a href="#contact">CONTACT ME</a>
+                <a href="writings.html">WRITINGS</a>
+            </div>
+        </div>
+
+        <div class="profile" id = "about">
+            <div class="content">
+                <div class = "picture">
+                    <img src="Images\fotor_1658364693920.jpg" alt="Your Photo">
+
+                    <div class = "social-media">
+                        <a href="https://bsky.app/profile/spacemanwalrus.bsky.social"><img src="Images\Bluesky_Logo.svg.png" alt="Logo 1"></a>
+                        <a href="https://github.com/Benrowan910"><img src="Images\Github_icon-icons.com_66788.png" alt="Logo 2"></a>
+                        <a href="https://www.instagram.com/ben_rowan_910/"><img src="Images\Instagram_logo_2022.svg.png" alt="Logo 3"></a>
+                        <a href="https://www.linkedin.com/in/benjamin-rowan-862923236/"><img src="Images\LinkedIn_logo_initials.png" alt="Logo 4"></a>
+                    </div>
+
+                </div>
+                <div class = "text">
+                    <h1>Benjamin Rowan</h1>
+                    <h2>Game Designer At UW-Stout</h2>
+                    <p class = "about-text">
+                        My Name is Ben Rowan, I am a Computer Science Student at the University of Wisconsin - Stout
+                    With a focus on Game Design and Development and a minor in Mathematics!
+                    Throughout my time at the university, I have been apart of several game projects as a general programmer, project lead, and programming manager!
+                    I have an extensive background in agile development and software development with C++.
+                    I am incredibly passionate about game making, spending a majority of my time working to gain experience in the field of game development.
+                    I am poised and committed to creating software and games that can impact peoples lives through creative design processes.
+                    </p>
+                    <a href="Resume-BenRowan-Main-2.pdf" download="Your-Resume.pdf">
+                        <button class="download-btn">Download My Resume</button>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Skills sections-->
+        <div class = "skills-section" id = "skills">
+        <h1 class="skills-title">Relevant Skills</h1>
+            <div class="skills-grid">
+                
+                <div class="skill-category" onclick="openSkillsModal('languages')">
+                    <img src="Images/language_icon.png" alt="Languages Icon">
+                    <h3>Languages</h3>
+                    <p>
+                        Through my time as a student, and programmer. I have spent a deal of time to make sure I could learn 
+                        a number of languages to diversify my skills as a programmer.
+                    </p>
+                    <ul>
+                        <li>C++</li>
+                        <li>C#</li>
+                        <li>Python</li>
+                        <li>Java</li>
+                        <li>HTML & CSS</li>
+                        <li>GLSL</li>
+                        <li>SQL</li>
+                        <li>GScript</li>
+                    </ul>
+                </div>
+                <div class="skill-category" onclick="openSkillsModal('methodologies')">
+                    <img src="Images/methodology_icon.png" alt="Methodologies Icon">
+                    <h3>Methodologies</h3>
+                    <p>
+                        A variety of development methodologies have been utilized in order to maximize development for different project styles.
+                    </p>
+                    <ul>
+                        <li>Agile Development</li>
+                        <li>Scrum</li>
+                        <li>Test-Driven Development</li>
+                    </ul>
+                </div>
+                <div class="skill-category" onclick="openSkillsModal('project-management')">
+                    <img src="Images/project_management_icon.png" alt="Project Management Icon">
+                    <h3>Project Management</h3>
+                    <p>
+                        In my time as a student, I have been fortunate enough to be in several positions that have allowed me to work in capacity as a manager, these are some skills I have been able to work on in that time.
+                    </p>
+                    <ul>
+                        <li>Team Management</li>
+                        <li>Task Delegation</li>
+                        <li>Version Control (Git, Subversion)</li>
+                        <li>Scheduling</li>
+                        <li>Culture Building</li>
+                    </ul>
+                </div>
+                <div class="skill-category" onclick="openSkillsModal('interests')">
+                    <img src="Images/interests_icon.png" alt="Interests Icon">
+                    <h3>Interests</h3>
+                    <p>
+                        These are some of my interests when it comes to the world of computer science and development
+                    </p>
+                    <ul>
+                        <li>Game Design</li>
+                        <li>Artificial Intelligence</li>
+                        <li>Procedural Generation</li>
+                        <li>Physics Simulations</li>
+                    </ul>
+                </div>
+                <div class="skill-category" onclick="openSkillsModal('relevant-courses')">
+                    <img src="Images/courses_icon.png" alt="Relevant Courses Icon">
+                    <h3>Relevant Courses</h3>
+                    <p>
+                        As a student, I have taken several classes that have helped to advance my knowledge of computer science and engineering
+                    </p>
+                    <ul>
+                        <li>Data Structures</li>
+                        <li>3 Dimensional Calculus</li>
+                        <li>Linear Algebra</li>
+                        <li>Game Development Courses 100-captsone</li>
+                        <li>Shader Programming</li>
+                        <li>Computer Graphics</li>
+                        <li>Algorithms</li>
+                        <li>Operating Systems</li>
+                        <li>Web Programming</li>
+                    </ul>
+                </div>
+                <div class="skill-category" onclick="openSkillsModal('development')">
+                    <img src="Images/development_icon.png" alt="Development Icon">
+                    <h3>Development</h3>
+                    <p>
+                        These are a collection of development tools I have utilized and have experience with
+                    </p>
+                    <ul>
+                        <li>Unreal Engine</li>
+                        <li>Unity</li>
+                        <li>Godot</li>
+                        <li>JetBrains IDE</li>
+                        <li>Eclipse IDE</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Modal Template -->
+        <div id="skills-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeSkillsModal()">&times;</span>
+                <div id="modal-body"></div>
+            </div>
+        </div>
+        <div class = "interest-background" style = "background-image: url('Images/Warframe_040113_1600.webp');">
+            <div class="interest-bar">
+                <img src="Images/Warframe.png" alt="Game Development" class="interest-image">
+                <p>One of the first video games that inspired me to chose my career path was Warframe by Digital Extremes Ltd.&copy</p>
+            </div>
+        </div>
+
+        <div class = "project-section" id = "projects">
+            <h1 class="page-title" style="color: aliceblue;">My Projects</h1>
+            <div class="project-grid">
+                <div class="project-item" onclick="openProjectModal('project1')">
+
+                    <img src="ProjectImages\AtomsEmbrace\output-onlinepngtools(4).png" alt="Project 1">
+                    <h3>Atom's Embrace</h3>
+                    <p>A Narrative Walking Simulator About Survivors Guilt</p>
+
+                </div>
+                <div class="project-item" onclick="openProjectModal('project2')">
+
+                    <img src="ProjectImages\sub_poster_pilot_PREVIEW.png" alt="Project2">
+                    <h3>Dread Not</h3>
+                    <p>A Co-op Experience Set In A Submarine, Where Both Played Must Work Together To Ascend</p>
+
+                </div>
+                <div class="project-item" onclick="openProjectModal('project3')">
+
+                    <img src="ProjectImages\IMG_6829.jpg" alt="Project3">
+                    <h3>What Lies Beneath</h3>
+                    <p>A Single Player 2D Dungeon Crawler, Focused on Puzzle Solving</p>
+
+                </div>
+                <div class="project-item" onclick="openProjectModal('project4')">
+
+                    <img src="ProjectImages\Screenshot_2024-10-18_013630.png" alt="Project4">
+                    <h3>Vulkan Graphics Renderer / Game Engine Framework</h3>
+                    <p>A Graphics Renderer built from the Vulkan Graphics API Framework, With the Intention of making it compatible for game making.</p>
+
+                </div>
+                <div class="project-item" onclick="openProjectModal('project5')">
+
+                    <img src="Images\Screenshot 2025-01-14 181422.png" alt="Project5">
+                    <h3>Python Physics Based Games</h3>
+                    <p>A collection of games made with physics calculations such as: Collision, Friction, Gravity, Bond Forces, etc.</p>
+
+                </div>
+                <div class="project-item" onclick="openProjectModal('project6')">
+
+                    <img src="ProjectImages\Screenshot 2025-01-14 180655.png" alt="Project 6">
+                    <h3>Game Tracking App</h3>
+                    <p>A Flutter Application Built With the IGDB API For the Intention of Keeping a Backlog of Games, and Tracking Notes for Them</p>
+
+                </div>
+                <div class="project-item" onclick="openProjectModal('project7')">
+
+                    <img src="ProjectImages\Screenshot 2025-01-14 163651.png" alt="Project 7">
+                    <h3>Barnes-Hut N-Body Solution</h3>
+                    <p>A Flutter Application Built With the IGDB API For the Intention of Keeping a Backlog of Games, and Tracking Notes for Them</p>
+
+                </div>
+                <div class="project-item" onclick="openProjectModal('project8')">
+
+                    <img src="ProjectImages\AtomsEmbrace\SC1.png" alt="Project 8">
+                    <h3>Shader Programming</h3>
+                    <p>A Flutter Application Built With the IGDB API For the Intention of Keeping a Backlog of Games, and Tracking Notes for Them</p>
+                    
+                </div>
+                <div class="project-item" onclick="openProjectModal('project9')">
+
+                    <img src="ProjectImages\Screenshot 2025-01-15 215831.png" alt="Project 9">
+                    <h3>Game of Life Web Game</h3>
+                    <p>A Web Game built for a UW-Stout course with Phaser and Javascript. A take on the "game of life" board game.</p>
+                    
+                </div>
+            </div>
+        </div>
+        <!-- Popup Modal Template -->
+        <div id="project-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeProjectModal()">&times;</span>
+                <div id="project-modal-body"></div>
+            </div>
+        </div>
+
+        <!-- Interest Bar Between Timeline and Projects-->
+        <div class = "interest-background" style = "background-image: url('Images/65d4f11c8fb1b.image.jpg');">
+            <div class="interest-bar">
+                <img src="Images/MonticelloHS.png" alt="Game Development" class="interest-image">
+                <p>When I was in high school, I helped create and structure a game design course!</p>
+            </div>
+        </div>
+
+        <!-- Timeline of my career/life -->
+        <div class="timeline" id = "timeline">
+            <div class="timeline-line"></div>
+            <div class="timeline-item left">
+                <div class="timeline-content">
+                    <img src="Images\UW–Stout_Blue_Devils_logo.svg.png" alt="Image 1">
+                    <h3>Graduation from High School/Arrival at UW-Stout</h3>
+                    <p>Upon arriving at the University of Wisconsin - Stout, I worked to adapt to my new life quickly, and focused on beginning my college career</p>
+                    <span class="date">Fall 2021</span>
+                </div>
+            </div>
+        
+            <div class="timeline-item right">
+                <div class="timeline-content">
+                    <img src="ProjectImages\AtomsEmbrace\DSC04333.jpg" alt="Image 2">
+                    <h3>My First Game!</h3>
+                    <p>In 2024, I was fortunate enough to be the lead designer of a team of developers on a semester long game project. Learning much about the development process.</p>
+                    <span class="date">January 2024 - Present</span>
+                </div>
+            </div>
+        
+            <div class="timeline-item left">
+                <div class="timeline-content">
+                    <img src="path-to-image3.jpg" alt="Image 3">
+                    <h3>Employed Game Developer for UW-Stout</h3>
+                    <p>In May, 2024, I was employed by the University of Wisconsin - Stout's instructional design lab to work on game projects that professors requested. </p>
+                    <span class="date">May 2024 - Present</span>
+                </div>
+            </div>
+        
+            <div class="timeline-item right">
+                <div class="timeline-content">
+                    <img src="ProjectImages\sub_poster_pilot_PREVIEW.png" alt="Image 4">
+                    <h3>My Capstone Project</h3>
+                    <p>In Fall of 2024, I began my Capstone class, where I was fortunate enough to be elected as a Project Manager for our game, Submerged!</p>
+                    <span class="date">Fall 2024 - Present</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Interest Bar Between Timeline and Projects-->
+        <div class = "interest-background" style = "background-image: url('Images/how-interstellar-advanced-black-hole-science_cprj.jpg');">
+            <div class="interest-bar">
+                <img src="Images\interstellar_3.jpg" alt="Game Development" class="interest-image">
+                <p>My all time favorite movie, and another inspiration for my journey, is Interstellar</p>
+            </div>
+        </div>
+        
+        <!-- Education Section, talking specifically about my education-->
+        <section class = "education-section" id = "education">
+            <div class="education">
+                <img src="Images\UW–Stout_Blue_Devils_logo.svg.png" alt="University Logo">
+                <div class="info">
+                    <h2>University of Wisconsin - Stout</h2>
+                    <p class="degree">Bachelor of Science in Computer Science</p>
+                    <p>Focus: Game Design and Development</p>
+                    <p>Minor: Mathematics</p>
+                    <p>Years Attended: 2021 - 2025</p>
+                </div>
+                <div class="description">
+                    <p>During my time at UW-Stout, I developed strong skills in software engineering, agile development, and game design. I participated in several team projects, honing my leadership abilities and technical expertise. My education provided me with a solid foundation in both theoretical and practical aspects of computer science.</p>
+                </div>
+            </div>
+        </section>
+
+            <!-- Contact Form Section -->
+            <div class = "contact-section">
+                <div class="contact-form" id="contact">
+                    <h2>Contact Me!</h2>
+                    <h3>Email: Benrowan910@gmail.com | rowanb7507@my.uwstout.edu</h3>
+                    <form action="https://formspree.io/f/xbllpydr" method="POST" id = "contactForm" onsubmit="return validateForm()">
+                        <div class="form-container">
+                            <!-- Left Side Form Fields -->
+                            <div class="left-side">
+                                <div class="form-group">
+                                    <label for="name">Your Name</label>
+                                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Your Email</label>
+                                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Your Phone Number</label>
+                                    <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="subject">Subject</label>
+                                    <input type="text" id="subject" name="subject" placeholder="Enter the subject" required>
+                                </div>
+                            </div>
+
+                            <!-- Right Side Message Field -->
+                            <div class="right-side">
+                                <div class="form-group">
+                                    <label for="message">Your Message</label>
+                                    <textarea id="message" name="message" placeholder="Write your message here" rows="5" required></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit">Send Message</button>
+                    </form>
+                </div>
+            </div>
+
+
+        <script src = "script.js"></script>
+    </body>
+</html>

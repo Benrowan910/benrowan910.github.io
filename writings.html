@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Writing Portfolio</title>
+    <link rel="stylesheet" href="writingStyle.css">
+</head>
+<body>
+    <header>
+        <h1>My Writing Portfolio</h1>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <div class="filter-bar">
+        <button onclick="filterProjects('all')">Show All</button>
+        <button onclick="filterProjects('Poetry')">Poetry</button>
+        <button onclick="filterProjects('Short Story')">Short Stories</button>
+    </div>
+
+    <main class="container">
+        <div class="project" data-genre = "Poetry">
+            <h2>I just ate it cold</h2>
+            <p>Genre: Poetry</p>
+            <p>
+                I found myself here
+                <br>
+                In line, waiting
+                <br>
+                The gold tinted lights
+                <br>
+                Hanging off the stained, chipped wall
+                <br>
+                The man in front of me, towering over
+                <br>
+                I can't see the menu 
+                <br> 
+                But I already know what I want 
+                <br>
+                It still doesn't help
+                <br>
+                My words come out, breaking
+                <br>
+                Chipped
+                <br> 
+                As if I'm trying too hard 
+                <br>
+                The lady was kind, she knew
+                <br>
+                -----
+                <br>
+                So I wondered
+                <br>
+                I just ate it later
+                <br>
+                Cold.
+
+            </p>
+        </div>
+        <div class="project" data-genre = "Poetry">
+            <h2>Shadows and Light</h2>
+            <p>Genre: Poetry</p>
+            <p>Shadows dance where light once lay, a fleeting glimpse of night and day...</p>
+        </div>
+        <div class="project" data-genre = "Short Story">
+            <h2>The Last Voyage</h2>
+            <p>Genre: Short Story</p>
+            <p>Captain Aurelia stood on the bow of her ship, the horizon ablaze with the setting sun...</p>
+        </div>
+        <div class="project" data-genre = "Short Story">
+            <h2>The Forgotten Forest</h2>
+            <p>Genre: Short Story</p>
+            <p>Legends spoke of a forest where time stood still, a place forgotten by the world...</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 My Writing Portfolio. All Rights Reserved.</p>
+        <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </footer>
+
+    <script src = "writingScript.js"></script>
+</body>
+</html>
