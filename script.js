@@ -444,6 +444,50 @@ function openProjectModal(projectId) {
                 </div>
             `;
             break;
+            case 'project10':
+                content = `
+                    <div style="
+                        text-align: center; 
+                         max-width: 600px; 
+                        max-height: 90vh; /* Ensures the modal doesn't exceed the viewport height */
+                        overflow-y: auto; /* Enables scrolling for overflowing content */
+                        border: 1px solid #ccc; 
+                        border-radius: 10px; 
+                        background-color: white; 
+                        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+                    ">
+                        <img src="ProjectImages/Screenshot 2025-01-15 215831.png" alt="Project 2" 
+                            style="width: 100%; border-radius: 10px; margin-bottom: 20px;">
+                        <h2 style="font-size: 24px; margin-bottom: 10px;">Doodle Dice</h2>
+                        <p style="
+                            font-size: 16px; 
+                            line-height: 1.6; 
+                            margin-bottom: 20px; 
+                            text-align: justify; 
+                            word-wrap: break-word; 
+                        ">
+                            Doodle Dice was a game made during a 49 hour game jam at the UW-Stout
+                            IGDA Spring Semester Game Jam. This was my first completed project in Godot, 
+                            I worked almost entirely on the backend of the game making sure it worked (and, not to brag
+                            made the art.)
+    
+                        </p>
+                        <a href="https://tyler-betanski.itch.io/doodle-dice" style="text-decoration: none;">
+                            <button style="
+                                background-color: #007BFF; 
+                                color: white; 
+                                padding: 10px 20px; 
+                                font-size: 16px; 
+                                border: none; 
+                                border-radius: 5px; 
+                                cursor: pointer;
+                            ">
+                                View Project
+                            </button>
+                        </a>
+                    </div>
+                `;
+                break; 
                     // Add more cases for additional projects
         default:
             content = `<p class="modal-description">Project details are not available.</p>`;
