@@ -207,7 +207,7 @@ function openProjectModal(projectId) {
                         Using an object oriented approach in C++, this is a continuous project that I intend to work on for years. With a page entirely dedicated to it and
                         I intend to keep the code open and reviewable throughout this process.
                     </p>
-                    <a href="your_project_link_here" style="text-decoration: none;">
+                    <a href="blubber.html" style="text-decoration: none;">
                         <button style="
                             background-color: #007BFF; 
                             color: white; 
