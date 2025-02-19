@@ -752,4 +752,132 @@
         }
 
 
-        
+        /* Enhanced Mobile-First Approach */
+@media (max-width: 768px) {
+    /* Navbar Mobile Optimization */
+    .navbar {
+        flex-direction: column;
+        padding: 10px;
+        font-size: 1em;
+    }
+
+    .navbar .right {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    /* Profile Section Mobile Layout */
+    .profile .content {
+        flex-direction: column;
+        width: 95%;
+    }
+
+    .profile .picture,
+    .profile .text {
+        width: 100%;
+    }
+
+    .profile .text h1 {
+        font-size: 2.5em;
+    }
+
+    .profile .text h2 {
+        font-size: 1.5em;
+    }
+
+    /* Education Section Stacking */
+    .education {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .education img {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    /* Skills Grid Responsive Layout */
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Project Grid Mobile Layout */
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Timeline Mobile Adjustments */
+    .timeline-item {
+        width: 100%;
+        left: 0 !important;
+    }
+
+    .timeline-line {
+        left: 20px !important;
+    }
+
+    /* Contact Form Stacking */
+    .contact-form {
+        max-width: 90%;
+        padding: 20px;
+    }
+
+    .contact-form .form-container {
+        flex-direction: column;
+    }
+
+    /* Interest Bar Mobile Optimization */
+    .interest-bar {
+        max-width: 90%;
+        padding: 20px;
+        border-radius: 20px;
+    }
+
+    .interest-bar p {
+        font-size: 1em;
+    }
+}
+
+/* Tablet Optimization */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .project-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .profile .content {
+        width: 90%;
+    }
+
+    .contact-form {
+        max-width: 70%;
+    }
+}
+
+/* Universal Mobile Improvements */
+@media (max-width: 480px) {
+    html {
+        font-size: 14px;
+    }
+
+    .profile .social-media a img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .modal {
+        width: 95vw;
+        padding: 10px;
+    }
+
+    .timeline-content img {
+        width: 50% !important;
+    }
+}
+
+/* Existing styles remain the same below this line */
