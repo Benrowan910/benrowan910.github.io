@@ -133,8 +133,12 @@
             box-sizing: border-box;
         }
 
-        body{
+        html, body{
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            width: 100vw;
+            min-width: 100vw;
+            max-width: 100vw;
+            overflow-x: hidden;
         }
 
         /* Navbar Styling */
@@ -151,7 +155,7 @@
             left: 0;
             right: 0;
             z-index: 1000;
-            width: 100%;
+            width: 100vw;
         }
 
         /* Left Section (Initials) */
@@ -276,6 +280,7 @@
             padding: 20px;
             height: 100vh;
             width: 100vw;
+            min-width: 100vw;
             background-image: url("Images/Black_hole_3.png");
             background-repeat: no-repeat; /* Teal to Purple Gradient */
             background-size: cover;
