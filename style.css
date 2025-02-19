@@ -4,7 +4,7 @@
     .navbar {
         flex-direction: column;
         padding: 10px;
-        font-size: 1em;
+        font-size: clamp(.5rem, 2vw, 1rem);
         width: 100vw !important;
     }
 
@@ -176,6 +176,7 @@
         .navbar .right a {
             color: #fff;
             text-decoration: none;
+            font-size: clamp(.5em, 2vw, 1em);
         }
 
         .navbar .right a:hover {
