@@ -250,7 +250,7 @@ function openProjectModal(projectId) {
 <br><br>
                         I continuously add, tweak, and experiment with these projects in order to test new ideas and such.
                     </p>
-                    <a href="your_project_link_here" style="text-decoration: none;">
+                    <a href="https://github.com/Benrowan910/PhysicsEngine-Games.git" style="text-decoration: none;">
                         <button style="
                             background-color: #007BFF; 
                             color: white; 
@@ -341,7 +341,7 @@ function openProjectModal(projectId) {
                         This project was an attempt to simulate a gravitational field with particles in OpenGL. The goal here was to be able to simulate this at a particle count of 1,000+ at a high framerate.
                         In order to achieve this, I attempted a barnes-hut algorithmic approach to rendering the particles on the screen. **THIS PROJECT IS STILL A WORK IN PROGRESS**
                     </p>
-                    <a href="your_project_link_here" style="text-decoration: none;">
+                    <a href="https://github.com/Benrowan910/Barnes-Hut-N-Body-Simulation.git" style="text-decoration: none;">
                         <button style="
                             background-color: #007BFF; 
                             color: white; 
