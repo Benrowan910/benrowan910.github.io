@@ -5,6 +5,7 @@
         flex-direction: column;
         padding: 10px;
         font-size: 1em;
+        width: 100vw !important;
     }
 
     .navbar .right {
@@ -155,7 +156,7 @@
             left: 0;
             right: 0;
             z-index: 1000;
-            width: 100vw;
+            width: 100vw !important;
         }
 
         /* Left Section (Initials) */
@@ -445,6 +446,7 @@
             background-size: cover; /* Cover the entire section */
             background-position: center; /* Center the background image */
             padding: 50px 0; /* Add space above and below */
+            min-width: 100vw;
         }
         /* Education Section */
         .education {
@@ -455,7 +457,6 @@
             padding: 30px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            max-width: 900px;
             background-color: #cbf1f5;
         }
 
