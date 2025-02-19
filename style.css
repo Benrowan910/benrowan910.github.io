@@ -205,8 +205,8 @@
         }
 
         .profile .social-media a img {
-            width: 40px;
-            height: 40px;
+            width: clamp(10px, 5vw, 40px);
+            height: clamp(10px, 5vw, 40px);
             transition: transform 0.3s;
         }
 
@@ -223,7 +223,8 @@
 
         /* Profile Picture Styling */
         .profile .picture {
-            width: 40%; /* Set the picture's width */
+            min-width: 40%;
+            max-width: 40%; /* Set the picture's width */
             text-align: center; /* Align the picture in the center */
             padding: 10px;
             border: 5px solid #fff;
@@ -287,6 +288,7 @@
             background-repeat: no-repeat; /* Teal to Purple Gradient */
             background-size: cover;
             background-position: center;
+            overflow-x: hidden;
         }
         .skills-section h1{
             color: #ffffff;
@@ -305,12 +307,11 @@
 
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: repeat(2, auto);
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
             margin: 20px;
             height: 90%;
-            width: 100vw;
+            width: calc(100% - 20px);
         }
         
         .skill-category {
@@ -325,6 +326,11 @@
             background-color: #f9f9f9;
             transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
             cursor: pointer;
+            min-width: 280px; /* Minimum width before wrapping */
+            max-width: 100%;
+            padding: 15px;
+            margin: 0 5px;
+            box-sizing: border-box;
         }
         
         .skill-category:hover {
@@ -340,9 +346,15 @@
         }
         
         .skill-category h3 {
-            font-size: 2.0rem;
+            font-size: clamp(1.2rem, 3vw, 2.0rem);
             font-weight: 600;
             color: #333;
+        }
+        .skill-category p,
+        .skill-category li {
+            font-size: clamp(0.9rem, 2vw, 1.1rem); /* Responsive text */
+            line-height: 1.4;
+            word-wrap: break-word; /* Prevent text overflow */
         }
 
 
@@ -356,7 +368,7 @@
         }
         .contact-form {
             width: 100%;
-            max-width: 50%;
+            max-width: 90%;
             margin: auto;
             padding: 30px;
             background-color: #f9f9f9;
