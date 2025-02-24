@@ -563,14 +563,6 @@ function validateForm() {
         return false;
     }
 
-    // Validate Phone Number
-    const phone = document.getElementById("phone").value;
-    const phonePattern = /^\+?[0-9]{1,4}?[-.\s]?[0-9]{1,3}?[-.\s]?[0-9]{4,10}$/;  // Simple international phone number regex
-    if (!phonePattern.test(phone)) {
-        alert("Please enter a valid phone number.");
-        return false;
-    }
-
     return true;  // All validations passed
 }
 
