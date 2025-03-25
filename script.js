@@ -563,15 +563,63 @@ function validateForm() {
         return false;
     }
 
-    // Validate Phone Number
-    const phone = document.getElementById("phone").value;
-    const phonePattern = /^\+?[0-9]{1,4}?[-.\s]?[0-9]{1,3}?[-.\s]?[0-9]{4,10}$/;  // Simple international phone number regex
-    if (!phonePattern.test(phone)) {
-        alert("Please enter a valid phone number.");
-        return false;
-    }
-
     return true;  // All validations passed
 }
 
 
+// Sample blog data (replace with your actual data or fetch from an API)
+const blogPosts = {
+    1: {
+        title: "Why Vulkan",
+        author: "Ben Rowan",
+        content: `Work in progress! Come back Soon!`
+    }
+};
+
+// Function to display blog content
+function displayBlogContent(postId) {
+    const blogContentSection = document.getElementById("blog-content");
+    const blogListSection = document.getElementById("blog-list");
+
+    // Hide the blog list and show the blog content
+    blogListSection.style.display = "none";
+    blogContentSection.style.display = "block";
+
+    // Populate the blog content
+    const blogPost = blogPosts[postId];
+    document.getElementById("blog-content-title").textContent = blogPost.title;
+    document.getElementById("blog-content-body").innerHTML = `
+        <p><em>By ${blogPost.author}</em></p>
+        ${blogPost.content}
+    `;
+}
+
+// Function to go back to the blog list
+function goBackToBlogList() {
+    const blogContentSection = document.getElementById("blog-content");
+    const blogListSection = document.getElementById("blog-list");
+
+    // Hide the blog content and show the blog list
+    blogContentSection.style.display = "none";
+    blogListSection.style.display = "block";
+}
+
+// Event listeners
+document.addEventListener("DOMContentLoaded", () => {
+    // Add click event listeners to blog links
+    const blogLinks = document.querySelectorAll(".blog-link");
+    blogLinks.forEach(link => {
+        link.addEventListener("click", (e) => {
+            e.preventDefault();
+            const postId = e.currentTarget.getAttribute("data-post-id");
+            displayBlogContent(postId);
+        });
+    });
+
+    // Add click event listener to the "Back to Blogs" button
+    const backButton = document.getElementById("back-to-blogs");
+    backButton.addEventListener("click", (e) => {
+        e.preventDefault();
+        goBackToBlogList();
+    });
+});

@@ -24,8 +24,8 @@
     <!-- Project Header -->
     <div class="project-header" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('Images/vulkan-bg.jpg');">
         <div class="header-content">
-            <h1>Vulkan Graphics Renderer</h1>
-            <h2>A Personal Graphics Engine Built with Vulkan API <br>
+            <h1>Tusk Graphics Renderer</h1>
+            <h2>A Personal Graphics/Game Engine Built with the Vulkan API <br>
                 Stored on Tortoise SVN</h2>
             <div class="status-badge">In Development</div>
         </div>
@@ -42,7 +42,7 @@
                 </div>
                 <div class="overview-item">
                     <h3>Repository</h3>
-                    <a href="[YOUR_GITHUB_LINK]" class="github-link">Subversion Link</a>
+                    <!--<a href="[YOUR_GITHUB_LINK]" class="github-link">Subversion Link</a>-->
                 </div>
                 <div class="overview-item">
                     <h3>Last Updated</h3>
@@ -58,19 +58,19 @@
             <h2>Current Features</h2>
             <div class="features-grid">
                 <div class="feature-card">
-                    <img src="ProjectImages/vulkan-feature1.jpg" alt="Feature 1">
+                    <!--<img src="ProjectImages/vulkan-feature1.jpg" alt="Feature 1">-->
                     <h3>2 Dimensional Graphics Rendering</h3>
-                    <p>Physically Based Rendering pipeline with image-based lighting</p>
+                    <p>Image/sprite rendering</p>
                 </div>
                 <div class="feature-card">
-                    <img src="ProjectImages/vulkan-feature2.jpg" alt="Feature 2">
+                    <!--<img src="ProjectImages/vulkan-feature2.jpg" alt="Feature 2">-->
                     <h3>Game Object Implementation</h3>
-                    <p>Advanced deferred rendering architecture</p>
+                    <p>For game programming compatibility</p>
                 </div>
                 <div class="feature-card">
-                    <img src="ProjectImages/vulkan-feature3.jpg" alt="Feature 3">
+                    <!--<img src="ProjectImages/vulkan-feature3.jpg" alt="Feature 3">-->
                     <h3>Object Oriented Design</h3>
-                    <p>Asynchronous resource loading system</p>
+                    <p>With Multi-Threaded utilization</p>
                 </div>
             </div>
         </div>
@@ -96,7 +96,7 @@
                         <h3>Physically Based Lighting</h3>
                         <ul>
                             <li>Hybrid rasterization/ray tracing</li>
-                            <li>DLSS/FSR integration</li>
+                            
                         </ul>
                     </div>
                 </div>
@@ -137,10 +137,34 @@
 
     <!-- Technical Documentation Link -->
     <section class="documentation-cta">
-        <div class="content-wrapper">
-            <h2>Technical Deep Dive</h2>
-            <p>Explore the engine architecture and implementation details:</p>
-            <a href="vulkan-docs.html" class="docs-button">View Documentation</a>
+        <h1 class="title">Tusk Blogs</h1>
+        <p class="mission-statement">
+            A collection of blog posts from yours truly
+        </p>
+
+                <!-- Blog Categories -->
+        <div class="blog-container">
+
+            <section id="blog-list" class="blog-section">
+                <h2>Blogs</h2>
+                <div class="blog-list">
+                    <!-- Blog Items with Data Attributes -->
+                    <div class="blog-item">
+                        <a href="#" class="blog-link" data-post-id="1">
+                            <h1>Why Use Vulkan?</h1>
+                            <h3>Ben Rowan</h3>
+                        </a>
+                    </div>
+                    <!-- Add more blog items as needed -->
+                </div>
+            </section>
+            
+            <!-- Blog Content Section (Hidden by Default) -->
+            <section id="blog-content" class="blog-section" style="display: none;">
+                <button id="back-to-blogs" class="back-button">← Back to Blogs</button>
+                <h2 id="blog-content-title"></h2>
+                <div id="blog-content-body"></div>
+            </section>
         </div>
     </section>
 
