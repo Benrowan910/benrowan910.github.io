@@ -414,7 +414,7 @@ function openProjectModal(projectId) {
                 ">
                     <img src="ProjectImages/Screenshot 2025-01-15 215831.png" alt="Project 2" 
                         style="width: 100%; border-radius: 10px; margin-bottom: 20px;">
-                    <h2 style="font-size: 24px; margin-bottom: 10px;">Dread Not</h2>
+                    <h2 style="font-size: 24px; margin-bottom: 10px;">The Game of Life</h2>
                     <p style="
                         font-size: 16px; 
                         line-height: 1.6; 
@@ -456,7 +456,7 @@ function openProjectModal(projectId) {
                         background-color: white; 
                         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
                     ">
-                        <img src="ProjectImages/Screenshot 2025-01-15 215831.png" alt="Project 2" 
+                        <img src="ProjectImages/DoodleDice.PNG" alt="Project 2" 
                             style="width: 100%; border-radius: 10px; margin-bottom: 20px;">
                         <h2 style="font-size: 24px; margin-bottom: 10px;">Doodle Dice</h2>
                         <p style="
