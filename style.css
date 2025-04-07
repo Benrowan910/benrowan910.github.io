@@ -282,7 +282,7 @@
         .skills-section {
             text-align: center;
             padding: 20px;
-            min-height: 100vh;
+            min-height: auto;
             height: auto;
             width: 100vw;
             min-width: 100vw;
