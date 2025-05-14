@@ -167,74 +167,97 @@
 
         <div class = "project-section" id = "projects">
             <h1 class="page-title" style="color: aliceblue;">My Projects</h1>
-            <div class="project-grid">
-                <div class="project-item" onclick="openProjectModal('project1')">
+                    <!-- Engine Subsection -->
+            <div class="subsection engine-subsection">
+                <h2 class="subsection-title">My Game Engine</h2>
+                <div class="engine-content">
+                    <div class="engine-text">
+                        <h2>Engine Pending Name</h2>
+                        <p class="engine-description">Engine Pending Name is a custom game engine in development since October of 2024. Engine Pending Name is currently only being developed by Ben Rowan, using the Vulkan
+                            Graphics Frameworks API. The goal of this engine is to make a fully functional 3D and 2D engine hybrid with different options of lighting, and shader presets. Inspired by my frustration with available
+                            lighting and shaders in current engines, and being very unfriendly variations in what you can do, ultimately the goal is to create an engine that you can make whatever you want in. 
 
+                            Below is a link to the page where I intend to blog my experience, and eventually share the source code with anyone interested!
+                        </p>
+                        <a href="blubber.html" class="engine-link">Explore Engine Details →</a>
+                    </div>
+                    <img src="ProjectImages\Screenshot_2024-10-18_013630.png" alt="Engine Preview" class="engine-preview">
+                </div>
+            </div>
+
+            <!-- New Games Subsection -->
+            <div class="subsection games-subsection">
+                <h2 class="subsection-title">Game Development Projects</h2>
+                <div class="project-grid emphasized-grid">
+                    <!-- Your game projects (1-6, 9-10) -->
+                     <div class="project-item" onclick="openProjectModal('project1')">
                     <img src="ProjectImages\AtomsEmbrace\output-onlinepngtools(4).png" alt="Project 1">
                     <h3>Atom's Embrace</h3>
                     <p>A Narrative Walking Simulator About Survivors Guilt</p>
+                     </div>
+                    <div class="project-item" onclick="openProjectModal('project2')">
 
-                </div>
-                <div class="project-item" onclick="openProjectModal('project2')">
+                        <img src="ProjectImages\sub_poster_pilot_PREVIEW.png" alt="Project2">
+                        <h3>Dread Not</h3>
+                        <p>A Co-op Experience Set In A Submarine, Where Both Played Must Work Together To Ascend</p>
 
-                    <img src="ProjectImages\sub_poster_pilot_PREVIEW.png" alt="Project2">
-                    <h3>Dread Not</h3>
-                    <p>A Co-op Experience Set In A Submarine, Where Both Played Must Work Together To Ascend</p>
-
-                </div>
-                <div class="project-item" onclick="openProjectModal('project3')">
+                    </div>                
+                    <div class="project-item" onclick="openProjectModal('project3')">
 
                     <img src="ProjectImages\IMG_6829.jpg" alt="Project3">
                     <h3>What Lies Beneath</h3>
                     <p>A Single Player 2D Dungeon Crawler, Focused on Puzzle Solving</p>
 
+                    </div>
+                    <div class="project-item" onclick="openProjectModal('project9')">
+
+                        <img src="ProjectImages\Screenshot 2025-01-15 215831.png" alt="Project 9">
+                        <h3>Game of Life Web Game</h3>
+                        <p>A Web Game built for a UW-Stout course with Phaser and Javascript. A take on the "game of life" board game.</p>
+                        
+                    </div>
+                    <div class="project-item" onclick="openProjectModal('project10')">
+                        <img src="ProjectImages\DoodleDice.PNG">
+                        <h3> Doodle Dice (48 Hour Jam Game)</h3>
+                        <p>A Game Based on Chance. You roll dice to defeat a monster and win the game!</p>
+                    </div>
                 </div>
-                <div class="project-item" onclick="openProjectModal('project4')">
+            </div>
 
-                    <img src="ProjectImages\Screenshot_2024-10-18_013630.png" alt="Project4">
-                    <h3>Vulkan Graphics Renderer / Game Engine Framework</h3>
-                    <p>A Graphics Renderer built from the Vulkan Graphics API Framework, With the Intention of making it compatible for game making.</p>
 
-                </div>
-                <div class="project-item" onclick="openProjectModal('project5')">
-
-                    <img src="Images\Screenshot 2025-01-14 181422.png" alt="Project5">
-                    <h3>Python Physics Based Games</h3>
-                    <p>A collection of games made with physics calculations such as: Collision, Friction, Gravity, Bond Forces, etc.</p>
-
-                </div>
-                <div class="project-item" onclick="openProjectModal('project6')">
-
-                    <img src="ProjectImages\Screenshot 2025-01-14 180655.png" alt="Project 6">
-                    <h3>Game Tracking App</h3>
-                    <p>A Flutter Application Built With the IGDB API For the Intention of Keeping a Backlog of Games, and Tracking Notes for Them</p>
-
-                </div>
-                <div class="project-item" onclick="openProjectModal('project7')">
-
-                    <img src="ProjectImages\Screenshot 2025-01-14 163651.png" alt="Project 7">
-                    <h3>Barnes-Hut N-Body Solution</h3>
-                    <p>A Flutter Application Built With the IGDB API For the Intention of Keeping a Backlog of Games, and Tracking Notes for Them</p>
-
-                </div>
-                <div class="project-item" onclick="openProjectModal('project8')">
-
-                    <img src="ProjectImages\AtomsEmbrace\SC1.png" alt="Project 8">
-                    <h3>Shader Programming</h3>
-                    <p>A Flutter Application Built With the IGDB API For the Intention of Keeping a Backlog of Games, and Tracking Notes for Them</p>
+            <div class="subsection other-projects">
+                <h2 class="subsection-title">Other Projects</h2>
+                <div class="project-grid">
                     
-                </div>
-                <div class="project-item" onclick="openProjectModal('project9')">
+                    <div class="project-item" onclick="openProjectModal('project5')">
 
-                    <img src="ProjectImages\Screenshot 2025-01-15 215831.png" alt="Project 9">
-                    <h3>Game of Life Web Game</h3>
-                    <p>A Web Game built for a UW-Stout course with Phaser and Javascript. A take on the "game of life" board game.</p>
+                        <img src="Images\Screenshot 2025-01-14 181422.png" alt="Project5">
+                        <h3>Python Physics Based Games</h3>
+                        <p>A collection of games made with physics calculations such as: Collision, Friction, Gravity, Bond Forces, etc.</p>
+
+                    </div>
+                    <div class="project-item" onclick="openProjectModal('project6')">
+
+                        <img src="ProjectImages\Screenshot 2025-01-14 180655.png" alt="Project 6">
+                        <h3>Game Tracking App</h3>
+                        <p>A Flutter Application Built With the IGDB API For the Intention of Keeping a Backlog of Games, and Tracking Notes for Them</p>
+
+                    </div>
+                    <div class="project-item" onclick="openProjectModal('project7')">
+
+                        <img src="ProjectImages\Screenshot 2025-01-14 163651.png" alt="Project 7">
+                        <h3>Barnes-Hut N-Body Solution</h3>
+                        <p>A Flutter Application Built With the IGDB API For the Intention of Keeping a Backlog of Games, and Tracking Notes for Them</p>
+
+                    </div>
+                    <div class="project-item" onclick="openProjectModal('project8')">
+
+                        <img src="ProjectImages\AtomsEmbrace\SC1.png" alt="Project 8">
+                        <h3>Shader Programming</h3>
+                        <p>A Flutter Application Built With the IGDB API For the Intention of Keeping a Backlog of Games, and Tracking Notes for Them</p>
+                        
+                    </div>
                     
-                </div>
-                <div class="project-item" onclick="openProjectModal('project10')">
-                    <img src="ProjectImages\DoodleDice.PNG">
-                    <h3> Doodle Dice (48 Hour Jam Game)</h3>
-                    <p>A Game Based on Chance. You roll dice to defeat a monster and win the game!</p>
                 </div>
             </div>
         </div>
