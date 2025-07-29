@@ -65,7 +65,7 @@ function openProjectModal(projectId) {
                 ">
                     <img src="ProjectImages/AtomsEmbrace/output-onlinepngtools(4).png" alt="Project 2" 
                         style="width: 100%; border-radius: 10px; margin-bottom: 20px;">
-                    <h2 style="font-size: 24px; margin-bottom: 10px;">Dread Not</h2>
+                    <h2 style="font-size: 24px; margin-bottom: 10px;">Atom's Embrace</h2>
                     <p style="
                         font-size: 16px; 
                         line-height: 1.6; 
@@ -73,8 +73,9 @@ function openProjectModal(projectId) {
                         text-align: justify; 
                         word-wrap: break-word; 
                     ">
-                        Dread Not is an asynchronous, cooperative adventure set in a submarine. Playing as the Pilot, or the Mechanic,
-                        you are being chased by some kind of creature. You must work together to keep the sub in working condition while you ascend to the surface.
+                        Atom's Embrace was my first big game project ever. Getting to work as the project director and systems programmer,
+                        I primarily worked on progression systems to advance the game, as well as an Unreal Engine Specialist. Utilizing the engine
+                        in the best way to ensure the best possible performance.
                     </p>
                     <a href="https://atomsembrace.itch.io/atoms-embrace" style="text-decoration: none;">
                         <button style="
@@ -164,50 +165,6 @@ function openProjectModal(projectId) {
                         Dialogue, Mask Capabilities, Character Controls, Puzzle systems, etc.
                     </p>
                     <a href="https://monkek.itch.io/what-lies-beneath" style="text-decoration: none;">
-                        <button style="
-                            background-color: #007BFF; 
-                            color: white; 
-                            padding: 10px 20px; 
-                            font-size: 16px; 
-                            border: none; 
-                            border-radius: 5px; 
-                            cursor: pointer;
-                        ">
-                            View Project
-                        </button>
-                    </a>
-                </div>
-            `;
-            break;
-            case 'project4':
-            content = `
-                <div style="
-                    text-align: center; 
-                    padding: 20px; 
-                    max-width: 600px; 
-                    max-height: 90vh; /* Ensures the modal doesn't exceed the viewport height */
-                    overflow-y: auto; /* Enables scrolling for overflowing content */
-                    border: 1px solid #ccc; 
-                    border-radius: 10px; 
-                    background-color: white; 
-                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
-                ">
-                    <img src="ProjectImages/Screenshot_2024-10-18_013630.png" alt="Project 2" 
-                        style="width: 100%; border-radius: 10px; margin-bottom: 20px;">
-                    <h2 style="font-size: 24px; margin-bottom: 10px;">Vulkan Graphics Renderer (Tusk Graphics Engine) and Blubber Game Engine</h2>
-                    <p style="
-                        font-size: 16px; 
-                        line-height: 1.6; 
-                        margin-bottom: 20px; 
-                        text-align: justify; 
-                        word-wrap: break-word; 
-                    ">
-                        This is a project utilizing the Vulkan graphics library and API to attempt to build a framework of a game engine and graphics engine.
-<br><br>
-                        Using an object oriented approach in C++, this is a continuous project that I intend to work on for years. With a page entirely dedicated to it and
-                        I intend to keep the code open and reviewable throughout this process.
-                    </p>
-                    <a href="blubber.html" style="text-decoration: none;">
                         <button style="
                             background-color: #007BFF; 
                             color: white; 
@@ -488,7 +445,49 @@ function openProjectModal(projectId) {
                     </div>
                 `;
                 break; 
-                    // Add more cases for additional projects
+            case 'project11':
+                content = `
+                    <div style="
+                        text-align: center; 
+                        padding: 20px; 
+                        max-width: 600px; 
+                        max-height: 90vh; /* Ensures the modal doesn't exceed the viewport height */
+                        overflow-y: auto; /* Enables scrolling for overflowing content */
+                        border: 1px solid #ccc; 
+                        border-radius: 10px; 
+                        background-color: white; 
+                        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+                    ">
+                        <img src="ProjectImages/Start_Menu.png" alt="Project 2" 
+                            style="width: 100%; border-radius: 10px; margin-bottom: 20px;">
+                        <h2 style="font-size: 24px; margin-bottom: 10px;">Earthline Protocol</h2>
+                        <p style="
+                            font-size: 16px; 
+                            line-height: 1.6; 
+                            margin-bottom: 20px; 
+                            text-align: justify; 
+                            word-wrap: break-word; 
+                        ">
+                            Earthline Protocol is a tower defense game made in Unity for the IndieCade Climate Jam (circa 2025.) I worked on gameplay systems
+                            that allowed our team to navigate the engine in such a way to build the game from the ground up with the assets they needed. Working on complex
+                            data structures and editor focused integration of the backend.
+                        </p>
+                        <a href="https://ibrower.itch.io/earthline-protocol" style="text-decoration: none;">
+                            <button style="
+                                background-color: #007BFF; 
+                                color: white; 
+                                padding: 10px 20px; 
+                                font-size: 16px; 
+                                border: none; 
+                                border-radius: 5px; 
+                                cursor: pointer;
+                            ">
+                                View Project
+                            </button>
+                        </a>
+                    </div>
+                `;
+                break;
         default:
             content = `<p class="modal-description">Project details are not available.</p>`;
             break;
