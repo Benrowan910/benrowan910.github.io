@@ -1,8 +1,8 @@
         :root {
             --primary: #1a1a2e;
             --secondary: #16213e;
-            --accent: #ff6b6b;
-            --accent-alt: #4ecca3;
+            --accent: #1cb4cf;
+            --accent-alt: #3591ce;
             --text: #f0f0f0;
             --text-secondary: #b8b8b8;
             --card-bg: rgba(30, 30, 46, 0.7);
@@ -117,7 +117,7 @@
         .header-content h1 {
             font-size: 4rem;
             margin-bottom: 1.5rem;
-            background: linear-gradient(to right, #4ecca3, #ff6b6b);
+            background: linear-gradient(to right, #3331b9, #45ddc4);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
@@ -133,7 +133,7 @@
         
         .status-badge {
             display: inline-block;
-            background: linear-gradient(45deg, #ff6b6b, #ff8e53);
+            background: linear-gradient(45deg, #2e6ada, #3edae6);
             color: white;
             padding: 0.5rem 1.5rem;
             border-radius: 30px;
