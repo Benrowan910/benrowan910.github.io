@@ -5,96 +5,132 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Benjamin Rowan Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel = "stylesheet" href="style.css">
 </head>
-    <body>
-        <div class="navbar">
-            <div class="left">Benjamin Rowan</div>
-            <div class="right">
-                <a href="#about">ABOUT</a>
-                <a href="#skills">SKILLS</a>
-                <a href="#projects">PROJECTS</a>
-                <a href="#timeline">TIMELINE</a>
-                <a href="#education">EDUCATION</a>
-                <a href="#contact">CONTACT ME</a>
-            </div>
-        </div>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="#" class="logo">B.R.</a>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#timeline">Timeline</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button class="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+        </button>
+    </nav>
 
-        <div class="profile" id = "about">
-            <div class="content">
-                <div class = "picture">
-                    <img src="Images\fotor_1658364693920.jpg" alt="Your Photo">
-
-                    <div class = "social-media">
-                        <a href="https://bsky.app/profile/spacemanwalrus.bsky.social"><img src="Images\Bluesky_Logo.svg.png" alt="Logo 1"></a>
-                        <a href="https://github.com/Benrowan910"><img src="Images\Github_icon-icons.com_66788.png" alt="Logo 2"></a>
-                        <a href="https://www.instagram.com/ben_rowan_910/"><img src="Images\Instagram_logo_2022.svg.png" alt="Logo 3"></a>
-                        <a href="https://www.linkedin.com/in/benjamin-rowan-862923236/"><img src="Images\LinkedIn_logo_initials.png" alt="Logo 4"></a>
-                    </div>
-
-                </div>
-                <div class = "text">
-                    <h1>Benjamin Rowan</h1>
-                    <h2>Game Designer At UW-Stout</h2>
-                    <p class = "about-text">
-                    My Name is Ben Rowan, I am a Game Designer based in Minnesota!
-                    Throughout my career, I have been apart of several game projects as a general programmer, project lead, and programming manager!
-                    I have an extensive background in agile development, software development with C++, and video game design with Unity, Godot, and Unreal Engine.
-                    I am incredibly passionate about game making, spending a majority of my time working to gain experience in the field of game development.
-                    I am poised and committed to creating software and games that can impact peoples lives through creative design processes.
+    <!-- Hero Section -->
+    <section class="hero" id="about">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="hero-subtitle">Hi, my name is</div>
+                    <h1 class="hero-title">Benjamin Rowan</h1>
+                    <!-- <h2 class="hero-title">I build <span>immersive games</span></h2> -->
+                    <p class="hero-description">
+                        My Name is Ben Rowan, I am a Game Designer based in Minnesota! Throughout my career, I have been apart of several game projects as a general programmer, project lead, and programming manager!
+                         I have an extensive background in agile development, software development with C++, and video game design with Unity, Godot, and Unreal Engine. 
+                         I am incredibly passionate about game making, spending a majority of my time working to gain experience in the field of game development.
+                         I am poised and committed to creating software and games that can impact peoples lives through creative design processes. 
                     </p>
-                    <a href="BenResume.pdf">
-                        <button class="download-btn">Download My Resume</button>
+                    <div class="social-icons">
+                        <a href="https://bsky.app/profile/spacemanwalrus.bsky.social" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://github.com/Benrowan910" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://www.instagram.com/ben_rowan_910/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/benjamin-rowan-862923236/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <a href="BenResume.pdf" class="btn" download>
+                        <i class="fas fa-download"></i> Download Resume
                     </a>
                 </div>
-            </div>
-
-        </div>
-        <!-- Education Section, talking specifically about my education-->
-        <section class = "education-section" id = "education">
-            <div class="education">
-                <img src="Images\UW–Stout_Blue_Devils_logo.svg.png" alt="University Logo">
-                <div class="info">
-                    <h2>University of Wisconsin - Stout</h2>
-                    <p class="degree">Bachelor of Science in Computer Science</p>
-                    <p>Focus: Game Design and Development</p>
-                    <p>Minor: Mathematics</p>
-                    <p>Years Attended: 2021 - 2025</p>
+                <div class="hero-image">
+                    <img src="Images\fotor_1658364693920.jpg" alt="Benjamin Rowan" class="profile-image">
                 </div>
-                <div class="description">
-                    <p>During my time at UW-Stout, I developed strong skills in software engineering, 
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="education-section" id="education">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            
+            <div class="education-card">
+                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/8/8b/UW%E2%80%93Stout_Blue_Devils_logo.svg/1200px-UW%E2%80%93Stout_Blue_Devils_logo.svg.png" alt="UW-Stout Logo" class="education-logo">
+                <div class="education-info">
+                    <h3>University of Wisconsin - Stout</h3>
+                    <div class="education-details">
+                        <span>Bachelor of Science in Computer Science</span> | 2021 - 2025
+                    </div>
+                    <div class="education-details">
+                        Focus: Game Design and Development | Minor: Mathematics
+                    </div>
+                    <p class="education-description">
+                        During my time at UW-Stout, I developed strong skills in software engineering, 
                         agile development, and game design. I participated in several team projects, 
-                        honing my leadership abilities and technical expertise. My education provided me 
-                        with a solid foundation in both theoretical and practical aspects of computer science.
+                        honing my leadership abilities and technical expertise.
                     </p>
                 </div>
             </div>
-
-            <!-- Relevant Courses Section -->
-            <div class="relevant-courses">
+            
+            <div class="courses-container">
                 <h3>Relevant Courses</h3>
-                <ul>
-                    <li>Data Structures</li>
-                    <li>3 Dimensional Calculus</li>
-                    <li>Linear Algebra</li>
-                    <li>Game Development Courses 100 through Capstone</li>
-                    <li>Shader Programming</li>
-                    <li>Computer Graphics</li>
-                    <li>Algorithms</li>
-                    <li>Operating Systems</li>
-                    <li>Web Programming</li>
-                </ul>
+                <div class="courses-grid">
+                    <div class="course-item">
+                        <h4>Data Structures</h4>
+                        <p>Advanced concepts in data organization and algorithms</p>
+                    </div>
+                    <div class="course-item">
+                        <h4>3D Calculus</h4>
+                        <p>Multivariable and vector calculus applications</p>
+                    </div>
+                    <div class="course-item">
+                        <h4>Linear Algebra</h4>
+                        <p>Matrix theory and linear transformations</p>
+                    </div>
+                    <div class="course-item">
+                        <h4>Game Development</h4>
+                        <p>Series from fundamentals to capstone projects</p>
+                    </div>
+                    <div class="course-item">
+                        <h4>Shader Programming</h4>
+                        <p>Real-time rendering techniques with GLSL</p>
+                    </div>
+                    <div class="course-item">
+                        <h4>Computer Graphics</h4>
+                        <p>Fundamentals of 3D rendering and visualization</p>
+                    </div>
+                    <div class="course-item">
+                        <h4>Algorithms</h4>
+                        <p>Design and analysis of efficient algorithms</p>
+                    </div>
+                    <div class="course-item">
+                        <h4>Operating Systems</h4>
+                        <p>Kernel development and system architecture</p>
+                    </div>
+                </div>
             </div>
-        </section>
-        <!-- Skills sections-->
-        <div class = "skills-section" id = "skills">
-        <h1 class="skills-title">Relevant Skills</h1>
-            <div class="skills-grid">
-                
-                <div class="skill-category">
-                    <h3>Languages</h3>
+        </div>
+    </section>
 
-                    <ul>
+    <!-- Skills Section -->
+    <section class="skills-section" id="skills">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3><i class="fas fa-code"></i> Languages</h3>
+                    <ul class="skill-list">
                         <li>C++</li>
                         <li>C#</li>
                         <li>Python</li>
@@ -105,273 +141,435 @@
                         <li>GScript</li>
                     </ul>
                 </div>
+                
                 <div class="skill-category">
-                    <h3>Methodologies</h3>
-
-                    <ul>
+                    <h3><i class="fas fa-project-diagram"></i> Methodologies</h3>
+                    <ul class="skill-list">
                         <li>Agile Development</li>
                         <li>Scrum</li>
                         <li>Test-Driven Development</li>
+                        <li>Continuous Integration</li>
                     </ul>
                 </div>
+                
                 <div class="skill-category">
-                    <h3>Project Management</h3>
-
-                    <ul>
-                        <li>Team Management</li>
+                    <h3><i class="fas fa-tasks"></i> Project Management</h3>
+                    <ul class="skill-list">
+                        <li>Team Leadership</li>
                         <li>Task Delegation</li>
-                        <li>Version Control (Git, Subversion)</li>
-                        <li>Scheduling</li>
+                        <li>Version Control (Git)</li>
+                        <li>Agile Scheduling</li>
                         <li>Culture Building</li>
                     </ul>
                 </div>
+                
                 <div class="skill-category">
-                    <h3>Interests</h3>
-
-                    <ul>
-                        <li>Game Design</li>
-                        <li>Graphics Programming</li>
-                        <li>Engine Programming</li>
-                        <li>Procedural Generation</li>
-                        <li>Physics Simulations</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Development</h3>
-                    <ul>
+                    <h3><i class="fas fa-gamepad"></i> Development</h3>
+                    <ul class="skill-list">
                         <li>Unreal Engine</li>
                         <li>Unity</li>
                         <li>Godot</li>
                         <li>JetBrains IDE</li>
-                        <li>Eclipse IDE</li>
+                        <li>Visual Studio</li>
+                        <li>Shader Programming</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3><i class="fas fa-lightbulb"></i> Interests</h3>
+                    <ul class="skill-list">
+                        <li>Game Design</li>
+                        <li>Graphics Programming</li>
+                        <li>Engine Architecture</li>
+                        <li>Procedural Generation</li>
+                        <li>Physics Simulations</li>
+                        <li>VR Development</li>
                     </ul>
                 </div>
             </div>
         </div>
-        
-        <!-- Modal Template -->
-        <div id="skills-modal" class="modal">
-            <div class="modal-content">
-                <span class="close-btn" onclick="closeSkillsModal()">&times;</span>
-                <div id="modal-body"></div>
-            </div>
-        </div>
-        <div class = "interest-background" style = "background-image: url('Images/Warframe_040113_1600.webp');">
-            <div class="interest-bar">
-                <img src="Images/Warframe.png" alt="Game Development" class="interest-image">
-                <p>One of the first video games that inspired me to chose my career path was Warframe by Digital Extremes Ltd.&copy</p>
-            </div>
-        </div>
+    </section>
 
-        <div class = "project-section" id = "projects">
-            <h1 class="page-title" style="color: aliceblue;">My Projects</h1>
-                    <!-- Engine Subsection -->
-            <div class="subsection engine-subsection">
-                <h2 class="subsection-title">My Game Engine</h2>
-                <div class="engine-content">
-                    <div class="engine-text">
-                        <h2>The Nessy Engine</h2>
-                        <p class="engine-description">The Nessy Engine is a custom game engine in development since July 2025. The Engine is currently only being developed by Ben Rowan, using what I call the Lock Laker Renderer, which is actually OpenGL and Vulkan. 
-                            The goal of this engine is to make a fully functional 3D engine with different options of lighting calculations, but a primary focus on high fidelity environments. Inspired by my frustration with available
-                            lighting options and bloat in current engines, and being very unfriendly in the variations in what you can do, ultimately the goal is to create an engine that you can make visually stunning, but light mechanic games in.
-
-                            Below is a link to the page where I intend to blog my experience, and eventually share the screenshots of source code with anyone interested!
+    <!-- Projects Section -->
+    <section class="projects-section" id="projects">
+        <div class="container">
+            <h2 class="section-title">Projects</h2>
+            
+            <div class="projects-filter">
+                <button class="filter-btn active">All Projects</button>
+                <button class="filter-btn">Game Engines</button>
+                <button class="filter-btn">Game Development</button>
+                <button class="filter-btn">Other Projects</button>
+            </div>
+            
+            <div class="projects-grid">
+                <!-- Engine Project -->
+                <div class="project-card" data-category="game">
+                    <img src="ProjectImages\image-9.png" alt="Nessy Engine" class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">The Nessy Engine</h3>
+                        <p class="project-description">
+                            A custom game engine built with OpenGL and Vulkan, focused on high-fidelity environments 
+                            and flexible lighting systems. Designed to solve bloat issues in existing engines.
                         </p>
-                        <a href="blubber.html" class="engine-link">Explore Engine Details →</a>
-                    </div>
-                    <img src="ProjectImages\image-9.png" alt="Engine Preview" class="engine-preview">
-                </div>
-            </div>
-
-            <!-- New Games Subsection -->
-            <div class="subsection games-subsection">
-                <h2 class="subsection-title">Game Development Projects</h2>
-                <div class="project-grid emphasized-grid">
-                    <!-- Your game projects (1-6, 9-10) -->
-                     <div class="project-item" onclick="openProjectModal('project1')">
-                    <img src="ProjectImages\AtomsEmbrace\output-onlinepngtools(4).png" alt="Project 1">
-                    <h3>Atom's Embrace</h3>
-                    <p>A Narrative Walking Simulator About Survivors Guilt</p>
-                     </div>
-                    <div class="project-item" onclick="openProjectModal('project2')">
-
-                        <img src="ProjectImages\sub_poster_pilot_PREVIEW.png" alt="Project2">
-                        <h3>Dread Not</h3>
-                        <p>A Co-op Experience Set In A Submarine, Where Both Played Must Work Together To Ascend</p>
-
-                    </div>                
-                    <div class="project-item" onclick="openProjectModal('project3')">
-
-                    <img src="ProjectImages\IMG_6829.jpg" alt="Project3">
-                    <h3>What Lies Beneath</h3>
-                    <p>A Single Player 2D Dungeon Crawler, Focused on Puzzle Solving</p>
-
-                    </div>
-                    <div class="project-item" onclick="openProjectModal('project11')">
-
-                        <img src="ProjectImages\Start_Menu.png" alt="Project 11">
-                        <h3>Earthline Protocol</h3>
-                        <p>A Game Made for the IndieCade 2025 Summer Climate Disasters Jam</p>
-                        
-                    </div>
-                    <div class="project-item" onclick="openProjectModal('project9')">
-
-                        <img src="ProjectImages\Screenshot 2025-01-15 215831.png" alt="Project 9">
-                        <h3>Game of Life Web Game</h3>
-                        <p>A Web Game built for a UW-Stout course with Phaser and Javascript. A take on the "game of life" board game.</p>
-                        
-                    </div>
-                    <div class="project-item" onclick="openProjectModal('project10')">
-                        <img src="ProjectImages\DoodleDice.PNG">
-                        <h3> Doodle Dice (48 Hour Jam Game)</h3>
-                        <p>A Game Based on Chance. You roll dice to defeat a monster and win the game!</p>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="subsection other-projects">
-                <h2 class="subsection-title">Other Projects</h2>
-                <div class="project-grid">
-                    
-                    <div class="project-item" onclick="openProjectModal('project5')">
-
-                        <img src="Images\Screenshot 2025-01-14 181422.png" alt="Project5">
-                        <h3>Python Physics Based Games</h3>
-                        <p>A collection of games made with physics calculations such as: Collision, Friction, Gravity, Bond Forces, etc.</p>
-
-                    </div>
-                    <div class="project-item" onclick="openProjectModal('project6')">
-
-                        <img src="ProjectImages\Screenshot 2025-01-14 180655.png" alt="Project 6">
-                        <h3>Game Tracking App</h3>
-                        <p>A Flutter Application Built With the IGDB API For the Intention of Keeping a Backlog of Games, and Tracking Notes for Them</p>
-
-                    </div>
-                    <div class="project-item" onclick="openProjectModal('project7')">
-
-                        <img src="ProjectImages\Screenshot 2025-01-14 163651.png" alt="Project 7">
-                        <h3>Barnes-Hut N-Body Solution</h3>
-                        <p>A Flutter Application Built With the IGDB API For the Intention of Keeping a Backlog of Games, and Tracking Notes for Them</p>
-
-                    </div>
-                    <div class="project-item" onclick="openProjectModal('project8')">
-
-                        <img src="ProjectImages\AtomsEmbrace\SC1.png" alt="Project 8">
-                        <h3>Shader Programming</h3>
-                        <p>A Flutter Application Built With the IGDB API For the Intention of Keeping a Backlog of Games, and Tracking Notes for Them</p>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
-        <!-- Popup Modal Template -->
-        <div id="project-modal" class="modal">
-            <div class="modal-content">
-                <span class="close-btn" onclick="closeProjectModal()">&times;</span>
-                <div id="project-modal-body"></div>
-            </div>
-        </div>
-
-        <!-- Interest Bar Between Timeline and Projects-->
-        <div class = "interest-background" style = "background-image: url('Images/65d4f11c8fb1b.image.jpg');">
-            <div class="interest-bar">
-                <img src="Images/MonticelloHS.png" alt="Game Development" class="interest-image">
-                <p>When I was in high school, I helped create and structure a game design course!</p>
-            </div>
-        </div>
-
-        <!-- Timeline of my career/life -->
-        <div class="timeline" id = "timeline">
-            <div class="timeline-line"></div>
-            <div class="timeline-item left">
-                <div class="timeline-content">
-                    <img src="Images\UW–Stout_Blue_Devils_logo.svg.png" alt="Image 1">
-                    <h3>Graduation from High School/Arrival at UW-Stout</h3>
-                    <p>Upon arriving at the University of Wisconsin - Stout, I worked to adapt to my new life quickly, and focused on beginning my college career</p>
-                    <span class="date">Fall 2021</span>
-                </div>
-            </div>
-        
-            <div class="timeline-item right">
-                <div class="timeline-content">
-                    <img src="ProjectImages\AtomsEmbrace\DSC04333.jpg" alt="Image 2">
-                    <h3>My First Game!</h3>
-                    <p>In 2024, I was fortunate enough to be the lead designer of a team of developers on a semester long game project. Learning much about the development process.</p>
-                    <span class="date">January 2024 - Present</span>
-                </div>
-            </div>
-        
-            <div class="timeline-item left">
-                <div class="timeline-content">
-                    <img src="Images\fotor_1658364693920.jpg" alt="Image 3">
-                    <h3>Employed Game Developer for UW-Stout</h3>
-                    <p>In May, 2024, I was employed by the University of Wisconsin - Stout's instructional design lab to work on game projects that professors requested. </p>
-                    <span class="date">May 2024 - Present</span>
-                </div>
-            </div>
-        
-            <div class="timeline-item right">
-                <div class="timeline-content">
-                    <img src="ProjectImages\sub_poster_pilot_PREVIEW.png" alt="Image 4">
-                    <h3>My Capstone Project</h3>
-                    <p>In Fall of 2024, I began my Capstone class, where I was fortunate enough to be elected as a Project Manager for our game, Submerged!</p>
-                    <span class="date">Fall 2024 - Present</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- Interest Bar Between Timeline and Projects-->
-        <div class = "interest-background" style = "background-image: url('Images/how-interstellar-advanced-black-hole-science_cprj.jpg');">
-            <div class="interest-bar">
-                <img src="Images\interstellar_3.jpg" alt="Game Development" class="interest-image">
-                <p>My all time favorite movie, and another inspiration for my journey, is Interstellar</p>
-            </div>
-        </div>
-        
-
-            <!-- Contact Form Section -->
-            <div class = "contact-section">
-                <div class="contact-form" id="contact">
-                    <h2>Contact Me!</h2>
-                    <h3>Email: Benrowan910@gmail.com | rowanb7507@my.uwstout.edu</h3>
-                    <form action="https://formspree.io/f/xbllpydr" method="POST" id = "contactForm" onsubmit="return validateForm()">
-                        <div class="form-container">
-                            <!-- Left Side Form Fields -->
-                            <div class="left-side">
-                                <div class="form-group">
-                                    <label for="name">Your Name (Required)</label>
-                                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="email">Your Email (Required)</label>
-                                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="phone">Your Phone Number</label>
-                                    <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
-                                </div>
-                                <div class="form-group">
-                                    <label for="subject">Subject (Required)</label>
-                                    <input type="text" id="subject" name="subject" placeholder="Enter the subject" required>
-                                </div>
-                            </div>
-
-                            <!-- Right Side Message Field -->
-                            <div class="right-side">
-                                <div class="form-group">
-                                    <label for="message">Your Message</label>
-                                    <textarea id="message" name="message" placeholder="Write your message here" rows="5" required></textarea>
-                                </div>
-                            </div>
+                        <div class="project-tags">
+                            <span class="project-tag">C++</span>
+                            <span class="project-tag">Vulkan</span>
+                            <span class="project-tag">OpenGL</span>
+                            <span class="project-tag">Engine</span>
                         </div>
-                        <button type="submit">Send Message</button>
+                        <div class="project-links">
+                            <a href="#" class="project-link" onclick="openProjectModal('project1')">
+                                <i class="fas fa-info-circle"></i> View Details
+                            </a>
+                            <a href="blubber.html" class="project-link">
+                                <i class="fas fa-external-link-alt"></i> Explore Blog
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Game Projects -->
+                <div class="project-card" data-category="game">
+                    <img src="ProjectImages\AtomsEmbrace\Barrel.png" alt="Atom's Embrace" class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">Atom's Embrace</h3>
+                        <p class="project-description">
+                            A narrative walking simulator exploring survivors guilt, developed with Unreal Engine. 
+                            Served as lead designer and systems programmer.
+                        </p>
+                        <div class="project-tags">
+                            <span class="project-tag">Unreal</span>
+                            <span class="project-tag">C++</span>
+                            <span class="project-tag">Narrative</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link" onclick="openProjectModal('project2')">
+                                <i class="fas fa-info-circle"></i> View Details
+                            </a>
+                            <a href="https://atomsembrace.itch.io/atoms-embrace" target="_blank" class="project-link">
+                                <i class="fas fa-external-link-alt"></i> Play Game
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="game">
+                    <img src="ProjectImages\sub_poster_pilot_PREVIEW.png" alt="Dread Not" class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">Dread Not</h3>
+                        <p class="project-description">
+                            Cooperative submarine adventure where players work together to ascend while being chased 
+                            by a mysterious creature. Developed as capstone project.
+                        </p>
+                        <div class="project-tags">
+                            <span class="project-tag">Unreal</span>
+                            <span class="project-tag">C+</span>
+                            <span class="project-tag">Multiplayer</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link" onclick="openProjectModal('project3')">
+                                <i class="fas fa-info-circle"></i> View Details
+                            </a>
+                            <a href="https://leviathan-interactive.itch.io/dread-not" target="_blank" class="project-link">
+                                <i class="fas fa-external-link-alt"></i> Play Game
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="game">
+                    <img src="ProjectImages\Start_Menu.png" alt="Earthline Protocol" class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">Earthline Protocol</h3>
+                        <p class="project-description">
+                            Cooperative submarine adventure where players work together to ascend while being chased 
+                            by a mysterious creature. Developed as capstone project.
+                        </p>
+                        <div class="project-tags">
+                            <span class="project-tag">Unity</span>
+                            <span class="project-tag">C#</span>
+                            <span class="project-tag">Multiplayer</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link" onclick="openProjectModal('project4')">
+                                <i class="fas fa-info-circle"></i> View Details
+                            </a>
+                            <a href="https://ibrower.itch.io/earthline-protocol" target="_blank" class="project-link">
+                                <i class="fas fa-external-link-alt"></i> Play Game
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="game">
+                    <img src="Images\Screenshot 2025-01-14 181422.png" alt="Dread Not" class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">Python Physics Projects</h3>
+                        <p class="project-description">
+                            Cooperative submarine adventure where players work together to ascend while being chased 
+                            by a mysterious creature. Developed as capstone project.
+                        </p>
+                        <div class="project-tags">
+                            <span class="project-tag">Unity</span>
+                            <span class="project-tag">C#</span>
+                            <span class="project-tag">Multiplayer</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link" onclick="openProjectModal('project5')">
+                                <i class="fas fa-info-circle"></i> View Details
+                            </a>
+                            <a href="https://github.com/Benrowan910/PhysicsEngine-Games" target="_blank" class="project-link">
+                                <i class="fas fa-external-link-alt"></i> View Source
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="game">
+                    <img src="ProjectImages\Screenshot 2025-01-14 163651.png" alt="Dread Not" class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">N-Body Simulation</h3>
+                        <p class="project-description">
+                            Cooperative submarine adventure where players work together to ascend while being chased 
+                            by a mysterious creature. Developed as capstone project.
+                        </p>
+                        <div class="project-tags">
+                            <span class="project-tag">Unity</span>
+                            <span class="project-tag">C#</span>
+                            <span class="project-tag">Multiplayer</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link" onclick="openProjectModal('project6')">
+                                <i class="fas fa-info-circle"></i> View Details
+                            </a>
+                            <a href="https://github.com/Benrowan910/Barnes-Hut-N-Body-Simulation" target="_blank" class="project-link">
+                                <i class="fas fa-external-link-alt"></i> View Source
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="game">
+                    <img src="ProjectImages\AtomsEmbrace\SC1.png" alt="Shader Programming" class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">Shader Programming</h3>
+                        <p class="project-description">
+                            Cooperative submarine adventure where players work together to ascend while being chased 
+                            by a mysterious creature. Developed as capstone project.
+                        </p>
+                        <div class="project-tags">
+                            <span class="project-tag">Unity</span>
+                            <span class="project-tag">C#</span>
+                            <span class="project-tag">Multiplayer</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link" onclick="openProjectModal('project7')">
+                                <i class="fas fa-info-circle"></i> View Details
+                            </a>
+                            <a href="https://github.com/Benrowan910/FinalShaderProject" target="_blank" class="project-link">
+                                <i class="fas fa-external-link-alt"></i> View Source
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="game">
+                    <img src="ProjectImages\Screenshot 2025-01-15 215831.png" alt="GOL Web Game" class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">Shader Programming</h3>
+                        <p class="project-description">
+                            Cooperative submarine adventure where players work together to ascend while being chased 
+                            by a mysterious creature. Developed as capstone project.
+                        </p>
+                        <div class="project-tags">
+                            <span class="project-tag">Unity</span>
+                            <span class="project-tag">C#</span>
+                            <span class="project-tag">Multiplayer</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link" onclick="openProjectModal('project8')">
+                                <i class="fas fa-info-circle"></i> View Details
+                            </a>
+                            <a href="https://github.com/Benrowan910/OldGoL" target="_blank" class="project-link">
+                                <i class="fas fa-external-link-alt"></i> View Source
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- More projects would go here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="timeline-section" id="timeline">
+        <div class="container">
+            <h2 class="section-title">Career Timeline</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <img src="Images\65d4f11c8fb1b.image.jpg" alt="Graduation" class="timeline-image">
+                        <div class="timeline-date">Fall 2021</div>
+                        <p class="timeline-text">
+                            Graduated from high school and began Computer Science program at University of Wisconsin - Stout.
+                            Focused on adapting to college life and beginning my journey in game development.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <img src="ProjectImages\AtomsEmbrace\DSC04333.jpg" alt="First Game" class="timeline-image">
+                        <div class="timeline-date">January 2024</div>
+                        <p class="timeline-text">
+                            Served as lead designer for my first major game project - "Atom's Embrace". 
+                            Learned valuable lessons about the development process, team management, and Unreal Engine.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <img src="ProjectImages\Screenshot 2025-01-15 215831.png" alt="Employed" class="timeline-image">
+                        <div class="timeline-date">May 2024</div>
+                        <p class="timeline-text">
+                            Hired by UW-Stout's instructional design lab as a Game Developer. Worked on educational game projects 
+                            requested by professors across various departments.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <img src="ProjectImages\sub_poster_pilot_PREVIEW.png" alt="Capstone" class="timeline-image">
+                        <div class="timeline-date">Fall 2024</div>
+                        <p class="timeline-text">
+                            Began Capstone project "Dread Not" as Project Manager. Leading a team of developers to create 
+                            a cooperative submarine adventure game built with Unity.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3 class="contact-title">Let's talk about your project</h3>
+                    <p class="contact-text">
+                        I'm currently open to freelance opportunities, collaborations, and full-time positions.
+                        Whether you have a question or just want to say hi, I'll get back to you as soon as possible!
+                    </p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-detail">
+                            <i class="fas fa-envelope"></i>
+                            Benrowan910@gmail.com
+                        </div>
+                        <div class="contact-detail">
+                            <i class="fas fa-envelope"></i>
+                            rowanb7507@my.uwstout.edu
+                        </div>
+                        <div class="contact-detail">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Minnesota, USA
+                        </div>
+                    </div>
+                    
+                    <div class="social-icons">
+                        <a href="https://github.com/Benrowan910" target="_blank" class="footer-social"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/benjamin-rowan-862923236/" target="_blank" class="footer-social"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://bsky.app/profile/spacemanwalrus.bsky.social" target="_blank" class="footer-social"><i class="fab fa-bluesky"></i></a>
+                        <a href="https://www.instagram.com/ben_rowan_910/" target="_blank" class="footer-social"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form action="https://formspree.io/f/xbllpydr" method="POST">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" class="form-input" placeholder=" " required>
+                            <label for="name" class="form-label">Your Name</label>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" class="form-input" placeholder=" " required>
+                            <label for="email" class="form-label">Your Email</label>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="text" id="subject" name="subject" class="form-input" placeholder=" " required>
+                            <label for="subject" class="form-label">Subject</label>
+                        </div>
+                        
+                        <div class="form-group">
+                            <textarea id="message" name="message" class="form-input" placeholder=" " required></textarea>
+                            <label for="message" class="form-label">Your Message</label>
+                        </div>
+                        
+                        <button type="submit" class="btn submit-btn">Send Message</button>
                     </form>
                 </div>
             </div>
+        </div>
+    </section>
 
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-logo">Benjamin Rowan</div>
+            <p class="footer-text">
+                Game Designer & Developer passionate about creating immersive experiences and pushing
+                the boundaries of interactive entertainment.
+            </p>
+            
+            <div class="footer-socials">
+                <a href="https://github.com/Benrowan910" target="_blank" class="footer-social"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/benjamin-rowan-862923236/" target="_blank" class="footer-social"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://bsky.app/profile/spacemanwalrus.bsky.social" target="_blank" class="footer-social"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/ben_rowan_910/" target="_blank" class="footer-social"><i class="fab fa-instagram"></i></a>
+            </div>
+            
+            <div class="copyright">
+                &copy; 2025 Benjamin Rowan. All rights reserved.
+            </div>
+        </div>
+    </footer>
 
-        <script src = "script.js"></script>
-    </body>
+    <!-- Project Modals -->
+    <div id="project-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeProjectModal()">&times;</span>
+            <div class="modal-header">
+                <img id="modal-img" src="" alt="Project Image" class="modal-image">
+            </div>
+            <div class="modal-body">
+                <h2 id="modal-title" class="modal-title"></h2>
+                <h3 id="modal-subtitle" class="modal-subtitle"></h3>
+                <p id="modal-description" class="modal-description"></p>
+                
+                <div class="modal-highlight">
+                    <p id="modal-highlight"></p>
+                </div>
+                
+                <div class="modal-tech">
+                    <!-- Tech tags will be added here by JavaScript -->
+                </div>
+                
+                <div class="modal-links">
+                    <!-- Links will be added here by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src = "script.js"></script>
+</body>
 </html>

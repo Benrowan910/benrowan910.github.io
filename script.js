@@ -1,624 +1,294 @@
-// Skills Modal Logic
-function openSkillsModal(category) {
-    const modal = document.getElementById('skills-modal');
-    const modalBody = document.getElementById('modal-body');
-    
-    const skillsData = {
-        languages: {
-            title: 'Languages',
-            details: ['C++', 'C#', 'Python', 'Java', 'GLSL', 'SQL', 'HTML/CSS', 'JavaScript']
-        },
-        methodologies: {
-            title: 'Methodologies',
-            details: ['Agile Development', 'Scrum', 'Kanban', 'Code Reviews', 'Version Control']
-        },
-        'project-management': {
-            title: 'Project Management',
-            details: ['Jira', 'Trello', 'Asana', 'Git', 'Slack']
-        },
-        interests: {
-            title: 'Interests',
-            details: ['Game Design', '3D Rendering', 'Shader Programming', 'Physics Simulations']
-        },
-        'relevant-courses': {
-            title: 'Relevant Courses',
-            details: ['Game Programming', 'Operating Systems', 'Data Structures', 'Algorithms']
-        },
-        development: {
-            title: 'Development Tools',
-            details: ['Unreal Engine', 'Unity', 'Godot', 'Visual Studio', 'JetBrains IDE']
-        }
-    };
+// Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
 
-    const data = skillsData[category];
-    modalBody.innerHTML = `
-        <h3>${data.title}</h3>
-        <ul>${data.details.map(skill => `<li>${skill}</li>`).join('')}</ul>
-    `;
-    modal.style.display = 'flex';
-}
+        // Mobile menu functionality - FIXED
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenuBtn.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking on a link
+        const navItems = document.querySelectorAll('.nav-links a');
+        navItems.forEach(item => {
+            item.addEventListener('click', function() {
+                navLinks.classList.remove('active');
+            });
+        });
 
-function closeSkillsModal() {
-    const modal = document.getElementById('skills-modal');
-    modal.style.display = 'none';
-}
-
-// Project Modal Logic
-function openProjectModal(projectId) {
-    const modal = document.getElementById('project-modal');
-    const modalBody = document.getElementById('project-modal-body');
-
-    let content = '';
-    switch (projectId) {
-        case 'project1':
-            content = `
-                <div style="
-                    text-align: center; 
-                    padding: 20px; 
-                    max-width: 600px; 
-                    max-height: 90vh; /* Ensures the modal doesn't exceed the viewport height */
-                    overflow-y: auto; /* Enables scrolling for overflowing content */
-                    border: 1px solid #ccc; 
-                    border-radius: 10px; 
-                    background-color: white; 
-                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
-                ">
-                    <img src="ProjectImages/AtomsEmbrace/output-onlinepngtools(4).png" alt="Project 2" 
-                        style="width: 100%; border-radius: 10px; margin-bottom: 20px;">
-                    <h2 style="font-size: 24px; margin-bottom: 10px;">Atom's Embrace</h2>
-                    <p style="
-                        font-size: 16px; 
-                        line-height: 1.6; 
-                        margin-bottom: 20px; 
-                        text-align: justify; 
-                        word-wrap: break-word; 
-                    ">
-                        Atom's Embrace was my first big game project ever. Getting to work as the project director and systems programmer,
-                        I primarily worked on progression systems to advance the game, as well as an Unreal Engine Specialist. Utilizing the engine
-                        in the best way to ensure the best possible performance.
-                    </p>
-                    <a href="https://atomsembrace.itch.io/atoms-embrace" style="text-decoration: none;">
-                        <button style="
-                            background-color: #007BFF; 
-                            color: white; 
-                            padding: 10px 20px; 
-                            font-size: 16px; 
-                            border: none; 
-                            border-radius: 5px; 
-                            cursor: pointer;
-                        ">
-                            View Project
-                        </button>
-                    </a>
-                </div>
-            `;
-            break;
-        case 'project2':
-            content = `
-                <div style="
-                    text-align: center; 
-                    padding: 20px; 
-                    max-width: 600px; 
-                    max-height: 90vh; /* Ensures the modal doesn't exceed the viewport height */
-                    overflow-y: auto; /* Enables scrolling for overflowing content */
-                    border: 1px solid #ccc; 
-                    border-radius: 10px; 
-                    background-color: white; 
-                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
-                ">
-                    <img src="ProjectImages/sub_poster_pilot_PREVIEW.png" alt="Project 2" 
-                        style="width: 100%; border-radius: 10px; margin-bottom: 20px;">
-                    <h2 style="font-size: 24px; margin-bottom: 10px;">Dread Not</h2>
-                    <p style="
-                        font-size: 16px; 
-                        line-height: 1.6; 
-                        margin-bottom: 20px; 
-                        text-align: justify; 
-                        word-wrap: break-word; 
-                    ">
-                        Dread Not is an asynchronous, cooperative adventure set in a submarine. Playing as the Pilot, or the Mechanic,
-                        you are being chased by some kind of creature. You must work together to keep the sub in working condition while you ascend to the surface.
-                    </p>
-                    <a href="https://leviathan-interactive.itch.io/dread-not" style="text-decoration: none;">
-                        <button style="
-                            background-color: #007BFF; 
-                            color: white; 
-                            padding: 10px 20px; 
-                            font-size: 16px; 
-                            border: none; 
-                            border-radius: 5px; 
-                            cursor: pointer;
-                        ">
-                            View Project
-                        </button>
-                    </a>
-                </div>
-            `;
-            break;
-        // Repeat the structure for all other cases
-        case 'project3':
-            content = `
-                <div style="
-                    text-align: center; 
-                    padding: 20px; 
-                    max-width: 600px; 
-                    max-height: 90vh; /* Ensures the modal doesn't exceed the viewport height */
-                    overflow-y: auto; /* Enables scrolling for overflowing content */
-                    border: 1px solid #ccc; 
-                    border-radius: 10px; 
-                    background-color: white; 
-                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
-                ">
-                    <img src="ProjectImages/IMG_6829.jpg" alt="Project 2" 
-                        style="width: 100%; border-radius: 10px; margin-bottom: 20px;">
-                    <h2 style="font-size: 24px; margin-bottom: 10px;">What Lies Beneath</h2>
-                    <p style="
-                        font-size: 16px; 
-                        line-height: 1.6; 
-                        margin-bottom: 20px; 
-                        text-align: justify; 
-                        word-wrap: break-word; 
-                    ">
-                        What Lies Beneath is a 2D dungeon crawler, and also the first game I ever worked on!
-<br><br>
-                        My responsibilities for this project were to build the backend logic for most of this game. Including but not limited to:
-                        Dialogue, Mask Capabilities, Character Controls, Puzzle systems, etc.
-                    </p>
-                    <a href="https://monkek.itch.io/what-lies-beneath" style="text-decoration: none;">
-                        <button style="
-                            background-color: #007BFF; 
-                            color: white; 
-                            padding: 10px 20px; 
-                            font-size: 16px; 
-                            border: none; 
-                            border-radius: 5px; 
-                            cursor: pointer;
-                        ">
-                            View Project
-                        </button>
-                    </a>
-                </div>
-            `;
-            break;
-            case 'project5':
-            content = `
-                <div style="
-                    text-align: center; 
-                    padding: 20px; 
-                    max-width: 600px; 
-                    max-height: 90vh; /* Ensures the modal doesn't exceed the viewport height */
-                    overflow-y: auto; /* Enables scrolling for overflowing content */
-                    border: 1px solid #ccc; 
-                    border-radius: 10px; 
-                    background-color: white; 
-                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
-                ">
-                    <img src="Images/Screenshot 2025-01-14 181422.png" alt="Project 2" 
-                        style="width: 100%; border-radius: 10px; margin-bottom: 20px;">
-                    <h2 style="font-size: 24px; margin-bottom: 10px;">Python Physics Projects</h2>
-                    <p style="
-                        font-size: 16px; 
-                        line-height: 1.6; 
-                        margin-bottom: 20px; 
-                        text-align: justify; 
-                        word-wrap: break-word; 
-                    ">
-                        These are a collection of projects that I completed to showcase my understanding of physics in game engines, how they are handled and calculated then applied to the objects.
-<br><br>
-                        I continuously add, tweak, and experiment with these projects in order to test new ideas and such.
-                    </p>
-                    <a href="https://github.com/Benrowan910/PhysicsEngine-Games.git" style="text-decoration: none;">
-                        <button style="
-                            background-color: #007BFF; 
-                            color: white; 
-                            padding: 10px 20px; 
-                            font-size: 16px; 
-                            border: none; 
-                            border-radius: 5px; 
-                            cursor: pointer;
-                        ">
-                            View Project
-                        </button>
-                    </a>
-                </div>
-            `;
-            break;
-            case 'project6':
-            content = `
-                <div style="
-                    text-align: center; 
-                    padding: 20px; 
-                    max-width: 600px; 
-                    max-height: 90vh; /* Ensures the modal doesn't exceed the viewport height */
-                    overflow-y: auto; /* Enables scrolling for overflowing content */
-                    border: 1px solid #ccc; 
-                    border-radius: 10px; 
-                    background-color: white; 
-                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
-                ">
-                    <img src="ProjectImages/Screenshot 2025-01-14 180655.png" alt="Project 2" 
-                        style="width: 100%; border-radius: 10px; margin-bottom: 20px;">
-                    <h2 style="font-size: 24px; margin-bottom: 10px;">Game Tracking Application With Flutter</h2>
-                    <p style="
-                        font-size: 16px; 
-                        line-height: 1.6; 
-                        margin-bottom: 20px; 
-                        text-align: justify; 
-                        word-wrap: break-word; 
-                    ">
-                        The purpose of this application is to have a personal app on my phone that can store information about games, such as;
-                        Whether I have played those games, My thoughts on those games.
-<br><br>
-                        In order to achieve this I utilize the IGDB api integration to have access to their database of games.
-<br><br>
-                        This project has challenged my ability to navigate a large database and display that information to the user (me). As well as tracking that information
-                        over to new pages.
-<br><br>
-                        This was the first time I had ever used Dart or Flutter to build anything, so it was more or less to familiarize myself with the language and build tools.
-                    </p>
-                    <a href="https://github.com/Benrowan910/walrustracker" style="text-decoration: none;">
-                        <button style="
-                            background-color: #007BFF; 
-                            color: white; 
-                            padding: 10px 20px; 
-                            font-size: 16px; 
-                            border: none; 
-                            border-radius: 5px; 
-                            cursor: pointer;
-                        ">
-                            View Project
-                        </button>
-                    </a>
-                </div>
-            `;
-            break;
-            case 'project7':
-            content = `
-                <div style="
-                    text-align: center; 
-                    padding: 20px; 
-                    max-width: 600px; 
-                    max-height: 90vh; /* Ensures the modal doesn't exceed the viewport height */
-                    overflow-y: auto; /* Enables scrolling for overflowing content */
-                    border: 1px solid #ccc; 
-                    border-radius: 10px; 
-                    background-color: white; 
-                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
-                ">
-                    <img src="ProjectImages/Screenshot 2025-01-14 163651.png" alt="Project 2" 
-                        style="width: 100%; border-radius: 10px; margin-bottom: 20px;">
-                    <h2 style="font-size: 24px; margin-bottom: 10px;">Barnes-Hut N-Body Gravity Simulation</h2>
-                    <p style="
-                        font-size: 16px; 
-                        line-height: 1.6; 
-                        margin-bottom: 20px; 
-                        text-align: justify; 
-                        word-wrap: break-word; 
-                    ">
-                        This project was an attempt to simulate a gravitational field with particles in OpenGL. The goal here was to be able to simulate this at a particle count of 1,000+ at a high framerate.
-                        In order to achieve this, I attempted a barnes-hut algorithmic approach to rendering the particles on the screen. **THIS PROJECT IS STILL A WORK IN PROGRESS**
-                    </p>
-                    <a href="https://github.com/Benrowan910/Barnes-Hut-N-Body-Simulation.git" style="text-decoration: none;">
-                        <button style="
-                            background-color: #007BFF; 
-                            color: white; 
-                            padding: 10px 20px; 
-                            font-size: 16px; 
-                            border: none; 
-                            border-radius: 5px; 
-                            cursor: pointer;
-                        ">
-                            View Project
-                        </button>
-                    </a>
-                </div>
-            `;
-            break;
-            case 'project8':
-            content = `
-                <div style="
-                    text-align: center; 
-                    padding: 20px; 
-                    max-width: 600px; 
-                    max-height: 90vh; /* Ensures the modal doesn't exceed the viewport height */
-                    overflow-y: auto; /* Enables scrolling for overflowing content */
-                    border: 1px solid #ccc; 
-                    border-radius: 10px; 
-                    background-color: white; 
-                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
-                ">
-                    <img src="ProjectImages/AtomsEmbrace/SC1.png" alt="Project 2" 
-                        style="width: 100%; border-radius: 10px; margin-bottom: 20px;">
-                    <h2 style="font-size: 24px; margin-bottom: 10px;">Shader Programming</h2>
-                    <p style="
-                        font-size: 16px; 
-                        line-height: 1.6; 
-                        margin-bottom: 20px; 
-                        text-align: justify; 
-                        word-wrap: break-word; 
-                    ">
-                        These are a selection of projects that showcase some of my skills specifically in Shader Programming.
-                        Some notable inclusions are: Kuwahara Filter, Water Shaders, Quantization effects, Translucency, etc.
-                    </p>
-                    <a href="https://github.com/Benrowan910/FinalShaderProject" style="text-decoration: none;">
-                        <button style="
-                            background-color: #007BFF; 
-                            color: white; 
-                            padding: 10px 20px; 
-                            font-size: 16px; 
-                            border: none; 
-                            border-radius: 5px; 
-                            cursor: pointer;
-                        ">
-                            View Project
-                        </button>
-                    </a>
-                </div>
-            `;
-            break;
-            case 'project9':
-            content = `
-                <div style="
-                    text-align: center; 
-                    padding: 20px; 
-                    max-width: 600px; 
-                    max-height: 90vh; /* Ensures the modal doesn't exceed the viewport height */
-                    overflow-y: auto; /* Enables scrolling for overflowing content */
-                    border: 1px solid #ccc; 
-                    border-radius: 10px; 
-                    background-color: white; 
-                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
-                ">
-                    <img src="ProjectImages/Screenshot 2025-01-15 215831.png" alt="Project 2" 
-                        style="width: 100%; border-radius: 10px; margin-bottom: 20px;">
-                    <h2 style="font-size: 24px; margin-bottom: 10px;">The Game of Life</h2>
-                    <p style="
-                        font-size: 16px; 
-                        line-height: 1.6; 
-                        margin-bottom: 20px; 
-                        text-align: justify; 
-                        word-wrap: break-word; 
-                    ">
-                        The Game of Life was a project assigned to me upon request from a professor at UW-Stout. 
-                        The Game of Life was developed using Phaser and Javascript in a fullstack development manner.
-                        My responsibilities on the project were to build and optimize the backend to a point where the game could operate 
-                        in a smooth and efficient manner. Changing algorithms and functions from previous versions of the project.
-
-                    </p>
-                    <a href="https://main.d2mf1swe2rwo3x.amplifyapp.com/" style="text-decoration: none;">
-                        <button style="
-                            background-color: #007BFF; 
-                            color: white; 
-                            padding: 10px 20px; 
-                            font-size: 16px; 
-                            border: none; 
-                            border-radius: 5px; 
-                            cursor: pointer;
-                        ">
-                            View Project
-                        </button>
-                    </a>
-                </div>
-            `;
-            break;
-            case 'project10':
-                content = `
-                    <div style="
-                        text-align: center; 
-                         max-width: 600px; 
-                        max-height: 90vh; /* Ensures the modal doesn't exceed the viewport height */
-                        overflow-y: auto; /* Enables scrolling for overflowing content */
-                        border: 1px solid #ccc; 
-                        border-radius: 10px; 
-                        background-color: white; 
-                        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
-                    ">
-                        <img src="ProjectImages/DoodleDice.PNG" alt="Project 2" 
-                            style="width: 100%; border-radius: 10px; margin-bottom: 20px;">
-                        <h2 style="font-size: 24px; margin-bottom: 10px;">Doodle Dice</h2>
-                        <p style="
-                            font-size: 16px; 
-                            line-height: 1.6; 
-                            margin-bottom: 20px; 
-                            text-align: justify; 
-                            word-wrap: break-word; 
-                        ">
-                            Doodle Dice was a game made during a 49 hour game jam at the UW-Stout
-                            IGDA Spring Semester Game Jam. This was my first completed project in Godot, 
-                            I worked almost entirely on the backend of the game making sure it worked (and, not to brag
-                            made the art.)
-    
-                        </p>
-                        <a href="https://tyler-betanski.itch.io/doodle-dice" style="text-decoration: none;">
-                            <button style="
-                                background-color: #007BFF; 
-                                color: white; 
-                                padding: 10px 20px; 
-                                font-size: 16px; 
-                                border: none; 
-                                border-radius: 5px; 
-                                cursor: pointer;
-                            ">
-                                View Project
-                            </button>
-                        </a>
-                    </div>
-                `;
-                break; 
-            case 'project11':
-                content = `
-                    <div style="
-                        text-align: center; 
-                        padding: 20px; 
-                        max-width: 600px; 
-                        max-height: 90vh; /* Ensures the modal doesn't exceed the viewport height */
-                        overflow-y: auto; /* Enables scrolling for overflowing content */
-                        border: 1px solid #ccc; 
-                        border-radius: 10px; 
-                        background-color: white; 
-                        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
-                    ">
-                        <img src="ProjectImages/Start_Menu.png" alt="Project 2" 
-                            style="width: 100%; border-radius: 10px; margin-bottom: 20px;">
-                        <h2 style="font-size: 24px; margin-bottom: 10px;">Earthline Protocol</h2>
-                        <p style="
-                            font-size: 16px; 
-                            line-height: 1.6; 
-                            margin-bottom: 20px; 
-                            text-align: justify; 
-                            word-wrap: break-word; 
-                        ">
-                            Earthline Protocol is a tower defense game made in Unity for the IndieCade Climate Jam (circa 2025.) I worked on gameplay systems
-                            that allowed our team to navigate the engine in such a way to build the game from the ground up with the assets they needed. Working on complex
-                            data structures and editor focused integration of the backend.
-                        </p>
-                        <a href="https://ibrower.itch.io/earthline-protocol" style="text-decoration: none;">
-                            <button style="
-                                background-color: #007BFF; 
-                                color: white; 
-                                padding: 10px 20px; 
-                                font-size: 16px; 
-                                border: none; 
-                                border-radius: 5px; 
-                                cursor: pointer;
-                            ">
-                                View Project
-                            </button>
-                        </a>
-                    </div>
-                `;
-                break;
-        default:
-            content = `<p class="modal-description">Project details are not available.</p>`;
-            break;
-        // Add more cases for other projects
-    }
-
-    modalBody.innerHTML = content;
-    modal.style.display = 'block';
-}
-
-function closeProjectModal() {
-    const modal = document.getElementById('project-modal');
-    modal.style.display = 'none';
-    modalBody.innerHTML = '';
-}
-
-// Close modals when clicking outside
-window.onclick = function (event) {
-    const skillsModal = document.getElementById('skills-modal');
-    const projectModal = document.getElementById('project-modal');
-
-    if (event.target === skillsModal) {
-        closeSkillsModal();
-    } else if (event.target === projectModal) {
-        closeProjectModal();
-    }
-};
-
-// Timeline Animation
-document.addEventListener('DOMContentLoaded', () => {
-    const timelineItems = document.querySelectorAll('.timeline-item');
-    const timelineLine = document.querySelector('.timeline-line');
-
-    const observer = new IntersectionObserver(
-        (entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                    entry.target.classList.remove('inactive');
-                } else {
-                    entry.target.classList.remove('active');
-                    entry.target.classList.add('inactive');
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                // Close mobile menu if open
+                navLinks.classList.remove('active');
+                
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
                 }
             });
-        },
-        {
-            threshold: 0.5,
-        }
-    );
-
-    timelineItems.forEach((item) => {
-        observer.observe(item);
-    });
-
-    // Animate the timeline line based on scroll
-    window.addEventListener('scroll', () => {
-        const scrollY = window.scrollY;
-        const timelineHeight = document.querySelector('.timeline').offsetHeight;
-        const viewportHeight = window.innerHeight;
-
-        const scrolledPercentage = Math.min(scrollY / (timelineHeight - viewportHeight), 1);
-        timelineLine.style.height = `${scrolledPercentage * 100}%`;
-    });
-});
-
-function validateForm() {
-    // Validate Email
-    const email = document.getElementById("email").value;
-    const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;  // Basic email regex
-    if (!emailPattern.test(email)) {
-        alert("Please enter a valid email address.");
-        return false;
-    }
-
-    return true;  // All validations passed
-}
-
-
-// Sample blog data (replace with your actual data or fetch from an API)
-const blogPosts = {
-    1: {
-        title: "Why Vulkan",
-        author: "Ben Rowan",
-        content: `Work in progress! Come back Soon!`
-    }
-};
-
-// Function to display blog content
-function displayBlogContent(postId) {
-    const blogContentSection = document.getElementById("blog-content");
-    const blogListSection = document.getElementById("blog-list");
-
-    // Hide the blog list and show the blog content
-    blogListSection.style.display = "none";
-    blogContentSection.style.display = "block";
-
-    // Populate the blog content
-    const blogPost = blogPosts[postId];
-    document.getElementById("blog-content-title").textContent = blogPost.title;
-    document.getElementById("blog-content-body").innerHTML = `
-        <p><em>By ${blogPost.author}</em></p>
-        ${blogPost.content}
-    `;
-}
-
-// Function to go back to the blog list
-function goBackToBlogList() {
-    const blogContentSection = document.getElementById("blog-content");
-    const blogListSection = document.getElementById("blog-list");
-
-    // Hide the blog content and show the blog list
-    blogContentSection.style.display = "none";
-    blogListSection.style.display = "block";
-}
-
-// Event listeners
-document.addEventListener("DOMContentLoaded", () => {
-    // Add click event listeners to blog links
-    const blogLinks = document.querySelectorAll(".blog-link");
-    blogLinks.forEach(link => {
-        link.addEventListener("click", (e) => {
-            e.preventDefault();
-            const postId = e.currentTarget.getAttribute("data-post-id");
-            displayBlogContent(postId);
         });
-    });
+        // Project modal functionality
+        function openProjectModal(projectId) {
+            const modal = document.getElementById('project-modal');
+            const modalTitle = document.getElementById('modal-title');
+            const modalSubtitle = document.getElementById('modal-subtitle');
+            const modalDescription = document.getElementById('modal-description');
+            const modalHighlight = document.getElementById('modal-highlight');
+            const modalImg = document.getElementById('modal-img');
+            const modalTech = document.querySelector('.modal-tech');
+            const modalLinks = document.querySelector('.modal-links');
+            
+            // Clear previous content
+            modalTech.innerHTML = '';
+            modalLinks.innerHTML = '';
+            
+            // Project data
+            let projectData;
+            
+            switch(projectId) {
+                case 'project1': // Nessy Engine
+                    projectData = {
+                        title: 'The Nessy Engine',
+                        subtitle: 'Custom Game Engine',
+                        description: 'The Nessy Engine is a custom game engine in development since July 2025. Built with C++ using OpenGL and Vulkan for rendering, the engine focuses on high-fidelity environments with flexible lighting options. The goal is to create an engine that enables visually stunning games with lightweight mechanics, addressing frustrations with bloat in existing engines.',
+                        highlight: 'The Lock Lake Renderer provides multiple rendering pathways, allowing developers to choose between performance and visual fidelity based on their project needs.',
+                        image: 'ProjectImages/image-9.png',
+                        tech: ['C++', 'Vulkan', 'OpenGL', 'Engine Architecture', 'Rendering'],
+                        links: [
+                            {text: 'View Blog', url: 'blubber.html', icon: 'fas fa-book'}
+                        ]
+                    };
+                    break;
+                    
+                case 'project2': // Atom's Embrace
+                    projectData = {
+                        title: "Atom's Embrace",
+                        subtitle: 'Narrative Walking Simulator',
+                        description: "Atom's Embrace is a narrative-driven walking simulator that explores themes of survivors guilt in a post-apocalyptic world. As the project lead and systems programmer, I designed the game's progression systems and optimized Unreal Engine implementation for the best possible performance.",
+                        highlight: 'The emotional narrative is enhanced by dynamic environmental storytelling that changes based on player choices and progression.',
+                        image: 'ProjectImages/AtomsEmbrace/Barrel.png',
+                        tech: ['Unreal Engine', 'C++', 'Narrative Design', 'Blueprints', 'Environmental Storytelling'],
+                        links: [
+                            {text: 'Play Game', url: 'https://atomsembrace.itch.io/atoms-embrace', icon: 'fas fa-gamepad'}
+                        ]
+                    };
+                    break;
+                    
+                case 'project3': // Dread Not
+                    projectData = {
+                        title: 'Dread Not',
+                        subtitle: 'Cooperative Submarine Adventure',
+                        description: 'Dread Not is an asynchronous cooperative game where players take on roles of Pilot and Mechanic aboard a submarine being chased by a mysterious creature. As Project Manager for this capstone project, I coordinated a team of 12 developers while implementing core gameplay systems using Unity and C#.',
+                        highlight: 'The asymmetric gameplay requires constant communication and coordination between players with different abilities and perspectives.',
+                        image: 'ProjectImages/sub_poster_pilot_PREVIEW.png',
+                        tech: ['Unreal', 'C++', 'Multiplayer', 'Network Programming', 'Project Management'],
+                        links: [
+                            {text: 'Play Game', url: 'https://store.steampowered.com/app/3616560/Dread_Not/', icon: 'fas fa-gamepad'}
+                        ]
+                    };
+                    break;
+                
+                case 'project4': // Earthline Protocol
+                    projectData = {
+                        title: 'Earthline Protocol',
+                        subtitle: 'An Itch Game Made for IndieCade Climate Jame',
+                        description: 'Earthline Protocol is a tower defense game made in Unity for the IndieCade Climate Jam (circa 2025.) I worked on gameplay systems that allowed our team to navigate the engine in such a way to build the game from the ground up with the assets they needed. Working on complex data structures and editor focused integration of the backend. ',
+                        highlight: 'Balance between managing enemies and environmental happenings.',
+                        image: 'ProjectImages/Start_Menu.png',
+                        tech: ['Unity', 'C#', 'Gameplay Systems Programming'],
+                        links: [
+                            {text: 'Play Game', url: 'https://store.steampowered.com/app/3616560/Dread_Not/', icon: 'fas fa-gamepad'}
+                        ]
+                    };
+                    break;
 
-    // Add click event listener to the "Back to Blogs" button
-    const backButton = document.getElementById("back-to-blogs");
-    backButton.addEventListener("click", (e) => {
-        e.preventDefault();
-        goBackToBlogList();
-    });
-});
+                case 'project5': // Python Physics Projects
+                    projectData = {
+                        title: 'Python Physics Projects',
+                        subtitle: 'PyGame Physics Based Games',
+                        description: 'These are a collection of projects that I completed to showcase my understanding of physics in game engines, how they are handled and calculated then applied to the objects. I continuously add, tweak, and experiment with these projects in order to test new ideas and such.',
+                        highlight: 'Showcasing my knowledge of Physics mathematics in Python',
+                        image: 'Images/Screenshot 2025-01-14 181422.png',
+                        tech: ['PyGame', 'Python', 'Physics Programming'],
+                        links: [
+                            {text: 'Play Game', url: 'https://store.steampowered.com/app/3616560/Dread_Not/', icon: 'fas fa-gamepad'}
+                        ]
+                    };
+                    break;
+                
+                case 'project6': // N-Body Simulation
+                    projectData = {
+                        title: 'N-Body Simulation',
+                        subtitle: 'An N-Body Simulation using OpenFrameworks',
+                        description: 'This project was an attempt to simulate a gravitational field with particles in OpenGL. The goal here was to be able to simulate this at a particle count of 1,000+ at a high framerate. In order to achieve this, I attempted a barnes-hut algorithmic approach to rendering the particles on the screen. **THIS PROJECT IS STILL A WORK IN PROGRESS**',
+                        highlight: 'The project uses the openframeworks library to simulate gravitational fields.',
+                        image: 'ProjectImages/Screenshot 2025-01-14 163651.png',
+                        tech: ['OpenFrameworks', 'C++','Graphics Programming'],
+                        links: [
+                            {text: 'Play Game', url: 'https://store.steampowered.com/app/3616560/Dread_Not/', icon: 'fas fa-gamepad'}
+                        ]
+                    };
+                    break;
+                                    
+                case 'project7': // Shader Programming
+                    projectData = {
+                        title: 'Shader Programming',
+                        subtitle: 'A Project Containing Multiple Different Shader Programming Concepts',
+                        description: 'These are a selection of projects that showcase some of my skills specifically in Shader Programming. Some notable inclusions are: Kuwahara Filter, Water Shaders, Quantization effects, Translucency, etc.',
+                        highlight: 'A showcase of shader programming as well as procedural modeling.',
+                        image: 'ProjectImages/AtomsEmbrace/SC1.png',
+                        tech: ['Unreal', 'C++', 'Graphics Programming'],
+                        links: [
+                            {text: 'Play Game', url: 'https://store.steampowered.com/app/3616560/Dread_Not/', icon: 'fas fa-gamepad'}
+                        ]
+                    };
+                    break;
+
+                case 'project8': // Game of Life Web Game
+                    projectData = {
+                        title: 'Game of Life Web Game',
+                        subtitle: 'A Web Game Version of the Board Game "Game of Life',
+                        description: 'The purpose of this application is to have a personal app on my phone that can store information about games, such as; Whether I have played those games, My thoughts on those games. In order to achieve this I utilize the IGDB api integration to have access to their database of games. This project has challenged my ability to navigate a large database and display that information to the user (me). As well as tracking that information over to new pages. This was the first time I had ever used Dart or Flutter to build anything, so it was more or less to familiarize myself with the language and build tools.',
+                        highlight: 'Working with several clients at the University of Wisconsin - Stout to Build apps',
+                        image: 'ProjectImages/Screenshot 2025-01-15 215831.png',
+                        tech: ['Phaser', 'NodeJS', 'AWS', 'Project Management'],
+                        links: [
+                            {text: 'Play Game', url: 'https://store.steampowered.com/app/3616560/Dread_Not/', icon: 'fas fa-gamepad'}
+                        ]
+                    };
+                    break;
+            }
+            
+            // Populate modal with data
+            modalTitle.textContent = projectData.title;
+            modalSubtitle.textContent = projectData.subtitle;
+            modalDescription.textContent = projectData.description;
+            modalHighlight.textContent = projectData.highlight;
+            modalImg.src = projectData.image;
+            
+            // Add tech tags
+            projectData.tech.forEach(tech => {
+                const tag = document.createElement('span');
+                tag.className = 'tech-tag';
+                tag.textContent = tech;
+                modalTech.appendChild(tag);
+            });
+            
+            // Add links
+            projectData.links.forEach(link => {
+                const a = document.createElement('a');
+                a.href = link.url;
+                a.className = 'btn';
+                a.target = '_blank';
+                a.innerHTML = `<i class="${link.icon}"></i> ${link.text}`;
+                modalLinks.appendChild(a);
+            });
+            
+            // Show modal
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeProjectModal() {
+            const modal = document.getElementById('project-modal');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside content
+        window.addEventListener('click', function(event) {
+            const modal = document.getElementById('project-modal');
+            if (event.target === modal) {
+                closeProjectModal();
+            }
+        });
+
+        // Form validation
+        const contactForm = document.querySelector('.contact-form form');
+        contactForm.addEventListener('submit', function(e) {
+            const email = document.getElementById('email').value;
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            
+            if (!emailPattern.test(email)) {
+                e.preventDefault();
+                alert('Please enter a valid email address.');
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    navLinks.style.display = 'none';
+                }
+            });
+        });
+
+                // Project filtering functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const projectCards = document.querySelectorAll('.project-card');
+            const projectCount = document.getElementById('project-count');
+            
+            // Set initial count
+            projectCount.textContent = projectCards.length;
+            
+            // Add animation delay to each project card
+            projectCards.forEach((card, index) => {
+                card.style.animationDelay = `${index * 0.1}s`;
+            });
+            
+            // Filter button functionality
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    button.classList.add('active');
+                    
+                    const filter = button.dataset.filter;
+                    
+                    let visibleCount = 0;
+                    
+                    // Filter projects
+                    projectCards.forEach(card => {
+                        if (filter === 'all') {
+                            card.classList.remove('hidden');
+                            visibleCount++;
+                        } else {
+                            if (card.dataset.category === filter) {
+                                card.classList.remove('hidden');
+                                visibleCount++;
+                            } else {
+                                card.classList.add('hidden');
+                            }
+                        }
+                    });
+                    
+                    // Update project count
+                    projectCount.textContent = visibleCount;
+                });
+            });
+        });
