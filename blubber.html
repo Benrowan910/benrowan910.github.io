@@ -1,176 +1,819 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vulkan Graphics Renderer - Benjamin Rowan</title>
-    <link rel="stylesheet" href="vulkanStyle.css">
-</head>
-<body>
-    <!-- Navbar (same as main site) -->
-    <div class="navbar">
-        <div class="left">Benjamin Rowan</div>
-        <div class="right">
-            <a href="index.html#about">ABOUT</a>
-            <a href="index.html#skills">SKILLS</a>
-            <a href="index.html#projects">PROJECTS</a>
-            <a href="index.html#timeline">TIMELINE</a>
-            <a href="index.html#education">EDUCATION</a>
-            <a href="index.html#contact">CONTACT ME</a>
-        </div>
-    </div>
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+        />
+        <title>The Nessy Engine - Development Blog | Benjamin Rowan</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        />
+        <link rel="stylesheet" href="style.css" />
+        <style>
+            /* Additional styles specific to the dev blog */
+            .dev-header {
+                background: var(--darker-bg);
+                position: relative;
+                padding: 120px 0 80px;
+            }
 
-    <!-- Project Header -->
-    <div class="project-header" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('Images/vulkan-bg.jpg');">
-        <div class="header-content">
-            <h1>The Nessy Engine</h1>
-            <h2>A Personal ECS Game Engine built with Vulkan and OpenGL rendering technologies <br>
-                Stored Locally on Tortoise SVN</h2>
-            <div class="status-badge">In Development Since July 2025</div>
-            <h2>Engine Statement</h2>
-            <p>The Goal of this engine is to ultimately be able to make high fidelity environments primed for world
-                creation and storytelling. While also including game mechanics to make those experiences enjoyable.
-            </p>
-        </div>
-    </div>
+            .dev-header::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: url("Images/vulkan-bg.jpg") center/cover;
+                opacity: 0.12;
+                z-index: 0;
+            }
 
-    <!-- Project Overview -->
-    <section class="project-overview">
-        <div class="content-wrapper">
-            <h2>Project Overview</h2>
-            <div class="overview-grid">
-                <div class="overview-item">
-                    <h3>Current Version</h3>
-                    <p>0.0.9 Alpha</p>
-                </div>
-                <div class="overview-item">
-                    <h3>Repository</h3>
-                    <p>Ope! Not Quite Ready Yet!</p>
-                </div>
-                <div class="overview-item">
-                    <h3>Last Updated</h3>
-                    <p>January 2025</p>
+            .dev-header .container {
+                position: relative;
+                z-index: 1;
+                text-align: center;
+            }
+
+            .dev-title {
+                font-size: 3.5rem;
+                color: var(--text-primary);
+                margin-bottom: 20px;
+                text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            }
+
+            .dev-subtitle {
+                font-size: 1.3rem;
+                color: var(--text-secondary);
+                margin-bottom: 30px;
+                max-width: 800px;
+                margin-left: auto;
+                margin-right: auto;
+                line-height: 1.6;
+            }
+
+            .dev-status {
+                display: inline-block;
+                background: rgba(27, 109, 202, 0.2);
+                color: var(--accent);
+                padding: 10px 20px;
+                border-radius: 25px;
+                font-weight: 600;
+                border: 2px solid var(--accent);
+                margin-bottom: 40px;
+            }
+
+            .dev-statement {
+                background: var(--light-bg);
+                padding: 30px;
+                border-radius: var(--border-radius);
+                margin-top: 40px;
+                border-left: 4px solid var(--accent);
+                max-width: 800px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .dev-statement h3 {
+                color: var(--accent);
+                margin-bottom: 15px;
+                font-size: 1.3rem;
+            }
+
+            .dev-statement p {
+                color: var(--text-tertiary);
+                line-height: 1.7;
+                font-size: 1.1rem;
+            }
+
+            .dev-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 30px;
+                margin-bottom: 80px;
+            }
+
+            .dev-card {
+                background: var(--light-bg);
+                padding: 30px;
+                border-radius: var(--border-radius);
+                box-shadow: var(--shadow);
+                transition: var(--transition);
+                border-top: 4px solid var(--accent);
+            }
+
+            .dev-card:hover {
+                transform: translateY(-5px);
+                box-shadow: var(--shadow-hover);
+            }
+
+            .dev-card h3 {
+                color: var(--text-primary);
+                font-size: 1.4rem;
+                margin-bottom: 15px;
+            }
+
+            .dev-card p {
+                color: var(--text-tertiary);
+                line-height: 1.6;
+            }
+
+            .dev-card .version {
+                color: var(--accent);
+                font-weight: 600;
+                font-size: 1.1rem;
+            }
+
+            .update-section {
+                background: var(--dark-bg);
+            }
+
+            .video-section {
+                background: var(--darker-bg);
+            }
+
+            .video-placeholder {
+                background: var(--light-bg);
+                padding: 60px 30px;
+                border-radius: var(--border-radius);
+                text-align: center;
+                box-shadow: var(--shadow);
+                border: 2px dashed rgba(27, 109, 202, 0.3);
+            }
+
+            .video-icon {
+                width: 120px;
+                height: 120px;
+                background: rgba(27, 109, 202, 0.1);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0 auto 20px;
+                font-size: 3rem;
+                color: var(--accent);
+            }
+
+            .video-placeholder h3 {
+                color: var(--text-primary);
+                font-size: 1.5rem;
+                margin-bottom: 10px;
+            }
+
+            .video-placeholder p {
+                color: var(--text-secondary);
+                font-size: 1rem;
+            }
+
+            .update-card {
+                background: var(--light-bg);
+                padding: 30px;
+                border-radius: var(--border-radius);
+                box-shadow: var(--shadow);
+                margin-bottom: 30px;
+            }
+
+            .update-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 20px;
+                padding-bottom: 15px;
+                border-bottom: 1px solid rgba(136, 146, 176, 0.1);
+            }
+
+            .update-version {
+                color: var(--accent);
+                font-size: 1.5rem;
+                font-weight: 600;
+            }
+
+            .update-date {
+                color: var(--text-secondary);
+                font-size: 0.95rem;
+            }
+
+            .update-changes {
+                list-style: none;
+            }
+
+            .update-changes li {
+                position: relative;
+                padding: 8px 0 8px 30px;
+                color: var(--text-tertiary);
+                border-bottom: 1px solid rgba(136, 146, 176, 0.05);
+            }
+
+            .update-changes li::before {
+                content: "✓";
+                position: absolute;
+                left: 0;
+                color: var(--accent);
+                font-weight: bold;
+            }
+
+            .update-changes li:last-child {
+                border-bottom: none;
+            }
+
+            .feature-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+                gap: 30px;
+            }
+
+            .feature-card {
+                background: var(--light-bg);
+                padding: 30px;
+                border-radius: var(--border-radius);
+                box-shadow: var(--shadow);
+                transition: var(--transition);
+                text-align: center;
+            }
+
+            .feature-card:hover {
+                transform: translateY(-8px);
+                box-shadow: var(--shadow-hover);
+            }
+
+            .feature-icon {
+                width: 80px;
+                height: 80px;
+                background: rgba(27, 109, 202, 0.1);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0 auto 20px;
+                font-size: 2rem;
+                color: var(--accent);
+            }
+
+            .roadmap-timeline {
+                position: relative;
+                padding: 40px 0;
+            }
+
+            .roadmap-item {
+                display: flex;
+                gap: 30px;
+                margin-bottom: 40px;
+                align-items: flex-start;
+            }
+
+            .roadmap-date {
+                flex-shrink: 0;
+                background: var(--accent);
+                color: var(--dark-bg);
+                padding: 12px 20px;
+                border-radius: var(--border-radius);
+                font-weight: 600;
+                min-width: 120px;
+                text-align: center;
+            }
+
+            .roadmap-content {
+                background: var(--light-bg);
+                padding: 25px;
+                border-radius: var(--border-radius);
+                flex: 1;
+                box-shadow: var(--shadow);
+            }
+
+            .roadmap-content h3 {
+                color: var(--text-primary);
+                margin-bottom: 15px;
+                font-size: 1.3rem;
+            }
+
+            .roadmap-content ul {
+                list-style: none;
+            }
+
+            .roadmap-content li {
+                position: relative;
+                padding: 5px 0 5px 20px;
+                color: var(--text-tertiary);
+            }
+
+            .roadmap-content li::before {
+                content: "→";
+                position: absolute;
+                left: 0;
+                color: var(--accent);
+            }
+
+            .blog-section {
+                background: var(--darker-bg);
+            }
+
+            .blog-header {
+                text-align: center;
+                margin-bottom: 60px;
+            }
+
+            .blog-title {
+                font-size: 2.5rem;
+                color: var(--text-primary);
+                margin-bottom: 20px;
+            }
+
+            .blog-description {
+                color: var(--text-secondary);
+                font-size: 1.1rem;
+                max-width: 600px;
+                margin: 0 auto;
+            }
+
+            .no-blogs-message {
+                text-align: center;
+                background: var(--light-bg);
+                padding: 60px 30px;
+                border-radius: var(--border-radius);
+                border: 2px dashed rgba(136, 146, 176, 0.3);
+                max-width: 600px;
+                margin: 0 auto;
+            }
+
+            .no-blogs-icon {
+                width: 80px;
+                height: 80px;
+                background: rgba(136, 146, 176, 0.1);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0 auto 20px;
+                font-size: 2rem;
+                color: var(--text-secondary);
+            }
+
+            .no-blogs-message h3 {
+                color: var(--text-primary);
+                margin-bottom: 10px;
+                font-size: 1.3rem;
+            }
+
+            .no-blogs-message p {
+                color: var(--text-secondary);
+                font-size: 1rem;
+            }
+
+            /* Blog Modal Styles */
+            .blog-modal {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(10, 25, 47, 0.95);
+                z-index: 2000;
+                overflow-y: auto;
+                backdrop-filter: blur(10px);
+            }
+
+            .blog-modal-content {
+                background: var(--light-bg);
+                margin: 50px auto;
+                padding: 0;
+                border-radius: var(--border-radius);
+                max-width: 800px;
+                width: 90%;
+                position: relative;
+                box-shadow: var(--shadow-hover);
+            }
+
+            .blog-modal-header {
+                padding: 30px 30px 0;
+                border-bottom: 1px solid rgba(136, 146, 176, 0.1);
+                margin-bottom: 30px;
+            }
+
+            .blog-modal-close {
+                position: absolute;
+                top: 20px;
+                right: 25px;
+                color: var(--text-secondary);
+                font-size: 2rem;
+                cursor: pointer;
+                z-index: 10;
+                transition: var(--transition);
+            }
+
+            .blog-modal-close:hover {
+                color: var(--accent);
+            }
+
+            .blog-modal-title {
+                font-size: 2.2rem;
+                color: var(--text-primary);
+                margin-bottom: 10px;
+            }
+
+            .blog-modal-meta {
+                color: var(--text-secondary);
+                font-size: 1rem;
+                margin-bottom: 20px;
+            }
+
+            .blog-modal-body {
+                padding: 0 30px 30px;
+                color: var(--text-tertiary);
+                line-height: 1.7;
+                font-size: 1.1rem;
+            }
+
+            .blog-modal-body p {
+                margin-bottom: 20px;
+            }
+
+            .blog-modal-body h3 {
+                color: var(--text-primary);
+                margin: 30px 0 15px;
+                font-size: 1.4rem;
+            }
+
+            .blog-modal-body h4 {
+                color: var(--accent);
+                margin: 25px 0 12px;
+                font-size: 1.2rem;
+            }
+
+            .blog-content-section {
+                background: var(--dark-bg);
+                min-height: 60vh;
+            }
+
+            .back-button {
+                background: var(--accent);
+                color: var(--dark-bg);
+                border: none;
+                padding: 12px 24px;
+                border-radius: var(--border-radius);
+                font-weight: 600;
+                cursor: pointer;
+                transition: var(--transition);
+                margin-bottom: 30px;
+            }
+
+            .back-button:hover {
+                background: var(--accent-dark);
+                transform: translateX(-5px);
+            }
+
+            #blog-content-title {
+                color: var(--text-primary);
+                font-size: 2rem;
+                margin-bottom: 20px;
+            }
+
+            #blog-content-body {
+                color: var(--text-tertiary);
+                line-height: 1.7;
+                font-size: 1.1rem;
+            }
+
+            #blog-content-body p {
+                margin-bottom: 20px;
+            }
+
+            /* Responsive Design */
+            @media (max-width: 768px) {
+                .dev-title {
+                    font-size: 2.5rem;
+                }
+
+                .dev-subtitle {
+                    font-size: 1.1rem;
+                }
+
+                .roadmap-item {
+                    flex-direction: column;
+                    gap: 15px;
+                }
+
+                .roadmap-date {
+                    align-self: flex-start;
+                }
+
+                .dev-grid,
+                .feature-grid {
+                    grid-template-columns: 1fr;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Navbar -->
+        <nav class="navbar">
+            <div class="container">
+                <a href="index.html" class="logo">B.R.</a>
+                <ul class="nav-links">
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#education">Education</a></li>
+                    <li><a href="index.html#skills">Skills</a></li>
+                    <li><a href="index.html#projects">Projects</a></li>
+                    <li><a href="index.html#timeline">Timeline</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Project Header -->
+        <section class="dev-header">
+            <div class="container">
+                <h1 class="dev-title">The Nessy Engine</h1>
+                <p class="dev-subtitle">
+                    A Personal ECS Game Engine built with Vulkan and OpenGL
+                    rendering technologies<br />
+                    Stored Locally on Tortoise SVN
+                </p>
+                <div class="dev-status">In Development Since July 2025</div>
+
+                <div class="dev-statement">
+                    <h3>Engine Statement</h3>
+                    <p>
+                        The Goal of this engine is to ultimately be able to make
+                        high fidelity environments primed for world creation and
+                        storytelling. While also including game mechanics to
+                        make those experiences enjoyable.
+                    </p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Patch Notes/Blog Section -->
-    <section class="patch-notes">
-        <div class="content-wrapper">
-            <h2>Most Recent Update</h2>
-            <div class="update-list">
-                <article class="update-card">
+        <!-- Project Overview -->
+        <section class="education-section">
+            <div class="container">
+                <h2 class="section-title">Project Overview</h2>
+                <div class="dev-grid">
+                    <div class="dev-card">
+                        <h3>Current Version</h3>
+                        <p class="version">0.0.9 Alpha</p>
+                    </div>
+                    <div class="dev-card">
+                        <h3>Repository</h3>
+                        <p>Ope! Not Quite Ready Yet!</p>
+                    </div>
+                    <div class="dev-card">
+                        <h3>Last Updated</h3>
+                        <p>January 2025</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Most Recent Video Update -->
+        <section class="video-section">
+            <div class="container">
+                <h2 class="section-title">Most Recent Video Update</h2>
+                <div class="video-placeholder">
+                    <div class="video-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3>Video Coming Soon</h3>
+                    <p>Latest development progress video will be posted here</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Most Recent Update -->
+        <section class="update-section">
+            <div class="container">
+                <h2 class="section-title">Most Recent Update</h2>
+                <div class="update-card">
                     <div class="update-header">
-                        <h3>Version 0.0.9</h3>
-                        <span class="update-date">January, 2025</span>
+                        <div class="update-version">Version 0.0.9</div>
+                        <div class="update-date">January, 2025</div>
                     </div>
                     <ul class="update-changes">
                         <li>Implemented Game Objects</li>
                         <li>Optimized Function Calls</li>
                         <li>Fixed memory leak issue in image rendering</li>
                     </ul>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- Current Features -->
-    <section class="project-features">
-        <div class="content-wrapper">
-            <h2>Current Features</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <!--<img src="ProjectImages/vulkan-feature1.jpg" alt="Feature 1">-->
-                    <h3>High Fidelity Environments</h3>
-                    <p>PBR Lighting and Optimized Geometry</p>
-                </div>
-                <div class="feature-card">
-                    <!--<img src="ProjectImages/vulkan-feature2.jpg" alt="Feature 2">-->
-                    <h3>A Slick and Human Usable Editor</h3>
-                    <p>For those (me) who need a pretty editor to look at</p>
-                </div>
-                <div class="feature-card">
-                    <!--<img src="ProjectImages/vulkan-feature3.jpg" alt="Feature 3">-->
-                    <h3>Multiple Renderers</h3>
-                    <p>For a variety of options based on your system/preference</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Development Roadmap -->
-    <section class="roadmap">
-        <div class="content-wrapper">
-            <h2>Development Roadmap</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-date">Q3 2025</div>
-                    <div class="timeline-content">
-                        <h3>Engine Editor Creation - Using Dear ImGui</h3>
-                        <ul>
-                            <li>A lightweight engine editor for me to view projects</li>
-                        </ul>
+        <!-- Current Features -->
+        <section class="projects-section">
+            <div class="container">
+                <h2 class="section-title">Current Features</h2>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-mountain"></i>
+                        </div>
+                        <h3>High Fidelity Environments</h3>
+                        <p>PBR Lighting and Optimized Geometry</p>
                     </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-date">Q4 2025</div>
-                    <div class="timeline-content">
-                        <h3>Terrain Generation Toolkit</h3>
-                        <ul>
-                            <li>A full terrain generation toolkit to create and save prefabs for highly detailed terrains</li>
-                            
-                        </ul>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-edit"></i>
+                        </div>
+                        <h3>A Slick and Human Usable Editor</h3>
+                        <p>
+                            For those (me) who need a pretty editor to look at
+                        </p>
                     </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-date">Q1 2026</div>
-                    <div class="timeline-content">
-                        <h3>Multi-Threaded Rendering</h3>
-                        <ul>
-                            <li>Multi-Threaded Rendering to improve performance</li>
-                            
-                        </ul>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-layer-group"></i>
+                        </div>
+                        <h3>Multiple Renderers</h3>
+                        <p>
+                            For a variety of options based on your
+                            system/preference
+                        </p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-
-    <!-- Technical Documentation Link -->
-    <section class="documentation-cta">
-        <h1 class="title">Nessy Blogs</h1>
-        <p class="mission-statement">
-            A collection of blog posts from yours truly
-        </p>
-
-                <!-- Blog Categories -->
-        <div class="blog-container">
-
-            <section id="blog-list" class="blog-section">
-                <h2>Blogs</h2>
-                <div class="blog-list">
-                    <!-- Blog Items with Data Attributes -->
-                    <div class="blog-item">
-                        <a href="#" class="blog-link" data-post-id="1">
-                            <h1>Why Use Vulkan?</h1>
-                            <h3>Ben Rowan</h3>
-                        </a>
+        <!-- Development Roadmap -->
+        <section class="skills-section">
+            <div class="container">
+                <h2 class="section-title">Development Roadmap</h2>
+                <div class="roadmap-timeline">
+                    <div class="roadmap-item">
+                        <div class="roadmap-date">Q3 2025</div>
+                        <div class="roadmap-content">
+                            <h3>Engine Editor Creation - Using Dear ImGui</h3>
+                            <ul>
+                                <li>
+                                    A lightweight engine editor for me to view
+                                    projects
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                    <!-- Add more blog items as needed -->
+                    <div class="roadmap-item">
+                        <div class="roadmap-date">Q4 2025</div>
+                        <div class="roadmap-content">
+                            <h3>Terrain Generation Toolkit</h3>
+                            <ul>
+                                <li>
+                                    A full terrain generation toolkit to create
+                                    and save prefabs for highly detailed
+                                    terrains
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="roadmap-item">
+                        <div class="roadmap-date">Q1 2026</div>
+                        <div class="roadmap-content">
+                            <h3>Multi-Threaded Rendering</h3>
+                            <ul>
+                                <li>
+                                    Multi-Threaded Rendering to improve
+                                    performance
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-            </section>
-            
-            <!-- Blog Content Section (Hidden by Default) -->
-            <section id="blog-content" class="blog-section" style="display: none;">
-                <button id="back-to-blogs" class="back-button">← Back to Blogs</button>
-                <h2 id="blog-content-title"></h2>
-                <div id="blog-content-body"></div>
-            </section>
-        </div>
-    </section>
+            </div>
+        </section>
 
-    <script src="script.js"></script>
-</body>
+        <!-- Blog Section -->
+        <section class="blog-section">
+            <div class="container">
+                <div class="blog-header">
+                    <h2 class="blog-title">Nessy Blogs</h2>
+                    <p class="blog-description">
+                        A collection of blog posts from yours truly
+                    </p>
+                </div>
+
+                <div class="no-blogs-message">
+                    <div class="no-blogs-icon">
+                        <i class="fas fa-blog"></i>
+                    </div>
+                    <h3>Blog Posts Coming Soon</h3>
+                    <p>
+                        Development insights and technical articles will be
+                        posted here
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Modal -->
+        <div id="blog-modal" class="blog-modal">
+            <div class="blog-modal-content">
+                <span class="blog-modal-close" onclick="closeBlogModal()"
+                    >&times;</span
+                >
+                <div class="blog-modal-header">
+                    <h2 id="blog-modal-title" class="blog-modal-title"></h2>
+                    <div id="blog-modal-meta" class="blog-modal-meta"></div>
+                </div>
+                <div id="blog-modal-body" class="blog-modal-body"></div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-logo">Benjamin Rowan</div>
+                <p class="footer-text">
+                    Game Designer & Developer passionate about creating
+                    immersive experiences and pushing the boundaries of
+                    interactive entertainment.
+                </p>
+
+                <div class="footer-socials">
+                    <a
+                        href="https://github.com/Benrowan910"
+                        target="_blank"
+                        class="footer-social"
+                        ><i class="fab fa-github"></i
+                    ></a>
+                    <a
+                        href="https://www.linkedin.com/in/benjamin-rowan-862923236/"
+                        target="_blank"
+                        class="footer-social"
+                        ><i class="fab fa-linkedin-in"></i
+                    ></a>
+                    <a
+                        href="https://bsky.app/profile/spacemanwalrus.bsky.social"
+                        target="_blank"
+                        class="footer-social"
+                        ><i class="fab fa-twitter"></i
+                    ></a>
+                    <a
+                        href="https://www.instagram.com/ben_rowan_910/"
+                        target="_blank"
+                        class="footer-social"
+                        ><i class="fab fa-instagram"></i
+                    ></a>
+                </div>
+
+                <div class="copyright">
+                    &copy; 2025 Benjamin Rowan. All rights reserved.
+                </div>
+            </div>
+        </footer>
+
+        <script src="script.js"></script>
+        <script>
+            // Blog Modal Functionality
+            function openBlogModal(title, author, date, content) {
+                const modal = document.getElementById("blog-modal");
+                const modalTitle = document.getElementById("blog-modal-title");
+                const modalMeta = document.getElementById("blog-modal-meta");
+                const modalBody = document.getElementById("blog-modal-body");
+
+                modalTitle.textContent = title;
+                modalMeta.textContent = `By ${author} • ${date}`;
+                modalBody.innerHTML = content;
+
+                modal.style.display = "flex";
+                document.body.style.overflow = "hidden";
+            }
+
+            function closeBlogModal() {
+                const modal = document.getElementById("blog-modal");
+                modal.style.display = "none";
+                document.body.style.overflow = "auto";
+            }
+
+            // Close modal when clicking outside
+            window.addEventListener("click", (e) => {
+                const modal = document.getElementById("blog-modal");
+                if (e.target === modal) {
+                    closeBlogModal();
+                }
+            });
+
+            // Close modal with Escape key
+            document.addEventListener("keydown", (e) => {
+                if (e.key === "Escape") {
+                    closeBlogModal();
+                }
+            });
+
+            // Example of how to add a blog post (for future use):
+            // openBlogModal(
+            //     'Why Use Vulkan?',
+            //     'Ben Rowan',
+            //     'January 2025',
+            //     '<p>Content goes here...</p><h3>Section Title</h3><p>More content...</p>'
+            // );
+        </script>
+    </body>
 </html>

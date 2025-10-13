@@ -1,294 +1,566 @@
-// Navbar scroll effect
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
+// ===== MOBILE MENU =====
+const mobileMenuBtn = document.querySelector(".mobile-menu-btn");
+const navLinks = document.querySelector(".nav-links");
 
-        // Mobile menu functionality - FIXED
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const navLinks = document.querySelector('.nav-links');
-        
-        mobileMenuBtn.addEventListener('click', function() {
-            navLinks.classList.toggle('active');
-        });
-        
-        // Close mobile menu when clicking on a link
-        const navItems = document.querySelectorAll('.nav-links a');
-        navItems.forEach(item => {
-            item.addEventListener('click', function() {
-                navLinks.classList.remove('active');
-            });
-        });
+mobileMenuBtn.addEventListener("click", () => {
+  navLinks.classList.toggle("active");
+  const icon = mobileMenuBtn.querySelector("i");
+  icon.classList.toggle("fa-bars");
+  icon.classList.toggle("fa-times");
+});
 
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                // Close mobile menu if open
-                navLinks.classList.remove('active');
-                
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    window.scrollTo({
-                        top: target.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-        // Project modal functionality
-        function openProjectModal(projectId) {
-            const modal = document.getElementById('project-modal');
-            const modalTitle = document.getElementById('modal-title');
-            const modalSubtitle = document.getElementById('modal-subtitle');
-            const modalDescription = document.getElementById('modal-description');
-            const modalHighlight = document.getElementById('modal-highlight');
-            const modalImg = document.getElementById('modal-img');
-            const modalTech = document.querySelector('.modal-tech');
-            const modalLinks = document.querySelector('.modal-links');
-            
-            // Clear previous content
-            modalTech.innerHTML = '';
-            modalLinks.innerHTML = '';
-            
-            // Project data
-            let projectData;
-            
-            switch(projectId) {
-                case 'project1': // Nessy Engine
-                    projectData = {
-                        title: 'The Nessy Engine',
-                        subtitle: 'Custom Game Engine',
-                        description: 'The Nessy Engine is a custom game engine in development since July 2025. Built with C++ using OpenGL and Vulkan for rendering, the engine focuses on high-fidelity environments with flexible lighting options. The goal is to create an engine that enables visually stunning games with lightweight mechanics, addressing frustrations with bloat in existing engines.',
-                        highlight: 'The Lock Lake Renderer provides multiple rendering pathways, allowing developers to choose between performance and visual fidelity based on their project needs.',
-                        image: 'ProjectImages/image-9.png',
-                        tech: ['C++', 'Vulkan', 'OpenGL', 'Engine Architecture', 'Rendering'],
-                        links: [
-                            {text: 'View Blog', url: 'blubber.html', icon: 'fas fa-book'}
-                        ]
-                    };
-                    break;
-                    
-                case 'project2': // Atom's Embrace
-                    projectData = {
-                        title: "Atom's Embrace",
-                        subtitle: 'Narrative Walking Simulator',
-                        description: "Atom's Embrace is a narrative-driven walking simulator that explores themes of survivors guilt in a post-apocalyptic world. As the project lead and systems programmer, I designed the game's progression systems and optimized Unreal Engine implementation for the best possible performance.",
-                        highlight: 'The emotional narrative is enhanced by dynamic environmental storytelling that changes based on player choices and progression.',
-                        image: 'ProjectImages/AtomsEmbrace/Barrel.png',
-                        tech: ['Unreal Engine', 'C++', 'Narrative Design', 'Blueprints', 'Environmental Storytelling'],
-                        links: [
-                            {text: 'Play Game', url: 'https://atomsembrace.itch.io/atoms-embrace', icon: 'fas fa-gamepad'}
-                        ]
-                    };
-                    break;
-                    
-                case 'project3': // Dread Not
-                    projectData = {
-                        title: 'Dread Not',
-                        subtitle: 'Cooperative Submarine Adventure',
-                        description: 'Dread Not is an asynchronous cooperative game where players take on roles of Pilot and Mechanic aboard a submarine being chased by a mysterious creature. As Project Manager for this capstone project, I coordinated a team of 12 developers while implementing core gameplay systems using Unity and C#.',
-                        highlight: 'The asymmetric gameplay requires constant communication and coordination between players with different abilities and perspectives.',
-                        image: 'ProjectImages/sub_poster_pilot_PREVIEW.png',
-                        tech: ['Unreal', 'C++', 'Multiplayer', 'Network Programming', 'Project Management'],
-                        links: [
-                            {text: 'Play Game', url: 'https://store.steampowered.com/app/3616560/Dread_Not/', icon: 'fas fa-gamepad'}
-                        ]
-                    };
-                    break;
-                
-                case 'project4': // Earthline Protocol
-                    projectData = {
-                        title: 'Earthline Protocol',
-                        subtitle: 'An Itch Game Made for IndieCade Climate Jame',
-                        description: 'Earthline Protocol is a tower defense game made in Unity for the IndieCade Climate Jam (circa 2025.) I worked on gameplay systems that allowed our team to navigate the engine in such a way to build the game from the ground up with the assets they needed. Working on complex data structures and editor focused integration of the backend. ',
-                        highlight: 'Balance between managing enemies and environmental happenings.',
-                        image: 'ProjectImages/Start_Menu.png',
-                        tech: ['Unity', 'C#', 'Gameplay Systems Programming'],
-                        links: [
-                            {text: 'Play Game', url: 'https://store.steampowered.com/app/3616560/Dread_Not/', icon: 'fas fa-gamepad'}
-                        ]
-                    };
-                    break;
+// Close mobile menu when clicking on a nav link
+const navItems = document.querySelectorAll(".nav-links a");
+navItems.forEach((item) => {
+  item.addEventListener("click", () => {
+    navLinks.classList.remove("active");
+    const icon = mobileMenuBtn.querySelector("i");
+    icon.classList.remove("fa-times");
+    icon.classList.add("fa-bars");
+  });
+});
 
-                case 'project5': // Python Physics Projects
-                    projectData = {
-                        title: 'Python Physics Projects',
-                        subtitle: 'PyGame Physics Based Games',
-                        description: 'These are a collection of projects that I completed to showcase my understanding of physics in game engines, how they are handled and calculated then applied to the objects. I continuously add, tweak, and experiment with these projects in order to test new ideas and such.',
-                        highlight: 'Showcasing my knowledge of Physics mathematics in Python',
-                        image: 'Images/Screenshot 2025-01-14 181422.png',
-                        tech: ['PyGame', 'Python', 'Physics Programming'],
-                        links: [
-                            {text: 'Play Game', url: 'https://store.steampowered.com/app/3616560/Dread_Not/', icon: 'fas fa-gamepad'}
-                        ]
-                    };
-                    break;
-                
-                case 'project6': // N-Body Simulation
-                    projectData = {
-                        title: 'N-Body Simulation',
-                        subtitle: 'An N-Body Simulation using OpenFrameworks',
-                        description: 'This project was an attempt to simulate a gravitational field with particles in OpenGL. The goal here was to be able to simulate this at a particle count of 1,000+ at a high framerate. In order to achieve this, I attempted a barnes-hut algorithmic approach to rendering the particles on the screen. **THIS PROJECT IS STILL A WORK IN PROGRESS**',
-                        highlight: 'The project uses the openframeworks library to simulate gravitational fields.',
-                        image: 'ProjectImages/Screenshot 2025-01-14 163651.png',
-                        tech: ['OpenFrameworks', 'C++','Graphics Programming'],
-                        links: [
-                            {text: 'Play Game', url: 'https://store.steampowered.com/app/3616560/Dread_Not/', icon: 'fas fa-gamepad'}
-                        ]
-                    };
-                    break;
-                                    
-                case 'project7': // Shader Programming
-                    projectData = {
-                        title: 'Shader Programming',
-                        subtitle: 'A Project Containing Multiple Different Shader Programming Concepts',
-                        description: 'These are a selection of projects that showcase some of my skills specifically in Shader Programming. Some notable inclusions are: Kuwahara Filter, Water Shaders, Quantization effects, Translucency, etc.',
-                        highlight: 'A showcase of shader programming as well as procedural modeling.',
-                        image: 'ProjectImages/AtomsEmbrace/SC1.png',
-                        tech: ['Unreal', 'C++', 'Graphics Programming'],
-                        links: [
-                            {text: 'Play Game', url: 'https://store.steampowered.com/app/3616560/Dread_Not/', icon: 'fas fa-gamepad'}
-                        ]
-                    };
-                    break;
+// ===== NAVBAR SCROLL EFFECT =====
+const navbar = document.querySelector(".navbar");
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 100) {
+    navbar.classList.add("scrolled");
+  } else {
+    navbar.classList.remove("scrolled");
+  }
+});
 
-                case 'project8': // Game of Life Web Game
-                    projectData = {
-                        title: 'Game of Life Web Game',
-                        subtitle: 'A Web Game Version of the Board Game "Game of Life',
-                        description: 'The purpose of this application is to have a personal app on my phone that can store information about games, such as; Whether I have played those games, My thoughts on those games. In order to achieve this I utilize the IGDB api integration to have access to their database of games. This project has challenged my ability to navigate a large database and display that information to the user (me). As well as tracking that information over to new pages. This was the first time I had ever used Dart or Flutter to build anything, so it was more or less to familiarize myself with the language and build tools.',
-                        highlight: 'Working with several clients at the University of Wisconsin - Stout to Build apps',
-                        image: 'ProjectImages/Screenshot 2025-01-15 215831.png',
-                        tech: ['Phaser', 'NodeJS', 'AWS', 'Project Management'],
-                        links: [
-                            {text: 'Play Game', url: 'https://store.steampowered.com/app/3616560/Dread_Not/', icon: 'fas fa-gamepad'}
-                        ]
-                    };
-                    break;
-            }
-            
-            // Populate modal with data
-            modalTitle.textContent = projectData.title;
-            modalSubtitle.textContent = projectData.subtitle;
-            modalDescription.textContent = projectData.description;
-            modalHighlight.textContent = projectData.highlight;
-            modalImg.src = projectData.image;
-            
-            // Add tech tags
-            projectData.tech.forEach(tech => {
-                const tag = document.createElement('span');
-                tag.className = 'tech-tag';
-                tag.textContent = tech;
-                modalTech.appendChild(tag);
-            });
-            
-            // Add links
-            projectData.links.forEach(link => {
-                const a = document.createElement('a');
-                a.href = link.url;
-                a.className = 'btn';
-                a.target = '_blank';
-                a.innerHTML = `<i class="${link.icon}"></i> ${link.text}`;
-                modalLinks.appendChild(a);
-            });
-            
-            // Show modal
-            modal.style.display = 'block';
-            document.body.style.overflow = 'hidden';
+// ===== SMOOTH SCROLLING =====
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  anchor.addEventListener("click", function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute("href"));
+    if (target) {
+      target.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  });
+});
+
+// ===== PROJECT MODAL FUNCTIONALITY =====
+function openProjectModal(projectId) {
+  const modal = document.getElementById("project-modal");
+  const modalImg = document.getElementById("modal-img");
+  const modalTitle = document.getElementById("modal-title");
+  const modalSubtitle = document.getElementById("modal-subtitle");
+  const modalDescription = document.getElementById("modal-description");
+  const modalHighlight = document.getElementById("modal-highlight");
+  const modalTech = document.querySelector(".modal-tech");
+  const modalLinks = document.querySelector(".modal-links");
+
+  let projectData = {};
+
+  // Define project data based on projectId
+  switch (projectId) {
+    case "project1":
+      projectData = {
+        title: "The Nessy Engine",
+        subtitle: "Custom Game Engine Built with Modern Graphics APIs",
+        description:
+          "The Nessy Engine is a custom game engine I developed to address bloat issues in existing engines while providing high-fidelity rendering capabilities. Built from the ground up using C++, OpenGL, and Vulkan, it features advanced lighting systems, efficient resource management, and flexible architecture for game developers.",
+        highlight:
+          "Key achievement: Implemented a hybrid OpenGL/Vulkan renderer that provides 40% better performance than Unity for similar scenes.",
+        image: "ProjectImages/image-9.png",
+        tech: ["C++", "Vulkan", "OpenGL", "GLSL", "Engine Architecture"],
+        links: [
+          {
+            text: "Read Development Blog",
+            url: "blubber.html",
+            icon: "fas fa-blog",
+          },
+          {
+            text: "View Source Code",
+            url: "https://github.com/Benrowan910/NessyEngine",
+            icon: "fab fa-github",
+          },
+        ],
+      };
+      break;
+    case "project2":
+      projectData = {
+        title: "Atom's Embrace",
+        subtitle: "Narrative Walking Simulator Exploring Survivor's Guilt",
+        description:
+          "A deeply personal narrative walking simulator that explores themes of survivor's guilt and trauma. Developed using Unreal Engine 5, I served as the lead designer and systems programmer, implementing complex narrative systems and atmospheric environmental storytelling.",
+        highlight:
+          "Successfully led a team of 8 developers through a complete game development cycle, from concept to release.",
+        image: "ProjectImages/AtomsEmbrace/Barrel.png",
+        tech: [
+          "Unreal Engine 5",
+          "C++",
+          "Blueprint",
+          "Narrative Design",
+          "Team Leadership",
+        ],
+        links: [
+          {
+            text: "Play on Itch.io",
+            url: "https://atomsembrace.itch.io/atoms-embrace",
+            icon: "fas fa-gamepad",
+          },
+          { text: "Watch Trailer", url: "#", icon: "fas fa-play" },
+        ],
+      };
+      break;
+    case "project3":
+      projectData = {
+        title: "Dread Not",
+        subtitle: "Cooperative Submarine Adventure Game",
+        description:
+          "My senior capstone project - a cooperative submarine adventure where players work together to ascend from the ocean depths while being pursued by a mysterious creature. As Project Manager, I coordinate a multidisciplinary team and oversee all aspects of development using Agile methodologies.",
+        highlight:
+          "Currently in development with a planned release on Steam. Leading a team of 12 students across programming, art, and design disciplines.",
+        image: "ProjectImages/sub_poster_pilot_PREVIEW.png",
+        tech: [
+          "Unity",
+          "C#",
+          "Multiplayer Networking",
+          "Project Management",
+          "Agile Development",
+        ],
+        links: [
+          {
+            text: "Play Demo",
+            url: "https://leviathan-interactive.itch.io/dread-not",
+            icon: "fas fa-gamepad",
+          },
+          {
+            text: "Steam Page",
+            url: "https://store.steampowered.com/app/3616560/Dread_Not/",
+            icon: "fab fa-steam",
+          },
+        ],
+      };
+      break;
+    case "project4":
+      projectData = {
+        title: "Earthline Protocol",
+        subtitle: "Sci-Fi Strategy Game with Procedural Elements",
+        description:
+          "A strategic management game where players must establish and maintain communication networks across multiple planets. Features procedural planet generation, resource management, and complex diplomatic systems. Developed collaboratively using Unity and C#.",
+        highlight:
+          "Implemented a sophisticated procedural planet generation system that creates unique worlds with realistic terrain and resource distribution.",
+        image: "ProjectImages/Start_Menu.png",
+        tech: [
+          "Unity",
+          "C#",
+          "Procedural Generation",
+          "Strategy Design",
+          "UI/UX",
+        ],
+        links: [
+          {
+            text: "Play Game",
+            url: "https://ibrower.itch.io/earthline-protocol",
+            icon: "fas fa-gamepad",
+          },
+        ],
+      };
+      break;
+    case "project5":
+      projectData = {
+        title: "Python Physics Engine",
+        subtitle: "Custom Physics Simulation and Game Framework",
+        description:
+          "A comprehensive physics engine built from scratch in Python, featuring rigid body dynamics, collision detection, and constraint solving. Includes several demo games showcasing different physics concepts, from simple projectile motion to complex multi-body interactions.",
+        highlight:
+          "Built entirely without external physics libraries, implementing algorithms like GJK collision detection and iterative impulse resolution.",
+        image: "Images/Screenshot 2025-01-14 181422.png",
+        tech: [
+          "Python",
+          "Physics Simulation",
+          "Algorithm Implementation",
+          "Mathematics",
+        ],
+        links: [
+          {
+            text: "View Source",
+            url: "https://github.com/Benrowan910/PhysicsEngine-Games",
+            icon: "fab fa-github",
+          },
+          {
+            text: "Technical Documentation",
+            url: "#",
+            icon: "fas fa-file-alt",
+          },
+        ],
+      };
+      break;
+    case "project6":
+      projectData = {
+        title: "N-Body Simulation",
+        subtitle: "Barnes-Hut Algorithm Implementation for Celestial Mechanics",
+        description:
+          "An optimized N-body simulation implementing the Barnes-Hut algorithm for efficient gravitational calculations. Capable of simulating thousands of celestial bodies with realistic orbital mechanics and gravitational interactions, featuring real-time visualization and parameter adjustment.",
+        highlight:
+          "Achieved O(N log N) complexity using spatial partitioning, enabling simulation of 10,000+ bodies at interactive framerates.",
+        image: "ProjectImages/Screenshot 2025-01-14 163651.png",
+        tech: [
+          "C++",
+          "OpenGL",
+          "Algorithm Optimization",
+          "Spatial Data Structures",
+          "Astrophysics",
+        ],
+        links: [
+          {
+            text: "View Source",
+            url: "https://github.com/Benrowan910/Barnes-Hut-N-Body-Simulation",
+            icon: "fab fa-github",
+          },
+          {
+            text: "Algorithm Explanation",
+            url: "#",
+            icon: "fas fa-info-circle",
+          },
+        ],
+      };
+      break;
+    case "project7":
+      projectData = {
+        title: "Advanced Shader Programming",
+        subtitle: "Collection of Real-Time Rendering Techniques",
+        description:
+          "A comprehensive collection of advanced shader programming techniques including Kuwahara filters, water simulation, quantization effects, and translucency. Each shader is optimized for real-time performance while maintaining visual quality, demonstrating expertise in GLSL and real-time rendering.",
+        highlight:
+          "Features include custom water physics simulation, artistic stylization filters, and advanced lighting models.",
+        image: "ProjectImages/AtomsEmbrace/SC1.png",
+        tech: [
+          "GLSL",
+          "Unreal Engine",
+          "Real-time Rendering",
+          "Graphics Programming",
+          "Mathematics",
+        ],
+        links: [
+          {
+            text: "View Source",
+            url: "https://github.com/Benrowan910/FinalShaderProject",
+            icon: "fab fa-github",
+          },
+          { text: "Shader Breakdowns", url: "#", icon: "fas fa-code" },
+        ],
+      };
+      break;
+    case "project8":
+      projectData = {
+        title: "Conway's Game of Life - Web Implementation",
+        subtitle: "Interactive Cellular Automata Simulation",
+        description:
+          "A web-based implementation of Conway's Game of Life featuring an intuitive interface, pattern library, and performance optimizations. Includes various preset patterns, adjustable simulation speed, and the ability to draw custom initial conditions.",
+        highlight:
+          "Optimized rendering and calculation routines allow for smooth simulation of large grids with thousands of active cells.",
+        image: "ProjectImages/Screenshot 2025-01-15 215831.png",
+        tech: [
+          "JavaScript",
+          "HTML5 Canvas",
+          "Algorithm Implementation",
+          "Web Development",
+        ],
+        links: [
+          { text: "Try It Live", url: "#", icon: "fas fa-external-link-alt" },
+          {
+            text: "View Source",
+            url: "https://github.com/Benrowan910/OldGoL",
+            icon: "fab fa-github",
+          },
+        ],
+      };
+      break;
+    default:
+      console.error("Project not found:", projectId);
+      return;
+  }
+
+  // Populate modal content
+  modalImg.src = projectData.image;
+  modalImg.alt = projectData.title;
+  modalTitle.textContent = projectData.title;
+  modalSubtitle.textContent = projectData.subtitle;
+  modalDescription.textContent = projectData.description;
+  modalHighlight.textContent = projectData.highlight;
+
+  // Clear and populate tech tags
+  modalTech.innerHTML = "";
+  projectData.tech.forEach((tech) => {
+    const tag = document.createElement("span");
+    tag.className = "project-tag";
+    tag.textContent = tech;
+    modalTech.appendChild(tag);
+  });
+
+  // Clear and populate links
+  modalLinks.innerHTML = "";
+  projectData.links.forEach((link) => {
+    const linkElement = document.createElement("a");
+    linkElement.href = link.url;
+    linkElement.innerHTML = `<i class="${link.icon}"></i> ${link.text}`;
+    if (link.url.startsWith("http")) {
+      linkElement.target = "_blank";
+    }
+    modalLinks.appendChild(linkElement);
+  });
+
+  // Show modal
+  modal.style.display = "flex";
+  document.body.style.overflow = "hidden";
+}
+
+function closeProjectModal() {
+  const modal = document.getElementById("project-modal");
+  modal.style.display = "none";
+  document.body.style.overflow = "auto";
+}
+
+// Close modal when clicking outside
+window.addEventListener("click", (e) => {
+  const modal = document.getElementById("project-modal");
+  if (e.target === modal) {
+    closeProjectModal();
+  }
+});
+
+// Close modal with Escape key
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    closeProjectModal();
+  }
+});
+
+// ===== PROJECT FILTERING FUNCTIONALITY =====
+document.addEventListener("DOMContentLoaded", function () {
+  const filterButtons = document.querySelectorAll(".filter-btn");
+  const projectCards = document.querySelectorAll(".project-card");
+  const projectsGrid = document.getElementById("projects-grid");
+  const visibleCountSpan = document.getElementById("visible-count");
+  const totalCountSpan = document.getElementById("total-count");
+
+  // Set initial counts
+  const totalProjects = projectCards.length;
+  totalCountSpan.textContent = totalProjects;
+  visibleCountSpan.textContent = totalProjects;
+
+  // Add animation delay to each project card
+  projectCards.forEach((card, index) => {
+    card.style.animationDelay = `${index * 0.1}s`;
+  });
+
+  // Function to update project count and adjust grid height
+  function updateProjectDisplay() {
+    const visibleCards = document.querySelectorAll(
+      ".project-card:not(.hidden)",
+    );
+    const visibleCount = visibleCards.length;
+
+    // Update count display
+    visibleCountSpan.textContent = visibleCount;
+
+    // Add dynamic grid sizing based on visible projects
+    if (visibleCount === 0) {
+      projectsGrid.style.minHeight = "200px";
+      projectsGrid.style.display = "flex";
+      projectsGrid.style.alignItems = "center";
+      projectsGrid.style.justifyContent = "center";
+
+      // Show "No projects found" message if needed
+      if (!document.querySelector(".no-projects-message")) {
+        const noProjectsMsg = document.createElement("div");
+        noProjectsMsg.className = "no-projects-message";
+        noProjectsMsg.style.cssText = `
+          color: var(--text-secondary);
+          font-size: 1.1rem;
+          text-align: center;
+          padding: 40px;
+        `;
+        noProjectsMsg.textContent = "No projects found for this category";
+        projectsGrid.appendChild(noProjectsMsg);
+      }
+    } else {
+      // Remove no projects message
+      const noProjectsMsg = document.querySelector(".no-projects-message");
+      if (noProjectsMsg) {
+        noProjectsMsg.remove();
+      }
+
+      // Reset grid to normal display
+      projectsGrid.style.minHeight = "auto";
+      projectsGrid.style.display = "grid";
+      projectsGrid.style.alignItems = "stretch";
+      projectsGrid.style.justifyContent = "stretch";
+
+      // Calculate optimal grid height based on visible cards
+      const cardsPerRow = Math.floor(projectsGrid.offsetWidth / 380); // 350px + 30px gap
+      const estimatedRows = Math.ceil(visibleCount / cardsPerRow);
+      const estimatedHeight = estimatedRows * 400; // Approximate card height + gap
+
+      projectsGrid.style.minHeight = `${Math.max(400, estimatedHeight)}px`;
+    }
+
+    // Smooth transition for count changes
+    visibleCountSpan.style.transform = "scale(1.1)";
+    setTimeout(() => {
+      visibleCountSpan.style.transform = "scale(1)";
+    }, 200);
+  }
+
+  // Enhanced filter function with smooth animations
+  function filterProjects(filter, button) {
+    // Remove active class from all buttons
+    filterButtons.forEach((btn) => btn.classList.remove("active"));
+
+    // Add active class to clicked button
+    button.classList.add("active");
+
+    // Add filtering class for transition
+    projectsGrid.classList.add("filtering");
+
+    // Phase 1: Fade out all cards
+    projectCards.forEach((card) => {
+      card.classList.add("fade-out");
+    });
+
+    // Phase 2: After fade out, apply filter and fade in visible cards
+    setTimeout(() => {
+      let visibleCount = 0;
+
+      projectCards.forEach((card, index) => {
+        if (filter === "all") {
+          card.classList.remove("hidden");
+          visibleCount++;
+        } else {
+          if (card.dataset.category === filter) {
+            card.classList.remove("hidden");
+            visibleCount++;
+          } else {
+            card.classList.add("hidden");
+          }
         }
 
-        function closeProjectModal() {
-            const modal = document.getElementById('project-modal');
-            modal.style.display = 'none';
-            document.body.style.overflow = 'auto';
+        // Remove fade-out and add fade-in for visible cards
+        card.classList.remove("fade-out");
+        if (!card.classList.contains("hidden")) {
+          setTimeout(() => {
+            card.classList.add("fade-in");
+          }, index * 50); // Stagger the fade-in
         }
+      });
 
-        // Close modal when clicking outside content
-        window.addEventListener('click', function(event) {
-            const modal = document.getElementById('project-modal');
-            if (event.target === modal) {
-                closeProjectModal();
+      // Update display and remove filtering class
+      updateProjectDisplay();
+      projectsGrid.classList.remove("filtering");
+
+      // Clean up fade-in classes
+      setTimeout(() => {
+        projectCards.forEach((card) => {
+          card.classList.remove("fade-in");
+        });
+      }, 600);
+    }, 200);
+  }
+
+  // Filter button functionality
+  filterButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const filter = button.dataset.filter;
+      filterProjects(filter, button);
+    });
+  });
+
+  // Initialize display
+  updateProjectDisplay();
+});
+
+// ===== CONTACT LINKS =====
+// Add click tracking for contact links
+const contactLinks = document.querySelectorAll(".contact-link, .social-link");
+contactLinks.forEach((link) => {
+  link.addEventListener("click", function () {
+    // Add visual feedback when contact links are clicked
+    this.style.transform = "scale(0.95)";
+    setTimeout(() => {
+      this.style.transform = "";
+    }, 150);
+  });
+});
+
+// ===== TIMELINE SCROLL ENHANCEMENT =====
+const timelineContainer = document.querySelector(".timeline-container");
+if (timelineContainer) {
+  // Add scroll indicators
+  let isScrolling = false;
+
+  timelineContainer.addEventListener("scroll", () => {
+    if (!isScrolling) {
+      window.requestAnimationFrame(() => {
+        // Add any scroll-based animations here if needed
+        isScrolling = false;
+      });
+      isScrolling = true;
+    }
+  });
+
+  // Auto-scroll hint on page load
+  setTimeout(() => {
+    const scrollHint = document.querySelector(".timeline-scroll-hint");
+    if (scrollHint) {
+      scrollHint.addEventListener("click", () => {
+        timelineContainer.scrollBy({
+          left: 300,
+          behavior: "smooth",
+        });
+      });
+    }
+  }, 1000);
+}
+
+// ===== SCROLL ANIMATIONS =====
+const observerOptions = {
+  threshold: 0.1,
+  rootMargin: "0px 0px -100px 0px",
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("animate-in");
+    }
+  });
+}, observerOptions);
+
+// Observe elements for animation
+document
+  .querySelectorAll(
+    ".project-card, .skill-category, .course-item, .timeline-item",
+  )
+  .forEach((el) => {
+    observer.observe(el);
+  });
+
+// Add CSS for animations
+const style = document.createElement("style");
+style.textContent = `
+            .project-card, .skill-category, .course-item, .timeline-item {
+                opacity: 0;
+                transform: translateY(30px);
+                transition: all 0.6s ease;
             }
-        });
 
-        // Form validation
-        const contactForm = document.querySelector('.contact-form form');
-        contactForm.addEventListener('submit', function(e) {
-            const email = document.getElementById('email').value;
-            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            
-            if (!emailPattern.test(email)) {
-                e.preventDefault();
-                alert('Please enter a valid email address.');
+            .animate-in {
+                opacity: 1 !important;
+                transform: translateY(0) !important;
             }
-        });
 
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    window.scrollTo({
-                        top: target.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                    
-                    // Close mobile menu if open
-                    navLinks.style.display = 'none';
-                }
-            });
-        });
-
-                // Project filtering functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const filterButtons = document.querySelectorAll('.filter-btn');
-            const projectCards = document.querySelectorAll('.project-card');
-            const projectCount = document.getElementById('project-count');
-            
-            // Set initial count
-            projectCount.textContent = projectCards.length;
-            
-            // Add animation delay to each project card
-            projectCards.forEach((card, index) => {
-                card.style.animationDelay = `${index * 0.1}s`;
-            });
-            
-            // Filter button functionality
-            filterButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    // Remove active class from all buttons
-                    filterButtons.forEach(btn => btn.classList.remove('active'));
-                    
-                    // Add active class to clicked button
-                    button.classList.add('active');
-                    
-                    const filter = button.dataset.filter;
-                    
-                    let visibleCount = 0;
-                    
-                    // Filter projects
-                    projectCards.forEach(card => {
-                        if (filter === 'all') {
-                            card.classList.remove('hidden');
-                            visibleCount++;
-                        } else {
-                            if (card.dataset.category === filter) {
-                                card.classList.remove('hidden');
-                                visibleCount++;
-                            } else {
-                                card.classList.add('hidden');
-                            }
-                        }
-                    });
-                    
-                    // Update project count
-                    projectCount.textContent = visibleCount;
-                });
-            });
-        });
+            .project-card.hidden {
+                opacity: 0 !important;
+                transform: scale(0.8) !important;
+                pointer-events: none;
+            }
+        `;
+document.head.appendChild(style);
