@@ -22,13 +22,39 @@ navItems.forEach((item) => {
 
 // ===== NAVBAR SCROLL EFFECT =====
 const navbar = document.querySelector(".navbar");
-window.addEventListener("scroll", () => {
-  if (window.scrollY > 100) {
-    navbar.classList.add("scrolled");
-  } else {
+let lastScrollY = window.scrollY;
+let ticking = false;
+
+function updateNavbar() {
+  const currentScrollY = window.scrollY;
+  
+  if (currentScrollY < 100) {
+    // Always show navbar at the top
+    navbar.classList.remove("hidden");
     navbar.classList.remove("scrolled");
+  } else {
+    if (currentScrollY > lastScrollY && currentScrollY > 150) {
+      // Scrolling down - hide navbar
+      navbar.classList.add("hidden");
+    } else {
+      // Scrolling up - show navbar
+      navbar.classList.remove("hidden");
+    }
+    navbar.classList.add("scrolled");
   }
-});
+  
+  lastScrollY = currentScrollY;
+  ticking = false;
+}
+
+function requestTick() {
+  if (!ticking) {
+    requestAnimationFrame(updateNavbar);
+    ticking = true;
+  }
+}
+
+window.addEventListener("scroll", requestTick);
 
 // ===== SMOOTH SCROLLING =====
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
@@ -42,296 +68,6 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
       });
     }
   });
-});
-
-// ===== PROJECT MODAL FUNCTIONALITY =====
-function openProjectModal(projectId) {
-  const modal = document.getElementById("project-modal");
-  const modalImg = document.getElementById("modal-img");
-  const modalTitle = document.getElementById("modal-title");
-  const modalSubtitle = document.getElementById("modal-subtitle");
-  const modalDescription = document.getElementById("modal-description");
-  const modalHighlight = document.getElementById("modal-highlight");
-  const modalTech = document.querySelector(".modal-tech");
-  const modalLinks = document.querySelector(".modal-links");
-
-  let projectData = {};
-
-  // Define project data based on projectId
-  switch (projectId) {
-    case "project1":
-      projectData = {
-        title: "The Nessy Engine",
-        subtitle: "Custom Game Engine Built with Modern Graphics APIs",
-        description:
-          "The Nessy Engine is a custom game engine I developed to address bloat issues in existing engines while providing high-fidelity rendering capabilities. Built from the ground up using C++, OpenGL, and Vulkan, it features advanced lighting systems, efficient resource management, and flexible architecture for game developers.",
-        highlight:
-          "Key achievement: Implemented a hybrid OpenGL/Vulkan renderer that provides 40% better performance than Unity for similar scenes.",
-        image: "ProjectImages/image-9.png",
-        tech: ["C++", "Vulkan", "OpenGL", "GLSL", "Engine Architecture"],
-        links: [
-          {
-            text: "Read Development Blog",
-            url: "blubber.html",
-            icon: "fas fa-blog",
-          },
-          {
-            text: "View Source Code",
-            url: "https://github.com/Benrowan910/NessyEngine",
-            icon: "fab fa-github",
-          },
-        ],
-      };
-      break;
-    case "project2":
-      projectData = {
-        title: "Atom's Embrace",
-        subtitle: "Narrative Walking Simulator Exploring Survivor's Guilt",
-        description:
-          "A deeply personal narrative walking simulator that explores themes of survivor's guilt and trauma. Developed using Unreal Engine 5, I served as the lead designer and systems programmer, implementing complex narrative systems and atmospheric environmental storytelling.",
-        highlight:
-          "Successfully led a team of 8 developers through a complete game development cycle, from concept to release.",
-        image: "ProjectImages/AtomsEmbrace/Barrel.png",
-        tech: [
-          "Unreal Engine 5",
-          "C++",
-          "Blueprint",
-          "Narrative Design",
-          "Team Leadership",
-        ],
-        links: [
-          {
-            text: "Play on Itch.io",
-            url: "https://atomsembrace.itch.io/atoms-embrace",
-            icon: "fas fa-gamepad",
-          },
-          { text: "Watch Trailer", url: "#", icon: "fas fa-play" },
-        ],
-      };
-      break;
-    case "project3":
-      projectData = {
-        title: "Dread Not",
-        subtitle: "Cooperative Submarine Adventure Game",
-        description:
-          "My senior capstone project - a cooperative submarine adventure where players work together to ascend from the ocean depths while being pursued by a mysterious creature. As Project Manager, I coordinate a multidisciplinary team and oversee all aspects of development using Agile methodologies.",
-        highlight:
-          "Currently in development with a planned release on Steam. Leading a team of 12 students across programming, art, and design disciplines.",
-        image: "ProjectImages/sub_poster_pilot_PREVIEW.png",
-        tech: [
-          "Unity",
-          "C#",
-          "Multiplayer Networking",
-          "Project Management",
-          "Agile Development",
-        ],
-        links: [
-          {
-            text: "Play Demo",
-            url: "https://leviathan-interactive.itch.io/dread-not",
-            icon: "fas fa-gamepad",
-          },
-          {
-            text: "Steam Page",
-            url: "https://store.steampowered.com/app/3616560/Dread_Not/",
-            icon: "fab fa-steam",
-          },
-        ],
-      };
-      break;
-    case "project4":
-      projectData = {
-        title: "Earthline Protocol",
-        subtitle: "Sci-Fi Strategy Game with Procedural Elements",
-        description:
-          "A strategic management game where players must establish and maintain communication networks across multiple planets. Features procedural planet generation, resource management, and complex diplomatic systems. Developed collaboratively using Unity and C#.",
-        highlight:
-          "Implemented a sophisticated procedural planet generation system that creates unique worlds with realistic terrain and resource distribution.",
-        image: "ProjectImages/Start_Menu.png",
-        tech: [
-          "Unity",
-          "C#",
-          "Procedural Generation",
-          "Strategy Design",
-          "UI/UX",
-        ],
-        links: [
-          {
-            text: "Play Game",
-            url: "https://ibrower.itch.io/earthline-protocol",
-            icon: "fas fa-gamepad",
-          },
-        ],
-      };
-      break;
-    case "project5":
-      projectData = {
-        title: "Python Physics Engine",
-        subtitle: "Custom Physics Simulation and Game Framework",
-        description:
-          "A comprehensive physics engine built from scratch in Python, featuring rigid body dynamics, collision detection, and constraint solving. Includes several demo games showcasing different physics concepts, from simple projectile motion to complex multi-body interactions.",
-        highlight:
-          "Built entirely without external physics libraries, implementing algorithms like GJK collision detection and iterative impulse resolution.",
-        image: "Images/Screenshot 2025-01-14 181422.png",
-        tech: [
-          "Python",
-          "Physics Simulation",
-          "Algorithm Implementation",
-          "Mathematics",
-        ],
-        links: [
-          {
-            text: "View Source",
-            url: "https://github.com/Benrowan910/PhysicsEngine-Games",
-            icon: "fab fa-github",
-          },
-          {
-            text: "Technical Documentation",
-            url: "#",
-            icon: "fas fa-file-alt",
-          },
-        ],
-      };
-      break;
-    case "project6":
-      projectData = {
-        title: "N-Body Simulation",
-        subtitle: "Barnes-Hut Algorithm Implementation for Celestial Mechanics",
-        description:
-          "An optimized N-body simulation implementing the Barnes-Hut algorithm for efficient gravitational calculations. Capable of simulating thousands of celestial bodies with realistic orbital mechanics and gravitational interactions, featuring real-time visualization and parameter adjustment.",
-        highlight:
-          "Achieved O(N log N) complexity using spatial partitioning, enabling simulation of 10,000+ bodies at interactive framerates.",
-        image: "ProjectImages/Screenshot 2025-01-14 163651.png",
-        tech: [
-          "C++",
-          "OpenGL",
-          "Algorithm Optimization",
-          "Spatial Data Structures",
-          "Astrophysics",
-        ],
-        links: [
-          {
-            text: "View Source",
-            url: "https://github.com/Benrowan910/Barnes-Hut-N-Body-Simulation",
-            icon: "fab fa-github",
-          },
-          {
-            text: "Algorithm Explanation",
-            url: "#",
-            icon: "fas fa-info-circle",
-          },
-        ],
-      };
-      break;
-    case "project7":
-      projectData = {
-        title: "Advanced Shader Programming",
-        subtitle: "Collection of Real-Time Rendering Techniques",
-        description:
-          "A comprehensive collection of advanced shader programming techniques including Kuwahara filters, water simulation, quantization effects, and translucency. Each shader is optimized for real-time performance while maintaining visual quality, demonstrating expertise in GLSL and real-time rendering.",
-        highlight:
-          "Features include custom water physics simulation, artistic stylization filters, and advanced lighting models.",
-        image: "ProjectImages/AtomsEmbrace/SC1.png",
-        tech: [
-          "GLSL",
-          "Unreal Engine",
-          "Real-time Rendering",
-          "Graphics Programming",
-          "Mathematics",
-        ],
-        links: [
-          {
-            text: "View Source",
-            url: "https://github.com/Benrowan910/FinalShaderProject",
-            icon: "fab fa-github",
-          },
-          { text: "Shader Breakdowns", url: "#", icon: "fas fa-code" },
-        ],
-      };
-      break;
-    case "project8":
-      projectData = {
-        title: "Conway's Game of Life - Web Implementation",
-        subtitle: "Interactive Cellular Automata Simulation",
-        description:
-          "A web-based implementation of Conway's Game of Life featuring an intuitive interface, pattern library, and performance optimizations. Includes various preset patterns, adjustable simulation speed, and the ability to draw custom initial conditions.",
-        highlight:
-          "Optimized rendering and calculation routines allow for smooth simulation of large grids with thousands of active cells.",
-        image: "ProjectImages/Screenshot 2025-01-15 215831.png",
-        tech: [
-          "JavaScript",
-          "HTML5 Canvas",
-          "Algorithm Implementation",
-          "Web Development",
-        ],
-        links: [
-          { text: "Try It Live", url: "#", icon: "fas fa-external-link-alt" },
-          {
-            text: "View Source",
-            url: "https://github.com/Benrowan910/OldGoL",
-            icon: "fab fa-github",
-          },
-        ],
-      };
-      break;
-    default:
-      console.error("Project not found:", projectId);
-      return;
-  }
-
-  // Populate modal content
-  modalImg.src = projectData.image;
-  modalImg.alt = projectData.title;
-  modalTitle.textContent = projectData.title;
-  modalSubtitle.textContent = projectData.subtitle;
-  modalDescription.textContent = projectData.description;
-  modalHighlight.textContent = projectData.highlight;
-
-  // Clear and populate tech tags
-  modalTech.innerHTML = "";
-  projectData.tech.forEach((tech) => {
-    const tag = document.createElement("span");
-    tag.className = "project-tag";
-    tag.textContent = tech;
-    modalTech.appendChild(tag);
-  });
-
-  // Clear and populate links
-  modalLinks.innerHTML = "";
-  projectData.links.forEach((link) => {
-    const linkElement = document.createElement("a");
-    linkElement.href = link.url;
-    linkElement.innerHTML = `<i class="${link.icon}"></i> ${link.text}`;
-    if (link.url.startsWith("http")) {
-      linkElement.target = "_blank";
-    }
-    modalLinks.appendChild(linkElement);
-  });
-
-  // Show modal
-  modal.style.display = "flex";
-  document.body.style.overflow = "hidden";
-}
-
-function closeProjectModal() {
-  const modal = document.getElementById("project-modal");
-  modal.style.display = "none";
-  document.body.style.overflow = "auto";
-}
-
-// Close modal when clicking outside
-window.addEventListener("click", (e) => {
-  const modal = document.getElementById("project-modal");
-  if (e.target === modal) {
-    closeProjectModal();
-  }
-});
-
-// Close modal with Escape key
-document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape") {
-    closeProjectModal();
-  }
 });
 
 // ===== PROJECT FILTERING FUNCTIONALITY =====

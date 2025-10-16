@@ -59,6 +59,19 @@ section {
     margin-bottom: 70px;
     position: relative;
     color: var(--text-primary);
+    padding-top: 20px;
+}
+
+.section-title::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 2px;
+    background: var(--accent);
+    border-radius: 1px;
 }
 
 .section-title::after {
@@ -119,12 +132,17 @@ section {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 15px 0;
+    padding: 20px 0;
     background: rgba(10, 25, 47, 0.95);
     z-index: 1000;
-    transition: var(--transition);
+    transition: transform 0.3s ease-in-out, var(--transition);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(100, 255, 218, 0.1);
+    transform: translateY(0);
+}
+
+.navbar.hidden {
+    transform: translateY(-100%);
 }
 
 .navbar .container {
@@ -188,9 +206,10 @@ section {
     display: flex;
     align-items: center;
     min-height: 100vh;
-    padding-top: 80px;
+    padding-top: 120px;
     position: relative;
     background: var(--dark-bg);
+    border-bottom: 2px solid rgba(27, 109, 202, 0.1);
 }
 
 .hero::before {
@@ -293,18 +312,7 @@ section {
 .education-section {
     background: var(--darker-bg);
     position: relative;
-}
-
-.education-section::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url("Images/pc_stout-institute_03.jpg") center/cover;
-    opacity: 0.08;
-    z-index: 0;
+    border-bottom: 2px solid rgba(27, 109, 202, 0.1);
 }
 
 .education-section .container {
@@ -393,6 +401,7 @@ section {
 /* ===== SKILLS SECTION ===== */
 .skills-section {
     background: var(--dark-bg);
+    border-bottom: 2px solid rgba(27, 109, 202, 0.1);
 }
 
 .skills-grid {
@@ -452,6 +461,7 @@ section {
     background: var(--darker-bg);
     position: relative;
     transition: var(--transition);
+    border-bottom: 2px solid rgba(27, 109, 202, 0.1);
 }
 
 .projects-header {
@@ -688,11 +698,163 @@ section {
 
 /* ===== TIMELINE SECTION ===== */
 .timeline-section {
-    background: var(--dark-bg);
+    background: var(--darker-bg);
     position: relative;
     overflow: hidden;
+    border-bottom: 2px solid rgba(27, 109, 202, 0.1);
 }
 
+/* Experience Grid Layout */
+.experience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.experience-card {
+    background: var(--light-bg);
+    border-radius: var(--border-radius);
+    padding: 30px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    border-left: 4px solid var(--accent);
+    position: relative;
+}
+
+.experience-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.experience-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.experience-role {
+    flex: 1;
+    min-width: 200px;
+}
+
+.experience-role h3 {
+    color: var(--text-primary);
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.experience-company {
+    color: var(--accent);
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.experience-location {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.experience-date {
+    background: rgba(27, 109, 202, 0.1);
+    color: var(--accent);
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    white-space: nowrap;
+    text-align: center;
+    border: 1px solid rgba(27, 109, 202, 0.2);
+}
+
+.experience-description {
+    color: var(--text-tertiary);
+    line-height: 1.6;
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+}
+
+.experience-achievements {
+    margin-bottom: 20px;
+}
+
+.experience-achievements ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.experience-achievements li {
+    position: relative;
+    padding: 4px 0 4px 20px;
+    color: var(--text-tertiary);
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.experience-achievements li::before {
+    content: "▶";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 0.7rem;
+}
+
+.experience-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.experience-skill {
+    background: rgba(27, 109, 202, 0.1);
+    color: var(--accent);
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    border: 1px solid rgba(27, 109, 202, 0.1);
+}
+
+.experience-type {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: var(--text-secondary);
+    color: var(--dark-bg);
+    padding: 4px 8px;
+    border-radius: 10px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Current Experience Highlight */
+.experience-card.current {
+    border-left-color: var(--accent-dark);
+}
+
+.experience-card.current .experience-type {
+    background: var(--accent-dark);
+    color: var(--dark-bg);
+}
+
+.experience-card.current .experience-date {
+    background: rgba(82, 209, 178, 0.1);
+    color: var(--accent-dark);
+    border-color: rgba(82, 209, 178, 0.2);
+}
+
+/* Legacy Timeline Styles (for reference/backup) */
 .timeline-wrapper {
     position: relative;
 }
@@ -844,7 +1006,8 @@ section {
 
 /* ===== CONTACT SECTION ===== */
 .contact-section {
-    background: var(--darker-bg);
+    background: var(--dark-bg);
+    border-bottom: 2px solid rgba(27, 109, 202, 0.1);
 }
 
 .contact-content {
@@ -1069,128 +1232,6 @@ section {
     border-top: 1px solid rgba(136, 146, 176, 0.1);
 }
 
-/* ===== MODAL STYLES ===== */
-.modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(10, 25, 47, 0.95);
-    z-index: 2000;
-    overflow-y: auto;
-    backdrop-filter: blur(10px);
-}
-
-.modal-content {
-    background: var(--light-bg);
-    margin: 50px auto;
-    padding: 0;
-    border-radius: var(--border-radius);
-    max-width: 800px;
-    width: 90%;
-    position: relative;
-    box-shadow: var(--shadow-hover);
-}
-
-.close-btn {
-    position: absolute;
-    top: 20px;
-    right: 25px;
-    color: var(--text-secondary);
-    font-size: 2rem;
-    cursor: pointer;
-    z-index: 10;
-    transition: var(--transition);
-}
-
-.close-btn:hover {
-    color: var(--accent);
-}
-
-.modal-header {
-    position: relative;
-    overflow: hidden;
-    border-radius: var(--border-radius) var(--border-radius) 0 0;
-}
-
-.modal-image {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-}
-
-.modal-body {
-    padding: 40px;
-}
-
-.modal-title {
-    font-size: 2.2rem;
-    color: var(--text-primary);
-    margin-bottom: 10px;
-}
-
-.modal-subtitle {
-    color: var(--accent);
-    font-size: 1.2rem;
-    font-weight: 600;
-    margin-bottom: 20px;
-}
-
-.modal-description {
-    color: var(--text-tertiary);
-    line-height: 1.6;
-    margin-bottom: 25px;
-}
-
-.modal-highlight {
-    background: rgba(27, 109, 202, 0.1);
-    padding: 20px;
-    border-radius: var(--border-radius);
-    margin-bottom: 25px;
-    border-left: 4px solid var(--accent);
-}
-
-.modal-tech {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 30px;
-}
-
-.modal-tech .project-tag {
-    background: rgba(27, 109, 202, 0.2);
-    color: var(--accent);
-    padding: 8px 16px;
-    border-radius: 25px;
-    font-weight: 600;
-}
-
-.modal-links {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.modal-links a {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 12px 20px;
-    background: var(--accent);
-    color: var(--dark-bg);
-    text-decoration: none;
-    border-radius: var(--border-radius);
-    font-weight: 600;
-    transition: var(--transition);
-}
-
-.modal-links a:hover {
-    background: var(--accent-dark);
-    transform: translateY(-2px);
-}
-
 /* ===== RESPONSIVE DESIGN ===== */
 @media (max-width: 1100px) {
     .hero-content {
@@ -1232,7 +1273,7 @@ section {
 
     .nav-links {
         position: fixed;
-        top: 70px;
+        top: 90px;
         left: 0;
         width: 100%;
         background: rgba(10, 25, 47, 0.98);
@@ -1363,6 +1404,20 @@ section {
         width: 250px;
     }
 
+    .experience-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .experience-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .experience-date {
+        align-self: flex-start;
+    }
+
     .timeline-content {
         padding: 20px;
     }
@@ -1479,7 +1534,6 @@ section {
 @media print {
     .navbar,
     .mobile-menu-btn,
-    .modal,
     .timeline-scroll-hint {
         display: none !important;
     }

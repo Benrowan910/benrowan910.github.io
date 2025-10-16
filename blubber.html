@@ -23,19 +23,8 @@
             .dev-header {
                 background: var(--darker-bg);
                 position: relative;
-                padding: 120px 0 80px;
-            }
-
-            .dev-header::before {
-                content: "";
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                background: url("Images/vulkan-bg.jpg") center/cover;
-                opacity: 0.12;
-                z-index: 0;
+                padding: 120px 0 60px;
+                border-bottom: 2px solid rgba(27, 109, 202, 0.1);
             }
 
             .dev-header .container {
@@ -45,16 +34,16 @@
             }
 
             .dev-title {
-                font-size: 3.5rem;
+                font-size: 3rem;
                 color: var(--text-primary);
                 margin-bottom: 20px;
                 text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
             }
 
             .dev-subtitle {
-                font-size: 1.3rem;
+                font-size: 1.2rem;
                 color: var(--text-secondary);
-                margin-bottom: 30px;
+                margin-bottom: 25px;
                 max-width: 800px;
                 margin-left: auto;
                 margin-right: auto;
@@ -74,9 +63,9 @@
 
             .dev-statement {
                 background: var(--light-bg);
-                padding: 30px;
+                padding: 25px;
                 border-radius: var(--border-radius);
-                margin-top: 40px;
+                margin-top: 30px;
                 border-left: 4px solid var(--accent);
                 max-width: 800px;
                 margin-left: auto;
@@ -99,12 +88,48 @@
                 display: grid;
                 grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
                 gap: 30px;
-                margin-bottom: 80px;
+                margin-bottom: 60px;
+            }
+
+            /* Section Distinctions */
+            .project-overview {
+                padding: 60px 0;
+                background: var(--dark-bg);
+                border-bottom: 2px solid rgba(27, 109, 202, 0.1);
+            }
+
+            .video-section {
+                background: var(--darker-bg);
+                padding: 60px 0;
+                border-bottom: 2px solid rgba(27, 109, 202, 0.1);
+            }
+
+            .update-section {
+                background: var(--dark-bg);
+                padding: 60px 0;
+                border-bottom: 2px solid rgba(27, 109, 202, 0.1);
+            }
+
+            .project-features {
+                padding: 60px 0;
+                background: var(--darker-bg);
+                border-bottom: 2px solid rgba(27, 109, 202, 0.1);
+            }
+
+            .roadmap {
+                padding: 60px 0;
+                background: var(--dark-bg);
+                border-bottom: 2px solid rgba(27, 109, 202, 0.1);
+            }
+
+            .blog-section {
+                background: var(--darker-bg);
+                padding: 60px 0;
             }
 
             .dev-card {
                 background: var(--light-bg);
-                padding: 30px;
+                padding: 25px;
                 border-radius: var(--border-radius);
                 box-shadow: var(--shadow);
                 transition: var(--transition);
@@ -118,8 +143,8 @@
 
             .dev-card h3 {
                 color: var(--text-primary);
-                font-size: 1.4rem;
-                margin-bottom: 15px;
+                font-size: 1.3rem;
+                margin-bottom: 12px;
             }
 
             .dev-card p {
@@ -143,7 +168,7 @@
 
             .video-placeholder {
                 background: var(--light-bg);
-                padding: 60px 30px;
+                padding: 40px 25px;
                 border-radius: var(--border-radius);
                 text-align: center;
                 box-shadow: var(--shadow);
@@ -227,13 +252,13 @@
 
             .feature-grid {
                 display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-                gap: 30px;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 25px;
             }
 
             .feature-card {
                 background: var(--light-bg);
-                padding: 30px;
+                padding: 25px;
                 border-radius: var(--border-radius);
                 box-shadow: var(--shadow);
                 transition: var(--transition);
@@ -260,13 +285,13 @@
 
             .roadmap-timeline {
                 position: relative;
-                padding: 40px 0;
+                padding: 30px 0;
             }
 
             .roadmap-item {
                 display: flex;
-                gap: 30px;
-                margin-bottom: 40px;
+                gap: 25px;
+                margin-bottom: 30px;
                 align-items: flex-start;
             }
 
@@ -283,7 +308,7 @@
 
             .roadmap-content {
                 background: var(--light-bg);
-                padding: 25px;
+                padding: 20px;
                 border-radius: var(--border-radius);
                 flex: 1;
                 box-shadow: var(--shadow);
@@ -520,10 +545,9 @@
                 <a href="index.html" class="logo">B.R.</a>
                 <ul class="nav-links">
                     <li><a href="index.html#about">About</a></li>
-                    <li><a href="index.html#education">Education</a></li>
+                    <li><a href="index.html#experience">Experience</a></li>
                     <li><a href="index.html#skills">Skills</a></li>
                     <li><a href="index.html#projects">Projects</a></li>
-                    <li><a href="index.html#timeline">Timeline</a></li>
                     <li><a href="index.html#contact">Contact</a></li>
                 </ul>
                 <button class="mobile-menu-btn">

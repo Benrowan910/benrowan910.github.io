@@ -26,18 +26,19 @@
     <body>
         <!-- Navbar -->
         <nav class="navbar">
-            <a href="#" class="logo">B.R.</a>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#timeline">Timeline</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <button class="mobile-menu-btn">
-                <i class="fas fa-bars"></i>
-            </button>
+            <div class="container">
+                <a href="#" class="logo">B.R.</a>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
         </nav>
 
         <!-- Hero Section -->
@@ -99,78 +100,169 @@
             </div>
         </section>
 
-        <!-- Education Section -->
-        <section class="education-section" id="education">
+        <!-- Professional Experience Section -->
+        <section class="timeline-section" id="experience">
             <div class="container">
-                <h2 class="section-title">Education</h2>
+                <h2 class="section-title">Professional Experience</h2>
 
-                <div class="education-card">
-                    <img
-                        src="https://upload.wikimedia.org/wikipedia/en/thumb/8/8b/UW%E2%80%93Stout_Blue_Devils_logo.svg/1200px-UW%E2%80%93Stout_Blue_Devils_logo.svg.png"
-                        alt="UW-Stout Logo"
-                        class="education-logo"
-                    />
-                    <div class="education-info">
-                        <h3>University of Wisconsin - Stout</h3>
-                        <div class="education-details">
-                            <span>Bachelor of Science in Computer Science</span>
-                            | 2021 - 2025
+                <div class="experience-grid">
+                    <!-- Current Position - Nagios -->
+                    <div class="experience-card current">
+                        <div class="experience-type">Current</div>
+                        <div class="experience-header">
+                            <div class="experience-role">
+                                <h3>Software Development Intern</h3>
+                                <div class="experience-company">Nagios</div>
+                                <div class="experience-location">
+                                    <i class="fas fa-building"></i>
+                                    Enterprise IT Solutions
+                                </div>
+                            </div>
+                            <div class="experience-date">August 2024 - Present</div>
                         </div>
-                        <div class="education-details">
-                            Focus: Game Design and Development | Minor:
-                            Mathematics
+                        <div class="experience-description">
+                            Full-stack development intern working on enterprise IT monitoring and infrastructure solutions. Contributing to core platform development and user experience improvements.
                         </div>
-                        <p class="education-description">
-                            During my time at UW-Stout, I developed strong
-                            skills in software engineering, agile development,
-                            and game design. I participated in several team
-                            projects, honing my leadership abilities and
-                            technical expertise.
-                        </p>
+                        <div class="experience-achievements">
+                            <ul>
+                                <li>Developing full-stack features for enterprise IT monitoring platform</li>
+                                <li>Contributing to both frontend and backend development</li>
+                                <li>Working with enterprise-scale infrastructure solutions</li>
+                            </ul>
+                        </div>
+                        <div class="experience-skills">
+                            <span class="experience-skill">Full-Stack Development</span>
+                            <span class="experience-skill">Enterprise Solutions</span>
+                            <span class="experience-skill">IT Infrastructure</span>
+                            <span class="experience-skill">Web Development</span>
+                        </div>
                     </div>
-                </div>
 
-                <div class="courses-container">
-                    <h3>Relevant Courses</h3>
-                    <div class="courses-grid">
-                        <div class="course-item">
-                            <h4>Data Structures</h4>
-                            <p>
-                                Advanced concepts in data organization and
-                                algorithms
-                            </p>
+                    <!-- Game Developer Position -->
+                    <div class="experience-card">
+                        <div class="experience-type">Professional</div>
+                        <div class="experience-header">
+                            <div class="experience-role">
+                                <h3>Game Developer</h3>
+                                <div class="experience-company">UW-Stout Instructional Design Lab</div>
+                                <div class="experience-location">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    Menomonie, WI
+                                </div>
+                            </div>
+                            <div class="experience-date">May 2024 - May 2025</div>
                         </div>
-                        <div class="course-item">
-                            <h4>3D Calculus</h4>
-                            <p>
-                                Multivariable and vector calculus applications
-                            </p>
+                        <div class="experience-description">
+                            Professional Game Developer creating educational games for university departments. Full-stack development from concept to deployment.
                         </div>
-                        <div class="course-item">
-                            <h4>Linear Algebra</h4>
-                            <p>Matrix theory and linear transformations</p>
+                        <div class="experience-achievements">
+                            <ul>
+                                <li>Developed educational games for multiple academic departments</li>
+                                <li>Collaborated with professors on pedagogical requirements</li>
+                                <li>Delivered projects on schedule using Unity and Unreal Engine</li>
+                            </ul>
                         </div>
-                        <div class="course-item">
-                            <h4>Game Development</h4>
-                            <p>Series from fundamentals to capstone projects</p>
+                        <div class="experience-skills">
+                            <span class="experience-skill">Unity</span>
+                            <span class="experience-skill">Unreal Engine</span>
+                            <span class="experience-skill">C#</span>
+                            <span class="experience-skill">C++</span>
                         </div>
-                        <div class="course-item">
-                            <h4>Shader Programming</h4>
-                            <p>Real-time rendering techniques with GLSL</p>
+                    </div>
+
+                    <!-- Capstone Project Manager -->
+                    <div class="experience-card">
+                        <div class="experience-type">Project</div>
+                        <div class="experience-header">
+                            <div class="experience-role">
+                                <h3>Project Manager</h3>
+                                <div class="experience-company">Dread Not - Capstone Project</div>
+                                <div class="experience-location">
+                                    <i class="fas fa-users"></i>
+                                    Team Leadership
+                                </div>
+                            </div>
+                            <div class="experience-date">Fall 2024 - Present</div>
                         </div>
-                        <div class="course-item">
-                            <h4>Computer Graphics</h4>
-                            <p>
-                                Fundamentals of 3D rendering and visualization
-                            </p>
+                        <div class="experience-description">
+                            Leading development team for "Dread Not", a cooperative submarine adventure game. Managing project planning and core systems development.
                         </div>
-                        <div class="course-item">
-                            <h4>Algorithms</h4>
-                            <p>Design and analysis of efficient algorithms</p>
+                        <div class="experience-achievements">
+                            <ul>
+                                <li>Managing cross-functional development team</li>
+                                <li>Implementing agile development methodologies</li>
+                                <li>Leading technical architecture decisions</li>
+                            </ul>
                         </div>
-                        <div class="course-item">
-                            <h4>Operating Systems</h4>
-                            <p>Kernel development and system architecture</p>
+                        <div class="experience-skills">
+                            <span class="experience-skill">Unity</span>
+                            <span class="experience-skill">Team Leadership</span>
+                            <span class="experience-skill">Agile</span>
+                            <span class="experience-skill">Git</span>
+                        </div>
+                    </div>
+
+                    <!-- First Major Project -->
+                    <div class="experience-card">
+                        <div class="experience-type">Project</div>
+                        <div class="experience-header">
+                            <div class="experience-role">
+                                <h3>Lead Designer</h3>
+                                <div class="experience-company">Atom's Embrace</div>
+                                <div class="experience-location">
+                                    <i class="fas fa-gamepad"></i>
+                                    Narrative Game
+                                </div>
+                            </div>
+                            <div class="experience-date">January - Summer 2024</div>
+                        </div>
+                        <div class="experience-description">
+                            Lead designer for narrative walking simulator exploring survivors guilt. First major game development project.
+                        </div>
+                        <div class="experience-achievements">
+                            <ul>
+                                <li>Led design decisions for narrative and gameplay</li>
+                                <li>Developed core systems in Unreal Engine</li>
+                                <li>Published game on itch.io platform</li>
+                            </ul>
+                        </div>
+                        <div class="experience-skills">
+                            <span class="experience-skill">Unreal Engine</span>
+                            <span class="experience-skill">C++</span>
+                            <span class="experience-skill">Game Design</span>
+                            <span class="experience-skill">Narrative Design</span>
+                        </div>
+                    </div>
+
+                    <!-- Education Start -->
+                    <div class="experience-card">
+                        <div class="experience-type">Education</div>
+                        <div class="experience-header">
+                            <div class="experience-role">
+                                <h3>Computer Science Student</h3>
+                                <div class="experience-company">University of Wisconsin - Stout</div>
+                                <div class="experience-location">
+                                    <i class="fas fa-graduation-cap"></i>
+                                    Game Design Focus
+                                </div>
+                            </div>
+                            <div class="experience-date">2021 - 2025</div>
+                        </div>
+                        <div class="experience-description">
+                            Computer Science degree with Game Design focus and Mathematics minor. Building foundational programming and design skills.
+                        </div>
+                        <div class="experience-achievements">
+                            <ul>
+                                <li>Specialized in Game Design and Development</li>
+                                <li>Participated in multiple team-based projects</li>
+                                <li>Maintained strong academic performance</li>
+                            </ul>
+                        </div>
+                        <div class="experience-skills">
+                            <span class="experience-skill">C++</span>
+                            <span class="experience-skill">Data Structures</span>
+                            <span class="experience-skill">Algorithms</span>
+                            <span class="experience-skill">Mathematics</span>
                         </div>
                     </div>
                 </div>
@@ -180,17 +272,17 @@
         <!-- Skills Section -->
         <section class="skills-section" id="skills">
             <div class="container">
-                <h2 class="section-title">Technical Skills</h2>
+                <h2 class="section-title">Skills & Expertise</h2>
 
                 <div class="skills-grid">
                     <div class="skill-category">
-                        <h3><i class="fas fa-code"></i> Languages</h3>
+                        <h3><i class="fas fa-code"></i> Programming Languages</h3>
                         <ul class="skill-list">
                             <li>C++</li>
                             <li>C#</li>
                             <li>Python</li>
                             <li>Java</li>
-                            <li>HTML & CSS</li>
+                            <li>JavaScript</li>
                             <li>GLSL</li>
                             <li>SQL</li>
                             <li>GScript</li>
@@ -198,49 +290,62 @@
                     </div>
 
                     <div class="skill-category">
-                        <h3>
-                            <i class="fas fa-project-diagram"></i> Methodologies
-                        </h3>
-                        <ul class="skill-list">
-                            <li>Agile Development</li>
-                            <li>Scrum</li>
-                            <li>Test-Driven Development</li>
-                            <li>Continuous Integration</li>
-                        </ul>
-                    </div>
-
-                    <div class="skill-category">
-                        <h3><i class="fas fa-tasks"></i> Project Management</h3>
-                        <ul class="skill-list">
-                            <li>Team Leadership</li>
-                            <li>Task Delegation</li>
-                            <li>Version Control (Git)</li>
-                            <li>Agile Scheduling</li>
-                            <li>Culture Building</li>
-                        </ul>
-                    </div>
-
-                    <div class="skill-category">
-                        <h3><i class="fas fa-gamepad"></i> Development</h3>
+                        <h3><i class="fas fa-gamepad"></i> Game Development</h3>
                         <ul class="skill-list">
                             <li>Unreal Engine</li>
                             <li>Unity</li>
                             <li>Godot</li>
-                            <li>JetBrains IDE</li>
-                            <li>Visual Studio</li>
                             <li>Shader Programming</li>
+                            <li>Physics Simulations</li>
+                            <li>VR Development</li>
                         </ul>
                     </div>
 
                     <div class="skill-category">
-                        <h3><i class="fas fa-lightbulb"></i> Interests</h3>
+                        <h3><i class="fas fa-globe"></i> Web & Enterprise</h3>
                         <ul class="skill-list">
-                            <li>Game Design</li>
+                            <li>Full-Stack Development</li>
+                            <li>HTML & CSS</li>
+                            <li>Enterprise IT Solutions</li>
+                            <li>Database Management</li>
+                            <li>API Development</li>
+                            <li>System Architecture</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3><i class="fas fa-tools"></i> Development Tools</h3>
+                        <ul class="skill-list">
+                            <li>Git Version Control</li>
+                            <li>Visual Studio</li>
+                            <li>JetBrains IDE</li>
+                            <li>Tortoise SVN</li>
+                            <li>CI/CD Pipelines</li>
+                            <li>Docker</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3><i class="fas fa-users"></i> Leadership & Soft Skills</h3>
+                        <ul class="skill-list">
+                            <li>Team Leadership</li>
+                            <li>Project Management</li>
+                            <li>Agile Methodologies</li>
+                            <li>Problem Solving</li>
+                            <li>Client Communication</li>
+                            <li>Mentoring</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3><i class="fas fa-lightbulb"></i> Specializations</h3>
+                        <ul class="skill-list">
+                            <li>Game Engine Architecture</li>
+                            <li>Educational Game Design</li>
                             <li>Graphics Programming</li>
-                            <li>Engine Architecture</li>
                             <li>Procedural Generation</li>
-                            <li>Physics Simulations</li>
-                            <li>VR Development</li>
+                            <li>Narrative Design</li>
+                            <li>Performance Optimization</li>
                         </ul>
                     </div>
                 </div>
@@ -297,14 +402,6 @@
                                 <span class="project-tag">Engine</span>
                             </div>
                             <div class="project-links">
-                                <a
-                                    href="#"
-                                    class="project-link"
-                                    onclick="openProjectModal('project1')"
-                                >
-                                    <i class="fas fa-info-circle"></i> View
-                                    Details
-                                </a>
                                 <a href="blubber.html" class="project-link">
                                     <i class="fas fa-external-link-alt"></i>
                                     Explore Blog
@@ -333,14 +430,6 @@
                                 <span class="project-tag">Narrative</span>
                             </div>
                             <div class="project-links">
-                                <a
-                                    href="#"
-                                    class="project-link"
-                                    onclick="openProjectModal('project2')"
-                                >
-                                    <i class="fas fa-info-circle"></i> View
-                                    Details
-                                </a>
                                 <a
                                     href="https://atomsembrace.itch.io/atoms-embrace"
                                     target="_blank"
@@ -374,14 +463,6 @@
                             </div>
                             <div class="project-links">
                                 <a
-                                    href="#"
-                                    class="project-link"
-                                    onclick="openProjectModal('project3')"
-                                >
-                                    <i class="fas fa-info-circle"></i> View
-                                    Details
-                                </a>
-                                <a
                                     href="https://leviathan-interactive.itch.io/dread-not"
                                     target="_blank"
                                     class="project-link"
@@ -413,14 +494,6 @@
                                 <span class="project-tag">Multiplayer</span>
                             </div>
                             <div class="project-links">
-                                <a
-                                    href="#"
-                                    class="project-link"
-                                    onclick="openProjectModal('project4')"
-                                >
-                                    <i class="fas fa-info-circle"></i> View
-                                    Details
-                                </a>
                                 <a
                                     href="https://ibrower.itch.io/earthline-protocol"
                                     target="_blank"
@@ -456,14 +529,6 @@
                             </div>
                             <div class="project-links">
                                 <a
-                                    href="#"
-                                    class="project-link"
-                                    onclick="openProjectModal('project5')"
-                                >
-                                    <i class="fas fa-info-circle"></i> View
-                                    Details
-                                </a>
-                                <a
                                     href="https://github.com/Benrowan910/PhysicsEngine-Games"
                                     target="_blank"
                                     class="project-link"
@@ -495,14 +560,6 @@
                                 <span class="project-tag">Multiplayer</span>
                             </div>
                             <div class="project-links">
-                                <a
-                                    href="#"
-                                    class="project-link"
-                                    onclick="openProjectModal('project6')"
-                                >
-                                    <i class="fas fa-info-circle"></i> View
-                                    Details
-                                </a>
                                 <a
                                     href="https://github.com/Benrowan910/Barnes-Hut-N-Body-Simulation"
                                     target="_blank"
@@ -536,14 +593,6 @@
                             </div>
                             <div class="project-links">
                                 <a
-                                    href="#"
-                                    class="project-link"
-                                    onclick="openProjectModal('project7')"
-                                >
-                                    <i class="fas fa-info-circle"></i> View
-                                    Details
-                                </a>
-                                <a
                                     href="https://github.com/Benrowan910/FinalShaderProject"
                                     target="_blank"
                                     class="project-link"
@@ -576,14 +625,6 @@
                             </div>
                             <div class="project-links">
                                 <a
-                                    href="#"
-                                    class="project-link"
-                                    onclick="openProjectModal('project8')"
-                                >
-                                    <i class="fas fa-info-circle"></i> View
-                                    Details
-                                </a>
-                                <a
                                     href="https://github.com/Benrowan910/OldGoL"
                                     target="_blank"
                                     class="project-link"
@@ -596,100 +637,6 @@
                     </div>
 
                     <!-- More projects would go here -->
-                </div>
-            </div>
-        </section>
-
-        <!-- Timeline Section -->
-        <section class="timeline-section" id="timeline">
-            <div class="container">
-                <h2 class="section-title">Career Timeline</h2>
-
-                <div class="timeline-wrapper">
-                    <div class="timeline-container">
-                        <div class="timeline-track"></div>
-
-                        <div class="timeline-item">
-                            <div class="timeline-content">
-                                <img
-                                    src="Images\65d4f11c8fb1b.image.jpg"
-                                    alt="Graduation"
-                                    class="timeline-image"
-                                />
-                                <div class="timeline-date">Fall 2021</div>
-                                <h3 class="timeline-title">Started College</h3>
-                                <p class="timeline-text">
-                                    Graduated from high school and began
-                                    Computer Science program at University of
-                                    Wisconsin - Stout. Focused on adapting to
-                                    college life and beginning my journey in
-                                    game development.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="timeline-item">
-                            <div class="timeline-content">
-                                <img
-                                    src="ProjectImages\AtomsEmbrace\DSC04333.jpg"
-                                    alt="First Game"
-                                    class="timeline-image"
-                                />
-                                <div class="timeline-date">January 2024</div>
-                                <h3 class="timeline-title">
-                                    First Major Project
-                                </h3>
-                                <p class="timeline-text">
-                                    Served as lead designer for my first major
-                                    game project - "Atom's Embrace". Learned
-                                    valuable lessons about the development
-                                    process, team management, and Unreal Engine.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="timeline-item">
-                            <div class="timeline-content">
-                                <img
-                                    src="ProjectImages\Screenshot 2025-01-15 215831.png"
-                                    alt="Employed"
-                                    class="timeline-image"
-                                />
-                                <div class="timeline-date">May 2024</div>
-                                <h3 class="timeline-title">
-                                    Professional Developer
-                                </h3>
-                                <p class="timeline-text">
-                                    Hired by UW-Stout's instructional design lab
-                                    as a Game Developer. Worked on educational
-                                    game projects requested by professors across
-                                    various departments.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="timeline-item">
-                            <div class="timeline-content">
-                                <img
-                                    src="ProjectImages\sub_poster_pilot_PREVIEW.png"
-                                    alt="Capstone"
-                                    class="timeline-image"
-                                />
-                                <div class="timeline-date">Fall 2024</div>
-                                <h3 class="timeline-title">Capstone Project</h3>
-                                <p class="timeline-text">
-                                    Began Capstone project "Dread Not" as
-                                    Project Manager. Leading a team of
-                                    developers to create a cooperative submarine
-                                    adventure game built with Unity.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="timeline-scroll-hint">
-                        <i class="fas fa-arrow-right"></i>
-                        <span>Scroll to explore timeline</span>
-                    </div>
                 </div>
             </div>
         </section>
@@ -846,40 +793,6 @@
                 </div>
             </div>
         </footer>
-
-        <!-- Project Modals -->
-        <div id="project-modal" class="modal">
-            <div class="modal-content">
-                <span class="close-btn" onclick="closeProjectModal()"
-                    >&times;</span
-                >
-                <div class="modal-header">
-                    <img
-                        id="modal-img"
-                        src=""
-                        alt="Project Image"
-                        class="modal-image"
-                    />
-                </div>
-                <div class="modal-body">
-                    <h2 id="modal-title" class="modal-title"></h2>
-                    <h3 id="modal-subtitle" class="modal-subtitle"></h3>
-                    <p id="modal-description" class="modal-description"></p>
-
-                    <div class="modal-highlight">
-                        <p id="modal-highlight"></p>
-                    </div>
-
-                    <div class="modal-tech">
-                        <!-- Tech tags will be added here by JavaScript -->
-                    </div>
-
-                    <div class="modal-links">
-                        <!-- Links will be added here by JavaScript -->
-                    </div>
-                </div>
-            </div>
-        </div>
 
         <script src="script.js"></script>
     </body>
