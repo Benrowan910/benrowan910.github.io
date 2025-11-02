@@ -300,3 +300,84 @@ style.textContent = `
             }
         `;
 document.head.appendChild(style);
+
+// ===== SCROLL PROGRESS BAR =====
+const scrollProgress = document.querySelector('.scroll-progress');
+
+function updateScrollProgress() {
+  const windowHeight = window.innerHeight;
+  const documentHeight = document.documentElement.scrollHeight - windowHeight;
+  const scrolled = window.scrollY;
+  const progress = (scrolled / documentHeight) * 100;
+  
+  scrollProgress.style.width = `${progress}%`;
+}
+
+window.addEventListener('scroll', updateScrollProgress);
+window.addEventListener('resize', updateScrollProgress);
+
+// ===== SCROLL TO TOP BUTTON =====
+const scrollToTopBtn = document.querySelector('.scroll-to-top');
+
+function toggleScrollToTop() {
+  if (window.scrollY > 300) {
+    scrollToTopBtn.classList.add('visible');
+  } else {
+    scrollToTopBtn.classList.remove('visible');
+  }
+}
+
+scrollToTopBtn.addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+});
+
+window.addEventListener('scroll', toggleScrollToTop);
+
+// ===== ENHANCED SCROLL ANIMATIONS WITH INTERSECTION OBSERVER =====
+const scrollAnimationObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, {
+  threshold: 0.1,
+  rootMargin: '0px 0px -50px 0px'
+});
+
+// Observe all elements with animation classes
+document.addEventListener('DOMContentLoaded', () => {
+  const animatedElements = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .scale-in');
+  animatedElements.forEach(el => scrollAnimationObserver.observe(el));
+});
+
+// ===== PARALLAX EFFECT FOR HERO SECTION =====
+const hero = document.querySelector('.hero');
+const heroContent = document.querySelector('.hero-content');
+
+function parallaxEffect() {
+  const scrolled = window.scrollY;
+  const parallaxSpeed = 0.2; // Reduced from 0.5 to 0.2 for subtler effect
+  
+  if (heroContent && scrolled < window.innerHeight) {
+    heroContent.style.transform = `translateY(${scrolled * parallaxSpeed}px)`;
+    heroContent.style.opacity = 1 - (scrolled / window.innerHeight) * 0.3; // Reduced from 0.7 to 0.3
+  }
+}
+
+window.addEventListener('scroll', () => {
+  requestAnimationFrame(parallaxEffect);
+});
+
+// ===== SMOOTH REVEAL ON PAGE LOAD =====
+window.addEventListener('load', () => {
+  document.body.style.opacity = '0';
+  document.body.style.transition = 'opacity 0.5s ease';
+  
+  setTimeout(() => {
+    document.body.style.opacity = '1';
+  }, 100);
+});
