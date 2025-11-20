@@ -354,23 +354,6 @@ document.addEventListener('DOMContentLoaded', () => {
   animatedElements.forEach(el => scrollAnimationObserver.observe(el));
 });
 
-// ===== PARALLAX EFFECT FOR HERO SECTION =====
-const hero = document.querySelector('.hero');
-const heroContent = document.querySelector('.hero-content');
-
-function parallaxEffect() {
-  const scrolled = window.scrollY;
-  const parallaxSpeed = 0.2; // Reduced from 0.5 to 0.2 for subtler effect
-  
-  if (heroContent && scrolled < window.innerHeight) {
-    heroContent.style.transform = `translateY(${scrolled * parallaxSpeed}px)`;
-    heroContent.style.opacity = 1 - (scrolled / window.innerHeight) * 0.3; // Reduced from 0.7 to 0.3
-  }
-}
-
-window.addEventListener('scroll', () => {
-  requestAnimationFrame(parallaxEffect);
-});
 
 // ===== SMOOTH REVEAL ON PAGE LOAD =====
 window.addEventListener('load', () => {
